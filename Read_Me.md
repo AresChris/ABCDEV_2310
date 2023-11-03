@@ -8,6 +8,6 @@
 ### êtes vous pres à former un trio de choc ?
 ### yep !
 >que la partie commence les gars 
-###                     Lores 2023
+<sub>                 Lores 2023 </sub>
 
 ### Conflit !!
