@@ -1,9 +1,49 @@
-<mxfile host="app.diagrams.net" modified="2023-11-15T13:33:19.294Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="N1XwEqCKMAv6nFadCf5x" version="22.1.1" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-15T13:35:21.168Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36 Edg/119.0.0.0" etag="B73NOmHxC61AIjWZqGrX" version="22.1.1" type="github">
   <diagram name="Page-1" id="hqdtKcqSjIvQi2jfvFWo">
-    <mxGraphModel dx="1146" dy="763" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="927" dy="1145" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-1" value="" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="11" y="-174" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="I3v4G_YuQNntpKReA2Zn-1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="26" y="-84" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-3" value="Saisir le premier nombre" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="-34" y="-84" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-4" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="I3v4G_YuQNntpKReA2Zn-3" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="26" y="16" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-5" value="Saisir le deuxième nombre" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="-34" y="16" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="I3v4G_YuQNntpKReA2Zn-5" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="26" y="116" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-7" value="moyenne &amp;lt;--(nombre1 + nombre2)/2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="-34" y="116" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="I3v4G_YuQNntpKReA2Zn-7" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="26" y="216" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-9" value="afficher la moyenne" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=#000000;fillColor=#ffffc0;strokeColor=#ff0000;" vertex="1" parent="1">
+          <mxGeometry x="-34" y="216" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="I3v4G_YuQNntpKReA2Zn-10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=open;endSize=8;strokeColor=#ff0000;rounded=0;" edge="1" source="I3v4G_YuQNntpKReA2Zn-9" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="26" y="316" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
