@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Algo>
-    <description texte="" courant="FIN_SINON"/>
+    <description texte="" courant="SI (a=>0 et b>=0 ou b&lt;=0 et a&lt;=0) ALORS"/>
     <extension extnom="inactif"/>
     <fonction fctetat="inactif" fctcode=""/>
-    <F2 F2lignes="" F2etat="inactif" F2defaut="" F2para=""/>
+    <F2 F2etat="inactif" F2defaut="" F2lignes="" F2para=""/>
     <repere repcode="-10#10#-10#10#2#2" repetat="inactif"/>
-    <param arrondiAuto="vrai" maxBoucle="500000" epaisseurLigne="2" nbDecimales="8" epaisseurPoint="2" totalAffichages="1000" totalBoucles="5000000"/>
+    <param nbDecimales="8" epaisseurPoint="2" maxBoucle="500000" arrondiAuto="vrai" totalAffichages="1000" totalBoucles="5000000" epaisseurLigne="2"/>
     <item algoitem="FONCTIONS_UTILISEES" code="200#declarationfonctions"/>
     <item algoitem="VARIABLES" code="100#declarationsvariables">
         <item algoitem="a EST_DU_TYPE NOMBRE" code="1#NOMBRE#a"/>
@@ -16,19 +16,23 @@
         <item algoitem="LIRE a" code="2#a#pasliste"/>
         <item algoitem="AFFICHER &quot;Inscrire b : &quot;" code="4#Inscrire b : #0"/>
         <item algoitem="LIRE b" code="2#b#pasliste"/>
-        <item algoitem="SI ((a*b)>0) ALORS" code="6#(a*b)>0">
+        <item algoitem="SI (a>0 et b>0 ou a&lt;0 et b&lt;0) ALORS" code="6#a>0 et b>0 ou a&lt;0 et b&lt;0">
             <item algoitem="DEBUT_SI" code="7#debutsi"/>
-            <item algoitem="AFFICHER &quot;Le produit des deux nombres est positif !&quot;" code="4#Le produit des deux nombres est positif !#0"/>
+            <item algoitem="AFFICHER &quot;Le produit des deux est positif !&quot;" code="4#Le produit des deux est positif !#0"/>
             <item algoitem="FIN_SI" code="8#finsi"/>
             <item algoitem="SINON" code="9#sinon">
                 <item algoitem="DEBUT_SINON" code="10#debutsinon"/>
-                <item algoitem="SI ((a*b)&lt;0) ALORS" code="6#(a*b)&lt;0">
+                <item algoitem="SI (a&lt;0 et b>0 ou a>0 et b&lt;0) ALORS" code="6#a&lt;0 et b>0 ou a>0 et b&lt;0">
                     <item algoitem="DEBUT_SI" code="7#debutsi"/>
                     <item algoitem="AFFICHER &quot;Ce nombre est négatif !&quot;" code="4#Ce nombre est négatif !#0"/>
                     <item algoitem="FIN_SI" code="8#finsi"/>
                     <item algoitem="SINON" code="9#sinon">
                         <item algoitem="DEBUT_SINON" code="10#debutsinon"/>
-                        <item algoitem="AFFICHER &quot;Ce nombre est nul !&quot;" code="4#Ce nombre est nul !#0"/>
+                        <item algoitem="SI (a=>0 et b>=0 ou b&lt;=0 et a&lt;=0) ALORS" code="6#a=>0 et b>=0 ou b&lt;=0 et a&lt;=0">
+                            <item algoitem="DEBUT_SI" code="7#debutsi"/>
+                            <item algoitem="AFFICHER &quot;Ce nombre est nul !&quot;" code="4#Ce nombre est nul !#0"/>
+                            <item algoitem="FIN_SI" code="8#finsi"/>
+                        </item>
                         <item algoitem="FIN_SINON" code="11#finsinon"/>
                     </item>
                 </item>

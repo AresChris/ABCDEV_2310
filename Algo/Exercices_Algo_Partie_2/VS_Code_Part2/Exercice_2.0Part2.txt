@@ -8,10 +8,10 @@ Début du programme
     Lire a
     Ecrire "Inscrire b :"
     Lire b
-        SI (a>0 ET b>0 OU a<0 ET b<0) ALORS
+        SI ((a*b)>0) ALORS
         Ecrire "Le produit des deux nombres est positif"
         SINON
-            SI (a<0 ET b>0 OU a>0 ET b<0) ALORS
+            SI ((a*b)<0) ALORS
             Ecrire "Le produit de ces deux sommes est négatif"
             FIN SI
             FIN SINON
