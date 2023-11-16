@@ -1,0 +1,18 @@
+Variable
+    reponseUser est un entier
+    realAnswer est un entier
+Début du programme
+    Ecrire "Inscrire un nombre compris entre 1 et 3 : "
+    Lire reponseUser
+    TryAgain <-- 2.7
+    Début TANT_QUE
+        TANT_QUE reponseUser != realAnswer
+            Ecrire "Nouvel essai : "
+            Lire reponseUser
+            FIN TANT_QUE
+            SI (reponseUser == realAnswer) ALORS
+                Ecrire "Bonne réponse !!"
+                FIN SI
+Fin du programme
+
+        
