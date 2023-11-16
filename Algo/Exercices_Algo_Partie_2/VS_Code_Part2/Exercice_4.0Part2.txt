@@ -8,5 +8,5 @@ Début du programme
     Ecrire "Inscrivez les minutes actuelles (mm) : "
     Lire minute
     minute <-- minute+1
-    Ecrire "Dans une minute, il sera " 'Lire heure' 'Lire minute'
+    Ecrire "Dans une minute, il sera " ,heure ,minute
 Fin du programme

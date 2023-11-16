@@ -14,6 +14,9 @@ Début du programme
                     SI (age>=10 ET age<=11) ALORS
                     Ecrire "Catagorie Minime"
                         SINON
+                        SI (age<6) ALORS
+                        Ecrire "Inscription impossible, l'enfant est trop jeune"
+                            SINON
                             Ecrire "Catagorie Cadet"
                         FIN SI
                         FIN SINON

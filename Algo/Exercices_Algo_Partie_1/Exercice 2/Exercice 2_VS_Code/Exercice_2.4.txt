@@ -1,0 +1,15 @@
+Variables
+    anneeA est un entier
+Début du programme
+    Ecrire "Quelle année ? "
+    Lire anneeA
+    SI (anneeA mod 4 ET anneeA mod 100 OU anneeA !mod 400)
+        Ecrire "L'année est bissextile"
+            SINON
+                Ecrire "L'année n'est pas bissextile"
+                FIN SI
+                FIN SINON
+Fin du programme
+
+
+
