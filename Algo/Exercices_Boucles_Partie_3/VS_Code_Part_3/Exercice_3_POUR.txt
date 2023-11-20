@@ -1,0 +1,19 @@
+Exercice_4
+
+Variables
+    userChoice est un entier
+    finalCount est un entier
+    
+Début du programme
+    Ecrire "Choisir un nombre de départ : "
+    Lire userChoice
+    finalCount <-- 27
+        Début Pour
+            Pour userChoice ALLANT de 0 à finalCount
+            Si (userChoice<finalCount)
+            userChoice <-- userChoice+1
+            FIN Pour
+Fin du programme
+
+
+

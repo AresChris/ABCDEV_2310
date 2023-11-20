@@ -1,0 +1,16 @@
+Exercice_4
+Variables
+    userChoice est un entier 
+    finalCount est un entier 
+Début du programme
+    Ecrire "Choisir un nombre de départ : "
+    Lire userChoice
+    finalCount <-- 27
+        Début Tant_Que
+            Tant_Que (userChoice!=finalCount ET userChoice<finalCount)
+            userChoice <-- userChoice + 1
+                Ecrire "Le compte est de : "
+                Afficher userChoice
+                FIN Tant_Que
+Fin du programme
+

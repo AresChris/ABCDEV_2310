@@ -1,0 +1,57 @@
+Exercice_2.7
+Variables
+    saisieUser est un entier
+    miles est un entier
+    q est une chaine de caractères
+Début du programme
+    Ecrire "Saisir un nombre de kilomètres entre 0.01 et 1 000 000 :"
+    Lire saisieUser
+    miles <-- saisieUser/1.609
+    km <-- saisieUser*1.609
+
+    Début Tant_Que
+        Tant_Que (saisieUser >= 0.01 et saisieUser <= 1 000 000)
+        Début Si
+            Si (saisieUser < 0.01 OU saisieUser > 1 000 000)
+            Ecrire "Valeur hors limite." //retour à la ligne
+            Ecrire "inscrivez un nombre de kms entre 0.01 et 1 000 000"
+            Lire saisieUser
+                Sinon Si (saisieUser = "q") alors
+                Ecrire "Vous avez quitté le programme"
+            Fin Si
+        Ecrire "En kilomètres : "
+        Afficher kilomètres
+        Ecrire "En miles : "
+        Afficher miles
+    Fin Tant_Que
+Fin du programme      
+
+
+
+
+Variables   
+    miles est un entier
+    saisieUser est un entier
+    leave est une chaine de caractères
+Début du programme
+    miles <-- saisieUser/1.609
+    Ecrire "Saisir un nombre de kms entre 0.01 et 1 000 000 :"
+    Lire saisieUser
+    afficher miles
+    Ecrire "Quitter/Continuer ? (Q/C)"
+    Lire leave
+    Début Tant_Que  
+        Tant_Que (leave = "C") 
+            Début Si 
+            Si (saisieUser>=0.01 ET saisieUser<=1000000) alors
+            Afficher saisieUser
+            Ecrire " kms est équivalent à "
+            Afficher miles
+            Ecrire " miles" // retour à la ligne
+            Ecrire "Quitter ?"
+            Lire leave
+                Sinon   
+                Si (saisieUser<0.01 OU saisieUser>1000000)
+                Ecrire "Hors limite, entrez un autre nombre (0.01 => 1 000 000)
+                Lire saisieUser
+

@@ -1,0 +1,25 @@
+Variables
+    userAnswer est un entier
+    realAnswer est un entier
+Début du programme
+    Ecrire "Inscrire un nombre compris entre 10 et 20"
+    Lire userAnswer
+    realAnswer <-- 17.50
+    Début Tant_que
+        Tant_que    (userAnswer!=realAnswer)
+        Ecrire "Nouvel essai : "
+        Lire userAnswer
+            Si (userAnswer >20) Alors
+            Ecrire "Plus petit !"
+            Lire userAnswer
+            Sinon
+                SI (userAnswer >10)
+                Ecrire "Plus grand !"
+                Lire userAnswer
+                    SINON
+                    SI (userAnswer==realAnswer) Alors
+                    Ecrire "Bonne réponse !"
+                    FIN SI
+                    FIN SINON
+                        FIN Tant_que
+Fin du programme
