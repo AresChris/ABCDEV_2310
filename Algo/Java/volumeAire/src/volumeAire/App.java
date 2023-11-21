@@ -1,4 +1,4 @@
-package aireVolume;
+package volumeAire;
 
 public class App {
 
@@ -8,10 +8,11 @@ public class App {
 			double rayon = 25;
 			
 			double aire = 4*Math.PI*Math.pow(rayon, 2);
-			System.out.println(aire);
+			System.out.println("L'aire est de : " + aire);
 			
 			double volume = 4/3*Math.PI*Math.pow(rayon,2);
-			System.out.println(volume);
+
+			System.out.println("Le volume est de : " + volume);
 			
 	}
 
