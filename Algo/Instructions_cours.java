@@ -24,7 +24,8 @@ Début du programme // Une fois les variables déclarées, elles peuvent être u
                                                                                                                                             }
             Sinon  // Si la condition du dessus n'est pas vrai, il faut que le programme fasse quelque chose, donc sinon || En java :       else if (nombre1 > nombre2){ 
                 Si (nombre1 > nombre2)                                                                                                       System.out.println("nombre1 est le plus grand des deux nombres");
-                Ecrire "nombre1 est le plus grand des deux"                                                                                 }
+                Ecrire "nombre1 est le plus grand des deux"   
+                Afficher nombre1 // Montre la valeur de la variable variable1  || En Java : System.out.println(variable1); pour afficher une variable, il ne faut pas ajouter de guillemets ! Ce n'est pas du texte.                                                                             }
                 Fin si                                                                                                                       
             Fin Sinon                               
 
