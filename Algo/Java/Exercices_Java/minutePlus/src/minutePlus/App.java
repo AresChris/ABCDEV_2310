@@ -1,5 +1,6 @@
 package minutePlus;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class App {
@@ -11,32 +12,36 @@ public class App {
 		int heures;
 		int secondes;
 		
+		DecimalFormat formater = new DecimalFormat("00");
+		
 		Scanner sc = new Scanner(System.in);
 		
 		
-		System.out.println("Inscrivez l'heure actuelle : ");
+		System.out.println("Heure actuelle : ");
 		heures = sc.nextInt();
 		
-		System.out.println("Inscrivez les minutes actuelle : ");
+		System.out.println("Minutes : ");
 		minutes = sc.nextInt();
 		
-		System.out.println("Inscrivez les secondes actuelle : ");
+		System.out.println("Secondes : ");
 		secondes = sc.nextInt();
 		
 		minutes = minutes + 1;
 		
 		if (secondes == 60) {
 			System.out.println(secondes == 0);
-			System.out.println(minutes == minutes+1);
+			System.out.println(minutes == minutes +1);
 		}
+		
 		if (minutes == 60) {
 			System.out.println(minutes == 0);
-			System.out.println(heures == heures+1);
+			System.out.println(heures == heures +1);
 		}
-		
-		System.out.println("Dans une minute il sera " + heures + ":" + minutes + ":" + secondes);
 
-		
-	}
+		System.out.println("Dans une minute il sera " + formater.format(heures) + ":" + formater.format(minutes) + ":" + formater.format(secondes));
 
-}
+		sc.close();
+		}
+		}
+
+
