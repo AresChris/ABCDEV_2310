@@ -1,11 +1,20 @@
 package majeurMineur;
 
+import java.util.Scanner;
+
 public class App {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		int ageA = 17;
+		int ageA;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Inscrivez votre âge : ");
+		ageA = sc.nextInt();
+		
+		sc.close();	
 		
 		if (ageA < 0) {
 			System.out.println("Vous n'êtes pas né");
@@ -15,7 +24,10 @@ public class App {
 			}
 				else {
 					System.out.println("Vous êtes majeur !");
-			}
+			
+			
+				
+				}
 		}
 	}
 
