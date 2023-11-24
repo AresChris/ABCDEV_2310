@@ -48,11 +48,16 @@ public class App {
 		while (userAnswer != answer ) {
 			System.out.println("Nouvel essai !");
 			userAnswer = sc.nextDouble();
-			
-			sc.close();
 		}
 	}
+			sc.close();
+		
+
 	}
+}
+	
+	
+
 	
 		
 	
