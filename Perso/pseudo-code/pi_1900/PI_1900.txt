@@ -1,0 +1,25 @@
+PI_1900
+
+//
+//pi est environ égal à 4/1-4/3 + 4/5-4/7 + 4/9...
+// 1. demander un nombre à l'utilisateur 'nombre d'itération'
+// 2. Pour chaque nombre 'i' impaire entre 1 et 'nombre d'itération' faire :
+//      L'ajout ou le retrait de la valeur 4/i à 'pi approxiatif'
+// 3. Afficher la valeur "Pi est environ égal à pi approximatif" --> avec 'pi approximatif' notre variable.
+
+// Si l'utilisateur entre 13, il faut alors effectuer la somme suivante :
+// 4/1-4/3 + 4/5-4/7 + 4/9-4/11+4/13
+// Si l'utilisateur 10 il faut alors effectuer le calcul suivant : 
+// 4/1-4/3 + 4/5-4/7 + 4/9
+// tester avec plusieurs nombres d'itération de plus en plus grand :
+// 100
+// 1000
+// 10000
+// 100000 ->Une seconde de calcul environ
+// 1000000 -> Surement une dizaine de secondes
+//
+
+Variables
+    nbIterations est un entier 
+    i est un entier
+    

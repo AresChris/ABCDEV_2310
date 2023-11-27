@@ -1,0 +1,28 @@
+exercice_7_Part2
+
+Variables
+    candidat1 est un entier
+    candidat2 est un entier
+    candidat3 est un entier
+    candidat4 est un entier
+    score est un entier
+Début du programme
+    Ecrire "Inscrire le score du premier candidat :"
+    Lire candidat1
+    Ecrire "Inscrire le score du deuxième candidat :"
+    Lire candidat2
+    Ecrire "Inscrire le score du troisième candidat :"
+    Lire candidat3
+    Ecrire "Inscrire le score du quatrième candidat :"
+    Lire candidat4
+    score <-- 100
+        Début tant_que
+            tant_que candidat1 >= 12.5 faire
+                Début si
+                    si (candidat1 > 50) alors
+                        Ecrire "le candidat est élu !"
+                        Sinon Si (candidat1 < 12.5) alors
+                            Ecrire "Le candidat est battu"
+                                
+
+
