@@ -1,0 +1,31 @@
+Exercice_8
+
+Variables
+    bill est un entier
+    paid est un entier
+    money est un entier
+    change est un entier
+Début du programme
+    Ecrire "Quelle somme à été donnée ?"
+    lire paid
+    bill <-- 65
+    Ecrire "La somme à payer est de " , bill, "€"
+    change <-- paid - bill
+    Début Pour
+        Pour i allant de 0 à change
+            Début si
+            si (change>=1 ET change<5) alors
+            money <- 1
+             sinon si (change >= 5 ET money <10)
+             money <-- 5
+                sinon   
+                money <-- 50
+            Fin si
+        Fin sinon
+                Ecrire "Le rendu monnaie est de ",money
+    Fin Pour
+Fin du programme
+
+
+
+

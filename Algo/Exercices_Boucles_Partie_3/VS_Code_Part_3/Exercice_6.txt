@@ -1,0 +1,18 @@
+Exercice_6
+variables
+    nombre est un entier
+    i est un entier
+    newNb est un entier
+Début du programme
+    Ecrire "Inscrivez un nombre"
+    Lire nombre
+    Début pour
+        pour i allant de 0 à 20 faire
+        Ecrire "Inscrire un nouveau nombre"
+        lire newNb
+        Fin pour
+            Début si
+                si (newNb > nombre) alors
+                newNb <-- nombre
+                Fin si
+Fin du programme

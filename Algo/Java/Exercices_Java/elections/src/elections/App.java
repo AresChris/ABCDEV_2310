@@ -34,31 +34,20 @@ public class App {
 		total = total - c4;
 		System.out.println(" Il reste " + total + " de points possibles.");
 		
-		boolean won = true;
-		boolean beaten = true;
-				
-				if (c1 >= 50) {
-					won = true;
-				}
-				if (c1 < 12.50) {
-					beaten = true;
-				}
-					do {
+		sc.close();
+		
 					if (c1 > c2 & c1 > c3 && c1 > c4) {
 					System.out.print("Le candidat est en tête et participe au second tour !");
 				} 	else if (c1 < c2 || c1 < c3 || c1 < c4 && c1 > 12.50) {
 					System.out.print("Le candidat n'est pas en tête mais passe au second tour");
-				} else if (beaten == true);
-					System.out.println("");
+				} 	else if (c1 < 12.50) {
+					System.out.println("Le candidat est battu !");
+				} 	else if ( c1 >= 50) {
+					System.out.println("Le candidat est élu !");
+				}
 				}
 			}
-				while (beaten = true);
-				
-				if (won = true) {
-				System.out.println("le candidat est élu !");
-				} 
-			}
-		}
+		
 	
 
 

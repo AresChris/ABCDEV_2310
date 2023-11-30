@@ -1,19 +1,14 @@
-Exercice_4
+Exercice_3_Pour
 
 Variables
-    userChoice est un entier
-    finalCount est un entier
-    
+    nombre est un entier
+    i est un entier
 Début du programme
-    Ecrire "Choisir un nombre de départ : "
-    Lire userChoice
-    finalCount <-- 27
-        Début Pour
-            Pour userChoice ALLANT de 0 à finalCount
-            Si (userChoice<finalCount)
-            userChoice <-- userChoice+1
-            FIN Pour
-Fin du programme
-
-
-
+    Ecrire "inscrire un nombre :"
+    Lire nombre
+    Début pour
+        Pour i allant de 0 à 10
+        nombre <- nombre + 1
+        lire nombre
+        fin pour
+fin du programme

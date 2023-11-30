@@ -10,11 +10,14 @@ public class App {
 
 		double saisieUser;
 		String leave = "Q";
+		double kms;
+		double miles;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		DecimalFormat formater = new DecimalFormat("00");
 		
-	
+		boolean fin_prog = true;
 		
 		System.out.println("Enter a kms number : ");
 		saisieUser = sc.nextDouble();
@@ -28,7 +31,7 @@ public class App {
 			System.out.println("Nouveau nombre de kms :");
 			saisieUser = sc.nextDouble();
 		}
-		while (saisieUser >= 0.01 && saisieUser <= 1000000); 
+		while (); 
 		
 		do {
 			System.out.println("Out of limits, enter another number : ");
@@ -41,6 +44,10 @@ public class App {
 	
 
 		
+		//	System.out.println("Enter a kms number : ");
+		//	saisieUser = sc.nextDouble();
+		//	formater.format(saisieUser);
+		//	
 	
 
 
