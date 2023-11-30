@@ -22,20 +22,35 @@ public class App {
 		
 			change = paid - bill;
 
-			for (i = 0; i > change; i+=1) {
-				if (change >=1 && change <5) {
-					money = 1;
-					System.out.print("Le rendu monnaie est de : " + money);
-				} else if (change >= 5 && change <10) {
-					money = 5;
-					System.out.print("Le rendu monnaie est de : " + money);
-				} else if (change >=10) {
-					money = 10;	
-					System.out.print("Le rendu monnaie est de : " + money);
+
+				while (change % i == 0) {
+					if (change >= 1 && change <= 5) {
+						for (i=1; i >= change; i++) {
+							money = 1;
+							total = change / money;
+							System.out.println("Le rendu monnaie est de : " + change);
+				} 
+			}
+					else if (change >= 5 && change <10) {
+						for (i=5; i <= change; i++) {
+							money = 5;
+							total = change / money;
+							System.out.println("Le rendu monnaie est de : " + change);
+						}
+					} 
+					else if (change >=10) {
+								for (i=10; i<=change; i++) {
+								money = 10;
+								total = change / money;
+								change = money * total;
+								System.out.println("Le rendu monnaie est de : " + total);
+						}
+					}
 				}
-			}	
+			}
+		}		
 			
-		}
-	}	
+		
+		
 			
 	

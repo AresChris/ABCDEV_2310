@@ -1,5 +1,6 @@
 package Exercice_5_Photocopies;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class App {
@@ -16,6 +17,7 @@ public class App {
 		int userChoice;
 		
 		Scanner sc = new Scanner(System.in);
+		DecimalFormat formater = new DecimalFormat("00");
 		
 		System.out.println("Combien de photocopies ?");
 		userChoice = sc.nextInt();
@@ -30,9 +32,9 @@ public class App {
 			System.out.print("La facture est de :" + bill);
 		}
 		else if (userChoice > 30) {
-			total = (10 * firstTen) + (20*nextTwenty)+ (aboveSum * above);
-			bill = userChoice - total;
-			System.out.print("La facture est de :" + bill);
+			total = userChoice - 30;
+			bill = (10 * firstTen) + (20*nextTwenty)+ (total * above);
+			System.out.print("La facture est de :" + formater.format(bill));
 		}
 		}
 }		
