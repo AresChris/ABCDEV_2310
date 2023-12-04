@@ -30,25 +30,27 @@ Fin du programme
 		
 		String genre;
 		int age;
-		boolean condition1;
-		boolean condition2;
-		
 		
 		Scanner sc = new Scanner(System.in);
 		
 		//Saisies utilisateur
-		System.out.println("Saisir le genree");
+		System.out.println("Saisir le genre h/f");
 		genre = sc.next();
 		
 		System.out.println("Saisir l'âge");
 		age = sc.nextInt();
 		
-		condition1 = genre;
+		sc.close();
 		
-		while () {
-			
+		boolean condition1 = genre.equals("h") && age >=20;
+		boolean condition2 = genre.equals("f") && age >=18 && age <=35;
+		
+		if (condition1 || condition2) {
+				System.out.print("Imposable !");
+			} else if (!condition1 || !condition2){
+				System.out.print("Non imposable");
 		}
-		
 	}
-
 }
+
+
