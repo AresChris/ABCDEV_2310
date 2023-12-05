@@ -34,26 +34,26 @@ public class App {
 	
 	do {
 		if (userAnswer > answer) {
-			System.out.println("Plus grand");
+			System.out.println("Plus petit");
 			userAnswer = sc.nextDouble();	
 		}
 		else if (userAnswer < answer) {
-			System.out.println("Plus petit");
+			System.out.println("Plus grand");
 			userAnswer = sc.nextDouble();
 		}
 		else {
 			System.out.println("Bonne réponse !");
 		}
-		
-		while (userAnswer != answer ) {
-			System.out.println("Nouvel essai !");
-			userAnswer = sc.nextDouble();
 		}
+	
+		while (userAnswer != answer ); {
 	}
-			sc.close();
+	
+			System.out.print("Bonne réponse");
 		
-
-	}
+			sc.close();
+	
+}
 }
 	
 	

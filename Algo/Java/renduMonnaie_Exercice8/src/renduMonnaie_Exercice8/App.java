@@ -6,49 +6,50 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		int bill = 65;
-		int paid;
-		int money;
-		int change;
-		int total;
-		int i=1;
+		int bill, paid, difference, change = 0;
+		int i;
+		boolean one, five, ten;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
-		System.out.println("La somme à payer est de " + bill + "€");
+		
 		
 		System.out.println("Quelle somme a été donnée ?");
 			paid = sc.nextInt();
+		System.out.println("Quelle est la facture ?");
+			bill = sc.nextInt();
+			
 		
-			change = paid - bill;
-
-
-				while (change % i == 0) {
-					if (change >= 1 && change <= 5) {
-						for (i=1; i >= change; i++) {
-							money = 1;
-							total = change / money;
-							System.out.println("Le rendu monnaie est de : " + change);
-				} 
+			
+		difference = paid - bill;
+		System.out.println("La somme à rendre est de " + difference + "€");
+		
+		one = difference <=5;	
+		five = difference >5 && difference <10;
+		ten = difference >10;
+		
+		for (i = 0; i < difference; i++) {
+			if (one) {
+				i = difference * i;
+				change = 1 * i;
+			} else if (five) {
+				i = difference * i;
+				change = 5 * i;
+			} else if (ten) {
+				change = 5 * i;
 			}
-					else if (change >= 5 && change <10) {
-						for (i=5; i <= change; i++) {
-							money = 5;
-							total = change / money;
-							System.out.println("Le rendu monnaie est de : " + change);
-						}
-					} 
-					else if (change >=10) {
-								for (i=10; i<=change; i++) {
-								money = 10;
-								total = change / money;
-								change = money * total;
-								System.out.println("Le rendu monnaie est de : " + total);
-						}
-					}
-				}
-			}
-		}		
+			
+			System.out.println("Le rendu monnaie est de " + i + " €");
+			
+		}
+
+		
+			
+						
+						
+	}
+}
 			
 		
 		
