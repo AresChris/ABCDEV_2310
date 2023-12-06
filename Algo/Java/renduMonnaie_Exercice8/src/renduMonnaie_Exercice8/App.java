@@ -40,7 +40,7 @@ public class App {
 				change = 5 * i;
 			}
 			
-			System.out.println("Le rendu monnaie est de " + i + " €");
+			System.out.println("Le rendu monnaie est de " + change + " €");
 			
 		}
 

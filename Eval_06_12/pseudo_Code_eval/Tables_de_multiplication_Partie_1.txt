@@ -1,0 +1,16 @@
+Tables_de_multiplication_Partie_1
+
+Variables
+    choixUtilisateur est un entier
+    i est un entier
+    somme est un entier
+Début du programme
+    Ecrire "Entrez un nombre"
+    lire choixUtilisateur
+    début pour 
+        pour i allant de 0 à 10 faire
+        somme <-- i * choixUtilisateur
+        Ecrire ,i " * " ,choixUtilisateur ," =" ,somme
+        ,i suivant
+    Fin pour
+Fin du programme
