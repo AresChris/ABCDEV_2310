@@ -21,19 +21,13 @@ public class App {
 			tableau[i] = sc.nextInt();
 			if(tableau[i] > plusGrand) {
 				plusGrand = tableau[i];
-			}
-			if(tableau[i] > position) {
-				position = i;
-				position += 1;
+				position = i + 1;
 			}
 		}	
 
 		System.out.print("La valeur la plus grande est " + plusGrand + " et il était en position " + position);
-				
-		
+
 		sc.close();
-			
-	
 
 }
 }

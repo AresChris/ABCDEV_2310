@@ -13,9 +13,7 @@ public class App {
 			somme[i] = tab1[i] + tab2[i];	
 			}
 		for(int j=0; j <= somme.length-1; j++) {
-			System.out.println(somme[j] + " ");
-		} 
-		
-		
+			System.out.print(somme[j] + " ");
+		} 	
 	}
 }
