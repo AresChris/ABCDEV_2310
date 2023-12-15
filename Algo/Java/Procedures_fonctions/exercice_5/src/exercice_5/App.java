@@ -16,9 +16,7 @@ public class App {
 					jourValide = true;
 			} else if (jour>29 && mois == 2 || !bissextile) {
 					jourValide = false;
-			} 
-			
-		
+			}
 		// début de la condition true/false
 		if (jourValide) {
 				System.out.print("La date est valide !");
@@ -26,7 +24,6 @@ public class App {
 				System.out.print("la date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ annee + " n'est pas valide !");
 			}
 		}
-
 	public static void main(String[] args) {
 		int annee;
 		int mois;
