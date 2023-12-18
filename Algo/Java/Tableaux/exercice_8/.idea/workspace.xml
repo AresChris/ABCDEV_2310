@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="3a046970-1a74-4cd9-884e-3d0e168e2783" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Procedures_fonctions/exercice_5/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Procedures_fonctions/exercices/src/exercice_5/mois/mois.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Perso/exercice_6/src/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Perso/n_secu_generator/src/nSecu_Generator/App.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Perso/n_secu_generator/src/random/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Procedures_fonctions/exercice_5/src/exercice_5/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Procedures_fonctions/exercice_5/src/exercice_5/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Procedures_fonctions/exercices/src/exercice_5/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Procedures_fonctions/exercices/src/exercice_5/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Procedures_fonctions/exercices/src/exercice_6/App.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="2ZiCMD8r9Z8QopxylVsuyYlNPIC" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Cares/Documents/Git/ABCDEV_2310_CA/Algo/Java/Tableaux/exercice_3"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a046970-1a74-4cd9-884e-3d0e168e2783" name="Changes" comment="" />
+      <created>1702895462479</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702895462479</updated>
+    </task>
+    <servers />
+  </component>
+</project>
