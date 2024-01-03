@@ -3,9 +3,7 @@ package exercice_switch_case;
 import java.util.Scanner;
 
 public class App {
-
-	public static void main(String[] args) {
-		
+	public static void operation(double resultat) {
 		double nombre1, nombre2;
 		String operateur;
 		
@@ -27,7 +25,7 @@ public class App {
 		switch (operateur)
 		{
 		case "*":
-			double resultat = nombre1 *nombre2;
+			resultat = nombre1 *nombre2;
 			System.out.print("Le résultat de l'opération est : " + resultat);
 			break;
 		case "-":
@@ -45,6 +43,10 @@ public class App {
 		default:
 			System.out.print("Erreur !");
 			}
+		sc.close();
+	}
+	public static void main(String[] args) {
+		operation(0);
 	}
 
 }

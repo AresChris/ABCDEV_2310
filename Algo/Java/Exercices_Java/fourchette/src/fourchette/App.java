@@ -18,11 +18,7 @@ public class App {
 		
 		System.out.print("Entrez un nombre entier de départ : ");
 		userChoice = sc.nextInt();
-		
-		boolean above = userChoice > n;
-		boolean under = userChoice < n;
-		
-		
+
 		while (userChoice != n) {
 			if (userChoice < n) {
 				min = userChoice;

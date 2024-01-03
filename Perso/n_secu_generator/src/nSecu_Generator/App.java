@@ -12,14 +12,13 @@ public class App {
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Genre : ");
-        genre = sc.next("");
+        genre = sc.next();
         System.out.print("Mois de naissance :");
         moisNaissance = sc.nextInt();
         System.out.println("Année de naissance : ");
         anneeNaissance = sc.nextInt();
         System.out.print("Département de naissance :");
         departement = sc.next();
-
 
         sc.close();
     }

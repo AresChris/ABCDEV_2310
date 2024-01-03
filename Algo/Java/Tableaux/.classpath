@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="exercice_1/src"/>
+	<classpathentry kind="src" path="exercice_2/src"/>
+	<classpathentry kind="src" path="exercice_3/src"/>
+	<classpathentry kind="src" path="exercice_5/src"/>
+	<classpathentry kind="src" path="exercice_6/src"/>
+	<classpathentry kind="src" path="exercice_8/src"/>
+	<classpathentry kind="src" path="voyelles_CharsToRemove/src"/>
+	<classpathentry kind="output" path="exercice_1/bin"/>
+</classpath>
