@@ -13,7 +13,6 @@ public class Bouteille {
 	public boolean remplir;
 	public boolean viderTout;
 	public boolean vider;
-	
 					// booleenne ouvrir
 			public boolean ouvrir() 
 			{
@@ -32,22 +31,20 @@ public class Bouteille {
 				if(estOuverte) 
 				{
 					estOuverte = false;
-					return false;
+					return true;
 				}
 				else 
 				{
-					return true;
+					return false;
 				}
-			}
-					
+			}	
 			public Bouteille()
 			{
-				nom = "Karmeliet";
+				nom = "Cristaline";
 				contenu = 0.75;
 				capacite = 1;
 				estOuverte = true;
 			}
-			
 			boolean remplir() 
 			{
 				if(contenu < capacite) 
@@ -61,7 +58,6 @@ public class Bouteille {
 				}
 			
 			}
-
 			public Bouteille(String _nom, double _contenu, double _capacite, boolean _estOuverte) 
 			{
 				nom = _nom;
