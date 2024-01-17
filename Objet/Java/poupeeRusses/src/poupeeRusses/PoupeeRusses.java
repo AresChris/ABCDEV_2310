@@ -41,6 +41,14 @@ public class PoupeeRusses {
 			return true;
 		}
 	}
+	public int getTaille()
+	{
+		return this.taille;
+	}
+	public int bonneTaille(int plusPetit)
+	{
+		return plusPetit;
+	}
 	public boolean insererUnePoupee()
 	{
 		if(!contientUnePoupee && this.estOuverte) // ne contient pas de poupée et est ouverte
