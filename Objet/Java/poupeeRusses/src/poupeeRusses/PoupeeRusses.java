@@ -1,21 +1,26 @@
 package poupeeRusses;
 
+import java.util.Comparator;
+
 public class PoupeeRusses {
 	
-	private int taille;
+	private int taillePoupee;
 	private boolean estOuverte;
 	private boolean contientUnePoupee;
+	private int poupeeContenue;
 	
+	public int tailleNouvellePoupee;
 	public boolean ouvrir;
 	public boolean fermer;
 	public boolean insererUnePoupee;
 	public boolean retirerUnePoupee;
 	
-	public PoupeeRusses(int _taille, boolean _estOuverte, boolean _contientUnePoupee)
+	public PoupeeRusses(int _taille, boolean _estOuverte, boolean _contientUnePoupee, int _poupeeContenue)
 	{
-	this.taille = _taille;
+	this.taillePoupee = _taille;
 	this.estOuverte = _estOuverte;
 	this.contientUnePoupee = _contientUnePoupee;
+	this.poupeeContenue = _poupeeContenue;
 	}
 	public boolean ouvrir()
 	{
@@ -43,34 +48,31 @@ public class PoupeeRusses {
 	}
 	public int getTaille()
 	{
-		return this.taille;
+		return this.taillePoupee;
 	}
-	public int bonneTaille(int plusPetit)
+	public boolean insererUnePoupee(int tailleNouvellePoupee)
 	{
-		return plusPetit;
-	}
-	public boolean insererUnePoupee()
-	{
-		if(!contientUnePoupee && this.estOuverte) // ne contient pas de poupée et est ouverte
+		if(!contientUnePoupee && this.estOuverte && tailleNouvellePoupee < this.taillePoupee) // ne contient pas de poupée et est ouverte
 		{
-			contientUnePoupee = false;
+			contientUnePoupee = true;
+			poupeeContenue = tailleNouvellePoupee;
 			return true;  // insererUnePoupee retourne true
 		}
 		else
 		{
 			return false; // si contient une poupée et n'est pas ouverte
-		}	
+		}
 	}
 	public boolean retirerUnePoupee()
 	{
-		if(!contientUnePoupee || !estOuverte) // contient une poupée et n'est pas ouverte
+		if(!contientUnePoupee || !estOuverte) // ne contient pas de poupée ou n'est pas ouverte
 		{
 			contientUnePoupee = false;
 			return false; // inserer une poupée retournera false
 		}
-		else
+		else 
 		{
-			return true; // si ne contient pas de poupée et est ouverte
+			return true; // si ne contient pas de poupée ou est ouverte
 		}
 	}
 
