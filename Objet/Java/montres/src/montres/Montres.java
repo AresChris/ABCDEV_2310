@@ -7,7 +7,7 @@ public class Montres {
 	private int minutes;
 	private boolean estDejaPortee;
 	
-	public int avancerHeure;
+	public boolean avancerHeure;
 	public boolean avancerMinutes;
 	
 	Scanner sc = new Scanner(System.in);
@@ -17,6 +17,12 @@ public class Montres {
 		heures = _heures;
 		minutes = _minutes;
 		estDejaPortee = _estDejaPortee;
+	}
+	public Montres()
+	{
+		heures = 13;
+		minutes = 45;
+		estDejaPortee = true;
 	}
 	public boolean estDejaPortee()
 	{
@@ -30,32 +36,25 @@ public class Montres {
 			return true;
 		}
 	}
-	
-	
-	
-	
-	
-	/*
-	 public int avancerHeure()
-	{
-		
-		
-		System.out.println("Voulez-vous avancer l'heure ?");
-		heures = sc.nextInt();
-		if(minutes >= 60)
+	 public boolean avancerHeure()
 		{
-			heures += 1;
+			System.out.println("De combien voulez-vous avancer l'heure ?");
+			heures = sc.nextInt();
+			heures += 13;
+			if(minutes >= 60)
+			{
+				heures += 1;
+			}
+			
+			System.out.println("De combien voulez-vous avancer les minutes ?");
+			minutes = sc.nextInt();
+			minutes += 45;
+			if(heures >= 24)
+			{
+				heures -= 24;
+			}
+			System.out.println("Il est " + heures + ":" + minutes + "h");
+			return avancerHeure;
 		}
-		
-		System.out.println("Voulez-vous avancer les minutes ?");
-		minutes = sc.nextInt();
-		if(heures >= 24)
-		{
-			heures -= 24;
-		}
-		return avancerHeure;
+	}	
 
-	}
-	 */
-	
-}
