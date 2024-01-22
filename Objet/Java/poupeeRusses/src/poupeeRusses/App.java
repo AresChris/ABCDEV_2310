@@ -3,35 +3,33 @@ package poupeeRusses;
 public class App {
 
 	public static void main(String[] args) {
-		
-		PoupeeRusses poupeeA = new PoupeeRusses(15, true, false, 0);
-		PoupeeRusses poupeeB = new PoupeeRusses(12, true, true, 10);
-		PoupeeRusses poupeeC = new PoupeeRusses(10, false, false, 0);
-		PoupeeRusses poupeeD = new PoupeeRusses(8, false, true, 6);
+									//(taille, estOuverte, contientUnePoupee, int poupeeContenue, estDansUnePoupee)	
+		PoupeeRusses poupeeA = new PoupeeRusses("poupeeA", 15, true, false, 0,"",  false);
+		PoupeeRusses poupeeB = new PoupeeRusses("poupeeB", 12, true, true, 10,"", false);
+		PoupeeRusses poupeeC = new PoupeeRusses("poupeeC", 10, false, false, 0,"", false);
+		PoupeeRusses poupeeD = new PoupeeRusses("poupeeD", 8, false, true, 6,"", false);
 	
-		// Test ouvrir
-		//boolean test1 = poupeeA.ouvrir();
-		//boolean test2 = poupeeB.ouvrir();
-		//boolean test3 = poupeeC.ouvrir();
-		//boolean test4 = poupeeD.ouvrir();
+
+		//tests
+		//poupeeA(15cm, est ouverte, ne contient pas de poupée, poupée contenue 0cm, n'est pas dans une poupée)
+		poupeeA.inserer(poupeeB); // poupeeB va dans poupeeA
 		
-		// Test fermer
-		//boolean test5 = poupeeA.fermer();
-		//boolean test6 = poupeeB.fermer();
-		//boolean test7 = poupeeC.fermer();
-		//boolean test8 = poupeeD.fermer();
+		//poupeeB(12cm, est ouverte, contient une poupée, poupée contenue fait 10cm, n'est pas dans une poupée)
+		boolean test17 = poupeeA.fermer(); // poupeeA est fermée
 		
-		// Test inserer une poupee
-		boolean test9 = poupeeA.insererUnePoupee(10);
-		boolean test10 = poupeeB.insererUnePoupee(5);
-		boolean test11 = poupeeC.insererUnePoupee(8);
-		boolean test12 = poupeeD.insererUnePoupee(7);
+		//poupeeC(10cm, est fermée, ne contient pas de poupée, poupée contenue 0cm, n'est pas dans une poupée)
+		boolean test18 = poupeeC.ouvrir(); // poupeeC est ouverte
+		poupeeD.inserer(poupeeC); // poupeeC est plus grande que poupeeD donc false
 		
-		// Test retirer une poupee
-		boolean test13 = poupeeA.retirerUnePoupee();
-		boolean test14 = poupeeB.retirerUnePoupee();
-		boolean test15 = poupeeC.retirerUnePoupee();
-		boolean test16 = poupeeD.retirerUnePoupee();
+		//poupeeD(8cm, est fermée, contient une poupée, poupée contenue 6cm, n'est pas dans une poupée)
+		poupeeC.inserer(poupeeD); // poupeeD est allée dans poupeeC
+		
+		boolean test19 = poupeeC.fermer(); // poupeeC est fermée, avec une poupée à l'interieur
+		
+		boolean test20 = poupeeC.ouvrir();
+		boolean test21 = poupeeC.retirerUnePoupee(); // id de la poupeeContenue devient "Aucune"
+		boolean test22 = poupeeC.fermer();
+		
 		
 	}
 

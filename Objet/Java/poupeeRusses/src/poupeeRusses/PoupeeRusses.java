@@ -4,23 +4,28 @@ import java.util.Comparator;
 
 public class PoupeeRusses {
 	
+	private String identifiantPoupee;
 	private int taillePoupee;
 	private boolean estOuverte;
 	private boolean contientUnePoupee;
-	private int poupeeContenue;
+	private int taillePoupeeContenue;
+	private boolean estDansUnePoupee;
+	private String nomPoupeeContenue;
 	
-	public int tailleNouvellePoupee;
 	public boolean ouvrir;
 	public boolean fermer;
 	public boolean insererUnePoupee;
 	public boolean retirerUnePoupee;
 	
-	public PoupeeRusses(int _taille, boolean _estOuverte, boolean _contientUnePoupee, int _poupeeContenue)
+	public PoupeeRusses(String _identifiantPoupee, int _taille, boolean _estOuverte, boolean _contientUnePoupee, int _taillePoupeeContenue, String _nomPoupeeContenue, boolean _estDansUnePoupee)
 	{
+	this.identifiantPoupee =_identifiantPoupee;
 	this.taillePoupee = _taille;
 	this.estOuverte = _estOuverte;
 	this.contientUnePoupee = _contientUnePoupee;
-	this.poupeeContenue = _poupeeContenue;
+	this.taillePoupeeContenue = _taillePoupeeContenue;
+	this.nomPoupeeContenue = _nomPoupeeContenue;
+	this.estDansUnePoupee = _estDansUnePoupee;
 	}
 	public boolean ouvrir()
 	{
@@ -36,26 +41,45 @@ public class PoupeeRusses {
 	}
 	public boolean fermer()
 	{
-		if(!estOuverte)
+		if(estOuverte)
 		{
-			estOuverte = true;
-			return false;
+			estOuverte = false;
+			return true;
 		}
 		else
 		{
-			return true;
+			return false;
 		}
+	}
+	public boolean getContenu()
+	{
+		return contientUnePoupee;
 	}
 	public int getTaille()
 	{
 		return this.taillePoupee;
 	}
+
+	private void setContenir(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
+	{
+		String poupee_A = "poupeeA";
+		String poupee_B = "poupeeB";
+		String poupee_C = "poupeeC";
+		String poupee_D = "poupeeD";
+	}
+	private void setVider(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
+	{
+		String poupee_A = "poupeeA";
+		String poupee_B = "poupeeB";
+		String poupee_C = "poupeeC";
+		String poupee_D = "poupeeD";
+	}
 	public boolean insererUnePoupee(int tailleNouvellePoupee)
 	{
-		if(!contientUnePoupee && this.estOuverte && tailleNouvellePoupee < this.taillePoupee) // ne contient pas de poupée et est ouverte
-		{
+		if(!contientUnePoupee && this.estOuverte && tailleNouvellePoupee < this.taillePoupee) // ne contient pas de poupée et est ouverte 
+		{																					 // et la taille de la nouvelle poupée est inferieur à la poupée qui contient
 			contientUnePoupee = true;
-			poupeeContenue = tailleNouvellePoupee;
+			taillePoupeeContenue = tailleNouvellePoupee;
 			return true;  // insererUnePoupee retourne true
 		}
 		else
@@ -63,17 +87,64 @@ public class PoupeeRusses {
 			return false; // si contient une poupée et n'est pas ouverte
 		}
 	}
+	public boolean getRetrait()
+	{
+		return contientUnePoupee;
+	}
+	public String getNomPoupeeContenue()
+	{
+		return nomPoupeeContenue;
+	}
+	public String getId(PoupeeRusses idPoupeeContenue)
+	{
+		return identifiantPoupee;
+	}
+	public int getTaillePoupee()
+	{
+		return taillePoupee;
+	}
 	public boolean retirerUnePoupee()
 	{
-		if(!contientUnePoupee || !estOuverte) // ne contient pas de poupée ou n'est pas ouverte
+		if(contientUnePoupee && this.estOuverte) // contient une poupée et est ouverte
 		{
-			contientUnePoupee = false;
-			return false; // inserer une poupée retournera false
+			contientUnePoupee = false; // Ne pourra pas retirer de poupée
+			this.taillePoupeeContenue = 0; // aucune poupée vaudra un taille de 0 pour la poupée contenue
+			this.nomPoupeeContenue = "Aucune"; // Aucune poupée affichera "Aucune" en nom de poupée contenue
+			return true; // retirer une poupée retournera true
 		}
 		else 
 		{
-			return true; // si ne contient pas de poupée ou est ouverte
+			return false; // si ne contient pas de poupée et est fermée
 		}
 	}
+	public boolean inserer(PoupeeRusses p1) // p1 est la poupée à inserer
+	{
+		// si p1(la poupée à inserer) est plus grande que la taille de la poupée à remplir
+		// ET que la poupée à remplir contient un poupée
+		if(p1.getTaillePoupee() > this.taillePoupee && this.contientUnePoupee)
+		{
+			insererUnePoupee = false; // n'insère pas de poupée
+			return false;
+		}
+			else 
+			{
+				insererUnePoupee = true; // insère une poupée 
+				contientUnePoupee = true; // contient une poupée passe true
+				this.taillePoupeeContenue = p1.getTaille(); // affiche la taille de la poupée insérée
+					if(true) // si la poupée à été insérée
+					{
+						p1.estDansUnePoupee = true; // Poupée insérée aura true en valeur 'estDansUnePoupée'
+						if(contientUnePoupee) // si la poupée en contient une autre
+							{
+							this.nomPoupeeContenue = p1.getId(p1); // affichage du nom de la poupée contenue
+							}
+					}
+			}
+		{
+			return contientUnePoupee;
+		}
+	
+	}
+}	
 
-}
+

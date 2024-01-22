@@ -49,17 +49,6 @@ public class Personne {
 			return true;
 		}
 	}
-	/*
-	 public boolean peutDemanderHeure()
-	{
-		if(Pierre == this.porteUneMontre)
-		{
-			
-			return true;
-		}
-	}
-	 */
-	
 	public String demanderHeure(String quelleHeure)
 	{
 		int heures = 13;
