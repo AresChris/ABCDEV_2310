@@ -60,20 +60,20 @@ public class PoupeeRusses {
 		return this.taillePoupee;
 	}
 
-	private void setContenir(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
+	/*
+	 private void setContenir(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
 	{
-		String poupee_A = "poupeeA";
-		String poupee_B = "poupeeB";
-		String poupee_C = "poupeeC";
-		String poupee_D = "poupeeD";
+		//if(this.retirerUnePoupee)
+		{
+			p1.poupeeContenue = false;
+		}
 	}
 	private void setVider(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
 	{
-		String poupee_A = "poupeeA";
-		String poupee_B = "poupeeB";
-		String poupee_C = "poupeeC";
-		String poupee_D = "poupeeD";
+		
 	}
+	 */
+	
 	public boolean insererUnePoupee(int tailleNouvellePoupee)
 	{
 		if(!contientUnePoupee && this.estOuverte && tailleNouvellePoupee < this.taillePoupee) // ne contient pas de poupée et est ouverte 
@@ -134,10 +134,15 @@ public class PoupeeRusses {
 					if(true) // si la poupée à été insérée
 					{
 						p1.estDansUnePoupee = true; // Poupée insérée aura true en valeur 'estDansUnePoupée'
-						if(contientUnePoupee) // si la poupée en contient une autre
+						if(this.contientUnePoupee) // si la poupée en contient une autre
 							{
 							this.nomPoupeeContenue = p1.getId(p1); // affichage du nom de la poupée contenue
 							}
+						if(retirerUnePoupee()) 
+						{
+							p1.estDansUnePoupee = false;
+							return true;
+						}
 					}
 			}
 		{
