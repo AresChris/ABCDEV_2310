@@ -87,6 +87,18 @@ public class PoupeeRusses {
 			return false; // si contient une poupée et n'est pas ouverte
 		}
 	}
+	public boolean getContientUnePoupee()
+	{
+		if(retirerUnePoupee)
+		{
+			estDansUnePoupee = false;
+			return false;
+		}
+		else
+		{
+			return true;
+		}
+	}
 	public boolean getRetrait()
 	{
 		return contientUnePoupee;
@@ -103,13 +115,15 @@ public class PoupeeRusses {
 	{
 		return taillePoupee;
 	}
-	public boolean retirerUnePoupee()
+	public boolean retirerUnePoupee(PoupeeRusses p2) // p2 est la poupee à retirer
 	{
 		if(contientUnePoupee && this.estOuverte) // contient une poupée et est ouverte
 		{
 			contientUnePoupee = false; // Ne pourra pas retirer de poupée
 			this.taillePoupeeContenue = 0; // aucune poupée vaudra un taille de 0 pour la poupée contenue
 			this.nomPoupeeContenue = "Aucune"; // Aucune poupée affichera "Aucune" en nom de poupée contenue
+			this.contientUnePoupee = getContientUnePoupee();
+			p2.estDansUnePoupee = false;
 			return true; // retirer une poupée retournera true
 		}
 		else 
@@ -145,6 +159,7 @@ public class PoupeeRusses {
 		}
 	
 	}
+
 }	
 
 

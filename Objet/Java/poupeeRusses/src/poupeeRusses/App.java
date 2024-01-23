@@ -12,25 +12,24 @@ public class App {
 
 		//tests
 		//poupeeA(15cm, est ouverte, ne contient pas de poupée, poupée contenue 0cm, n'est pas dans une poupée)
-		poupeeA.inserer(poupeeB); // poupeeB va dans poupeeA
+			poupeeA.inserer(poupeeB); // poupeeB va dans poupeeA
 		
 		//poupeeB(12cm, est ouverte, contient une poupée, poupée contenue fait 10cm, n'est pas dans une poupée)
-		boolean test17 = poupeeA.fermer(); // poupeeA est fermée
+			boolean test17 = poupeeA.fermer(); // poupeeA est fermée
 		
 		//poupeeC(10cm, est fermée, ne contient pas de poupée, poupée contenue 0cm, n'est pas dans une poupée)
-		boolean test18 = poupeeC.ouvrir(); // poupeeC est ouverte
-		poupeeD.inserer(poupeeC); // poupeeC est plus grande que poupeeD donc false
+			boolean test18 = poupeeC.ouvrir(); // poupeeC est ouverte
+			poupeeD.inserer(poupeeC); // poupeeC est plus grande que poupeeD donc false
 		
 		//poupeeD(8cm, est fermée, contient une poupée, poupée contenue 6cm, n'est pas dans une poupée)
-		poupeeC.inserer(poupeeD); // poupeeD est allée dans poupeeC
+			poupeeC.inserer(poupeeD); // poupeeD est allée dans poupeeC
 		
-		boolean test19 = poupeeC.fermer(); // poupeeC est fermée, avec une poupée à l'interieur
-		
-		boolean test20 = poupeeC.ouvrir();
-		boolean test21 = poupeeC.retirerUnePoupee(); // id de la poupeeContenue devient "Aucune"
-		boolean test22 = poupeeC.fermer();
-		
-		
+			boolean test19 = poupeeC.fermer(); // poupeeC est fermée, avec une poupée à l'interieur
+			
+			boolean test20 = poupeeC.ouvrir();
+			boolean test21 = poupeeC.retirerUnePoupee(poupeeD); // id de la poupeeContenue devient "Aucune"// paramètre change l'état 'estDansUnePoupee' en false
+			boolean test22 = poupeeC.fermer();
+	
 	}
 
 }
