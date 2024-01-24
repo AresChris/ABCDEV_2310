@@ -12,8 +12,8 @@ public class Point {
 	}
 	public Point()
 	{
-		abscisse = 4;
-		ordonnee = 6;
+		abscisse = 9;
+		ordonnee = 12;
 	}
 	
 }
