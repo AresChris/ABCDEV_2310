@@ -29,7 +29,7 @@ public class PoupeeRusses {
 	}
 	public boolean ouvrir()
 	{
-		if(!estOuverte)
+		if(!estOuverte & !estDansUnePoupee)
 		{
 			estOuverte = true;
 			return true;
@@ -41,7 +41,7 @@ public class PoupeeRusses {
 	}
 	public boolean fermer()
 	{
-		if(estOuverte)
+		if(estOuverte && !estDansUnePoupee)
 		{
 			estOuverte = false;
 			return true;
@@ -60,20 +60,6 @@ public class PoupeeRusses {
 		return this.taillePoupee;
 	}
 
-	/*
-	 private void setContenir(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
-	{
-		//if(this.retirerUnePoupee)
-		{
-			p1.poupeeContenue = false;
-		}
-	}
-	private void setVider(PoupeeRusses contientUnePoupee, PoupeeRusses poupeeContenue)
-	{
-		
-	}
-	 */
-	
 	public boolean insererUnePoupee(int tailleNouvellePoupee)
 	{
 		if(!contientUnePoupee && this.estOuverte && tailleNouvellePoupee < this.taillePoupee) // ne contient pas de poupée et est ouverte 
@@ -152,16 +138,11 @@ public class PoupeeRusses {
 							{
 							this.nomPoupeeContenue = p1.getId(p1); // affichage du nom de la poupée contenue
 							}
-						if(retirerUnePoupee()) 
-						{
-							p1.estDansUnePoupee = false;
-							return true;
-						}
 					}
 			}
-		{
-			return contientUnePoupee;
-		}
+			{
+				return contientUnePoupee;
+			}
 	
 	}
 
