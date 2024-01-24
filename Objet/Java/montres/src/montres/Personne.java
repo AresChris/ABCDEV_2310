@@ -4,11 +4,12 @@ public class Personne {
 
 	private String nom;
 	public boolean porteUneMontre;
-	
+	public String montrePortee;
 	public boolean peutDonnerHeure;
 	public boolean enleverMontre;
 	public boolean donnerMontre;
 	public boolean demanderheure;
+
 	
 	public Personne(String _nom, boolean _porteUneMontre)
 	{
@@ -20,21 +21,9 @@ public class Personne {
 		nom = "Pierre";
 		porteUneMontre = true;
 	}
-	Personne Pierre = new Personne("Pierre", true);
-	Personne Paul = new Personne("Paul", false);
-	Personne Jacques = new Personne("Jacques", true);
-	
-	Personne getPierre()
+	public String getNom(Personne p3)
 	{
-		return Pierre;
-	}
-	Personne getPaul()
-	{
-		return Paul;
-	}
-	Personne getJacques()
-	{
-		return Jacques;
+		return this.nom;
 	}
 	public boolean enleverMontre()
 	{
@@ -49,20 +38,33 @@ public class Personne {
 			return true;
 		}
 	}
-	public String demanderHeure(String quelleHeure)
+	public String demanderHeure(Personne p4, String quelleHeure)
 	{
 		int heures = 13;
 		int minutes = 45;
-
 		if(!porteUneMontre)
 		{
-			System.out.println("Je n'ai pas de montre");
+			quelleHeure = "Je n'ai pas de montre";
 			return quelleHeure;
 		}
 		else 
 		{
-			System.out.println("Il est " + heures + ":" + minutes + "h");
+			quelleHeure = "Il est " + heures + ":" + minutes + "h";
 			return quelleHeure;
+		}
+	}
+	 
+	public boolean donnerMontre(Personne p1)
+	{
+		if(!p1.porteUneMontre && this.porteUneMontre) // si p1 ne porte pas de montre && personne porte une montre
+		{
+			porteUneMontre = false; // porte une montre retournera false
+			p1.porteUneMontre = true; // p1 porte une montre et this n'en porte plus
+			return true; // donner une montre retournera true
+		}
+		else
+		{
+			return false;
 		}
 	}
 	

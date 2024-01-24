@@ -3,9 +3,7 @@ package compte;
 public class Compte {
 
 	private double solde;
-	
-	
-	
+
 	
 	public Compte(int _solde)
 	{
