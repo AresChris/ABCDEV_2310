@@ -42,11 +42,13 @@ public class Personnes {
 			this.montrePortee = "Aucune";
 			p1.porteUneMontre = true;
 			m1.estPorteePar = p1.estPorteePar(p1);
-			System.out.println(this.idPersonne +" donna sa belle " + m1.idMontre + " à " + p1.idPersonne + " !");
+			System.out.println("-Le génereux " + this.idPersonne +" donna sa belle " + m1.idMontre + " à " + p1.idPersonne + " !");
 			return true;
 		}
 		else 
 		{
+			System.out.println("\t\tConversation épique : \n- Tiens " + this.idPersonne + ", dit " +  p1.idPersonne + ", je te donne ma " + m1.idMontre 
+								+ "\n- Je porte déjà la " + this.montrePortee + " mais je te remercie !");
 			return false;
 		}
 	}
@@ -58,7 +60,7 @@ public class Personnes {
 		if(!this.porteUneMontre)
 		{	
 			porteUneMontre = false;
-			System.out.println(this.idPersonne + " ne peut pas retirer sa montre, il n'en porte pas !");
+			System.out.println("-" +this.idPersonne + " ne peut pas retirer sa montre, il n'en porte pas !");
 			return false;
 		}
 		else
@@ -67,7 +69,7 @@ public class Personnes {
 			m1.estDejaPortee = false;
 			montrePortee = "Aucune";
 			this.porteUneMontre = false;
-			System.out.println(this.idPersonne + " enleva sa belle " + m1.idMontre + ", elle n'est donc plus portée et " + this.idPersonne + " ne porte plus de montre.");
+			System.out.println("-" +this.idPersonne + " enleva sa belle " + m1.idMontre + ", elle n'est donc plus portée et " + this.idPersonne + " ne porte plus de montre.");
 			return true;
 		}
 	}
@@ -87,26 +89,30 @@ public class Personnes {
 	{
 		if(m1.estDejaPortee || this.porteUneMontre)
 		{
-			System.out.println("Voulez-vous modifier l'heure ? Y/N");
+			System.out.println("-Voulez-vous modifier l'heure ? Y/N" + "\n Elle est actuellement sur " + formater.format(heures) + ":" + formater.format(m1.minutes));
 			answer = sc.next();
 			if(answer.contains("Y") || answer.contains("y"))
 					{
-						System.out.println("Indiquez l'heure actuelle : ");
+						System.out.println("-Indiquez l'heure actuelle : ");
 						heures = sc.nextInt();
-						System.out.println("Indiquez les minutes : ");
+						m1.heures = heures;
+						System.out.println("-Indiquez les minutes : ");
 						minutes = sc.nextInt();
-						System.out.println("Il est maintenant " + formater.format(heures)  + ":" + formater.format(minutes) + " sur la " + m1.idMontre);
+						m1.minutes = minutes;
+						System.out.println("-Il est maintenant " + formater.format(heures)  + ":" + formater.format(minutes) + " sur la " + m1.idMontre);
+						this.heures = m1.heures;
+						this.minutes = m1.minutes;
 						return true;
 					}
 			else
 			{
-				System.out.println("L'heure de la montre " + m1.idMontre + " est " + formater.format(heures) + ":" + formater.format(minutes));
+				System.out.println("-L'heure de la montre " + m1.idMontre + " est inchangée : " + formater.format(heures) + ":" + formater.format(minutes));
 				return true;
 			}
 		}
 		else
 		{
-			System.out.println("La " + m1.idMontre + " n'est pas portée, il le faut pour pouvoir changer l'heure...");
+			System.out.println("-La " + m1.idMontre + " n'est pas portée, il le faut pour pouvoir changer l'heure...");
 			return false;
 		}
 	}
@@ -114,29 +120,39 @@ public class Personnes {
 	{
 		if(this.porteUneMontre && !p1.porteUneMontre)
 		{
-			System.out.println("Je vois votre montre d'ici...");
+			System.out.println("-" + this.idPersonne + " : Je vois votre montre d'ici...");
 			return false;
 		}
 		else 
 		{
-				System.out.println(this.idPersonne + " demanda à " + p1.idPersonne + " : Pourriez-vous me donner l'heure exacte ? Y/N");
+				System.out.println(" - " + this.idPersonne + " demanda à " + p1.idPersonne + " : Pourriez-vous me donner l'heure exacte ? Y/N");
 				answer = sc.next();
 				if(answer.contains("Y") || answer.contains("y"))
 				{
-					System.out.println(this.idPersonne + " : Quelle heure ?");
-					heures = sc.nextInt();
-					System.out.println(this.idPersonne + " : Combien de minutes ? ");
-					minutes = sc.nextInt();
-					System.out.println(this.idPersonne + " : Déjà " + formater.format(heures) + ":" + formater.format(minutes) + " ? \n" + p1.idPersonne + " : Et oui, ca file ...");
+					System.out.println(" - " + p1.idPersonne + " : " + formater.format(p1.heures) + ":" + formater.format(p1.minutes));
+					System.out.println(" - " + this.idPersonne + " : Déjà " + formater.format(p1.heures) + ":" + formater.format(p1.minutes) + " ? \n - " + p1.idPersonne + " : Et oui, ca file ...");
 				}
 				else
 				{
-					System.out.println(p1.idPersonne + " : Non  ¯\\_(ツ)_/¯");
-					System.out.println(this.idPersonne + " : Pas cool " + "\u2639");
+					System.out.println(" - " + p1.idPersonne + " : Non  ¯\\_(ツ)_/¯");
+					System.out.println(" - " + this.idPersonne + " : Pas cool " + "\u2639");
 				}
 				return true;
 		}
 	}
-	
+	// booleen tests
+	public boolean porteQuelleMontre()
+	{
+		if(this.porteUneMontre)
+		{
+			System.out.println("-" + this.idPersonne + " porte la montre " + this.montrePortee);
+			return true;
+		}
+		else
+		{
+			System.out.println("-" + this.idPersonne + " ne porte pas de montre");
+			return false;
+		}
+	}
 
 }

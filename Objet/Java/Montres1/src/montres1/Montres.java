@@ -1,10 +1,12 @@
 package montres1;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Montres {
 
 	Scanner sc = new Scanner(System.in);
+	DecimalFormat formater = new DecimalFormat("00");
 	
 	boolean estDejaPortee;
 	public String idMontre;
@@ -38,26 +40,26 @@ public class Montres {
 			{
 				if(this.estDejaPortee)
 				{
-					System.out.println("Oui, la " + this.idMontre + " est déjà portée par " + this.estPorteePar);
+					System.out.println("-Oui, la " + this.idMontre + " est déjà portée par " + this.estPorteePar);
 					return true;
 				}
 				else
 				{
-					System.out.println("Non, la " + this.idMontre + " n'est pas portée.");
+					System.out.println("-Non, la " + this.idMontre + " n'est pas portée.");
 					return false;
 				}
 			}
 			// booleens tests
-			public boolean quiPorte(Montres m1)
+			public boolean quiPorte()
 			{
-				if(m1.estDejaPortee)
+				if(this.estDejaPortee)
 				{
-					System.out.println("La montre " + m1.idMontre + " est portée par " + m1.estPorteePar);
+					System.out.println("-La montre " + this.idMontre + " est portée par " + this.estPorteePar);
 					return true;
 				}
 				else
 				{
-					System.out.println("La montre " + m1.idMontre + " n'est pas portée");
+					System.out.println("-La montre " + this.idMontre + " n'est pas portée");
 					return false;
 				}
 			}
@@ -69,7 +71,7 @@ public class Montres {
 			this.estDejaPortee = true;
 			p1.montrePortee = this.montrePortee(idMontre);
 			estPorteePar = p1.getIdPersonne(p1);
-			System.out.println(p1.idPersonne + " mit sa belle " + this.idMontre);
+			System.out.println("-" +p1.idPersonne + " mit sa belle " + this.idMontre + ".");
 			return true;
 		}
 		else
@@ -81,21 +83,19 @@ public class Montres {
 	}
 	public boolean clonerMontre(Montres m1)
 	{
-		System.out.println("Copier l'heure de " + m1.idMontre + " sur " + this.idMontre + " ?");
+		System.out.println("-Copier l'heure de " + m1.idMontre + " sur " + this.idMontre + " ? Y/N");
 		answer = sc.next();
 		if(answer.contains("Y") || answer.contains("y"))
 		{
-			System.out.println("Heures : ");
-			this.heures = sc.nextInt();
-			System.out.println("Minutes : ");
-			this.minutes = sc.nextInt();
-			m1.heures = this.heures;
-			m1.minutes = this.minutes;
-			System.out.println("Il est " + m1.heures + ":" + m1.minutes + " sur " + m1.idMontre + " et sur " + this.idMontre);
+			this.heures = m1.heures;
+			this.minutes = m1.minutes;
+			System.out.println("-Il est " + formater.format(m1.heures) + ":" + formater.format(m1.minutes) + " sur " + m1.idMontre + " et sur " + this.idMontre);
 			return true;
 		}
 		else
 		{
+			System.out.println("-L'heure de la " + this.idMontre + " n'à pas changé, il est " 
+									+ formater.format(this.heures)+ ":" + formater.format(this.minutes));
 			return false;
 		}
 		

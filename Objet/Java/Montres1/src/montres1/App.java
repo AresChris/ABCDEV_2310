@@ -20,25 +20,38 @@ public class App {
 		Paul.donnerMontre(swatch, Pierre); // Paul donne la montre Swatch à Pierre
 		
 		Paul.retirerMontre(swatch); // Paul ne peut pas retirer sa montre, il n'en porte pas
-		rolex.estPorteePar(Paul); // Paul porte la Rolex 
+		
+		rolex.estPorteePar(Paul); // Rolex est portée par Paul 
 		
 		Pierre.retirerMontre(swatch); // Pierre retire sa montre Swatch, il n'en porte plus et Swatch n'est plus portée
 		
-		//Pierre.avancerHeure(swatch); // Swatch n'est pas portée, Paul ne porte pas de montre -- return false
+		Pierre.avancerHeure(swatch); // Swatch n'est pas portée, Paul ne porte pas de montre -- return false
 	
-		swatch.estPorteePar(Pierre);
+		swatch.estPorteePar(Pierre); // La montre Swatch est portée par Pierre
 		
-		//Pierre.avancerHeure(swatch);
+		Pierre.avancerHeure(swatch); // Scanner : Modifier l'heure ? Y/N ou y/n -- donne les heures et les minutes à la montre
 
-		//Paul.demanderHeure(Pierre); 
+		Paul.demanderHeure(Pierre); //
 		
-		//rolex.clonerMontre(swatch);
+		rolex.clonerMontre(swatch); //cloner la swatch sur la rolex
+		Paul.retirerMontre(rolex); // Paul retire la Rolex
+		rolex.estPorteePar(Paul); // Paul met la Rolex
+		Pierre.donnerMontre(rolex, Paul); // Pierre donne la rolex à Paul 
+		// -- false -- "La Rolex est déjà portée par Paul, en plus, Pierre porte la Swatch"
 		
+	//--------------------------------------------------------------------------------------------
+		//tests pour savoir si la montre est portée
 		boolean test = swatch.estLibre();
-		boolean test2 = swatch.quiPorte(swatch);
-		boolean test3 = rolex.quiPorte(rolex);
-		Paul.retirerMontre(rolex);
-		boolean test4 = rolex.quiPorte(rolex);
+		boolean test2 = rolex.estLibre();
+		
+		// Tests pour savoir qui porte la montre
+		boolean test5 = rolex.quiPorte();
+		boolean test6 = swatch.quiPorte();
+		
+		// Tests pour savoir quelle montre porte une personne
+		boolean test7 = Paul.porteQuelleMontre();
+		boolean test8 = Pierre.porteQuelleMontre();
+		
 	}
 
 }
