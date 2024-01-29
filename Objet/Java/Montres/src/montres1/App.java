@@ -25,11 +25,11 @@ public class App {
 		
 		Pierre.retirerMontre(swatch); // Pierre retire sa montre Swatch, il n'en porte plus et Swatch n'est plus portée
 		
-		Pierre.avancerHeure(swatch); // Swatch n'est pas portée, Paul ne porte pas de montre -- return false
+		Pierre.modifierHeureDe(swatch); // Swatch n'est pas portée, Paul ne porte pas de montre -- return false
 	
 		swatch.estPorteePar(Pierre); // La montre Swatch est portée par Pierre
 		
-		Pierre.avancerHeure(swatch); // Scanner : Modifier l'heure ? Y/N ou y/n -- donne les heures et les minutes à la montre
+		Pierre.modifierHeureDe(swatch); // Scanner : Modifier l'heure ? Y/N ou y/n -- donne les heures et les minutes à la montre
 
 		Paul.demanderHeure(Pierre); //
 		
@@ -51,6 +51,28 @@ public class App {
 		// Tests pour savoir quelle montre porte une personne
 		boolean test7 = Paul.porteQuelleMontre();
 		boolean test8 = Pierre.porteQuelleMontre();
+		
+		// Test pour savoir quelle heure est affiché sur la montre
+		boolean test9 = rolex.indiqueHeure();
+	//--------------------------------------------------------------------------------------------
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 	}
 
