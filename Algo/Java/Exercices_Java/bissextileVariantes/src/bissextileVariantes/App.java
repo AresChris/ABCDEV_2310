@@ -36,19 +36,16 @@ public class App {
 			}
 		}
 		if (bissextile) {
-				if (jour == 29 && mois == 2) {
+				if (jour == 29 && mois == 2) 
+				{
 					System.out.print("la date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " est dans une année bissextile !");
 				}
-				else {
+				else 
+				{
 					System.out.print("La date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " n'est pas dans une année bissextile !");
 				}
-				
-		} 
-	
-		
-		}
-		
-		
+			} 
+		}	
 	}
 	
 
