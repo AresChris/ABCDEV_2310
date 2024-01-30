@@ -98,22 +98,12 @@ public class Remote {
 				{
 					System.out.println("Le niveau de batterie est donc de " + this.batteryLeft + "%");
 				}
-		}
-			
 	}
-	
+			
+}
+
 	////Serviabot.donneDateHeure("");
 	//Serviabot.allumer();
 	//Serviabot.eteindre();
-	public boolean menu()
-	{
-		int choix;
-		switch(choix)
-		{
-		case 1 :
-		{
-			
-		}
-		}
-	}
+
 }
