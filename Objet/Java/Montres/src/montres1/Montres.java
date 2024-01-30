@@ -10,16 +10,12 @@ public class Montres {
 	
 	boolean estDejaPortee;
 	public String idMontre;
-	
 	public int heures;
 	public int minutes;
-	public boolean aEteDonnee;
 	public String estPorteePar;
-	public boolean avancerHeures;
-	public boolean avancerMinutes;
+	public boolean modifierHeureDe;
 	Personnes montrePortee;
 	public String answer;
-	private boolean porteUneMontre;
 	
 	public Montres(String _idMontre, boolean _estDejaPortee)
 	{
@@ -49,7 +45,6 @@ public class Montres {
 					return false;
 				}
 			}
-			// booleens tests
 			public boolean quiPorte()
 			{
 				if(this.estDejaPortee)
@@ -63,7 +58,24 @@ public class Montres {
 					return false;
 				}
 			}
+<<<<<<< HEAD:Objet/Java/Montres1/src/montres1/Montres.java
 		//-------------------------------------------------------------------------------------------------------------
+=======
+			public boolean indiqueHeure()
+			{
+					if(this.modifierHeureDe)
+					{
+						
+						System.out.println("-Il est " + formater.format(this.heures) + ":" + formater.format(this.minutes) + " sur la " + this.idMontre);
+						return true;
+					}
+					else 
+					{
+						System.out.println("-L'heure de la montre n'à pas été modifié, elle est sur " + formater.format(this.heures) + ":" + formater.format(this.minutes) + "\n-Essaie \"boolean test = " + this.idMontre + ".modifierHeuresDe()\"");
+						return false;
+					}
+			}
+>>>>>>> bfa43d1dc8040f81ab883086a65fdd662d2c6345:Objet/Java/Montres/src/montres1/Montres.java
 	public boolean estPorteePar(Personnes p1)
 	{
 		if(!p1.porteUneMontre && !this.estDejaPortee)

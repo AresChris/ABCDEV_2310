@@ -19,7 +19,7 @@ public class Personnes {
 	String montrePortee;
 	public String answer;
 	public boolean aEteDonnee;
-	public boolean avancerHeures;
+	public boolean modifierHeuresDe;
 	public int heures;
 	public int minutes;
 	
@@ -85,7 +85,7 @@ public class Personnes {
 		return minutes;
 	}
 	
-	public boolean avancerHeure(Montres m1)
+	public boolean modifierHeureDe(Montres m1)
 	{
 		if(m1.estDejaPortee || this.porteUneMontre)
 		{
@@ -110,11 +110,13 @@ public class Personnes {
 						System.out.println("-Il est maintenant " + formater.format(heures)  + ":" + formater.format(minutes) + " sur la " + m1.idMontre);
 						this.heures = m1.heures;
 						this.minutes = m1.minutes;
+						modifierHeuresDe = true;
 						return true;
 					}
 			else
 			{
 				System.out.println("-L'heure de la montre " + m1.idMontre + " est inchangée : " + formater.format(heures) + ":" + formater.format(minutes));
+				modifierHeuresDe = false;
 				return true;
 			}
 		}
