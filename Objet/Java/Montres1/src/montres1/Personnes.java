@@ -93,6 +93,14 @@ public class Personnes {
 			answer = sc.next();
 			if(answer.contains("Y") || answer.contains("y"))
 					{
+				if(heures > 24)
+				{
+					heures -= 24;
+				}
+				if(minutes > 60)
+				{
+					heures += 1;
+				}
 						System.out.println("-Indiquez l'heure actuelle : ");
 						heures = sc.nextInt();
 						m1.heures = heures;

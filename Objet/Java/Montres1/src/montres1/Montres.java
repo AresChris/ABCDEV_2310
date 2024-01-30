@@ -34,7 +34,7 @@ public class Montres {
 	{
 		return idPersonne;
 	}
-	
+	//----------------------------------------------------------------------------------------------------------------
 	// Booleens tests
 			public boolean estLibre()
 			{
@@ -63,6 +63,7 @@ public class Montres {
 					return false;
 				}
 			}
+		//-------------------------------------------------------------------------------------------------------------
 	public boolean estPorteePar(Personnes p1)
 	{
 		if(!p1.porteUneMontre && !this.estDejaPortee)
