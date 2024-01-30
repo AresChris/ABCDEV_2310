@@ -7,8 +7,8 @@ public class App {
 	public static void main(String[] args) {
 	
 		Scanner sc = new Scanner(System.in);
-		//String _idMontre, int _minutes, int _heures, boolean _estDejaPortee
 		
+		//String _idMontre, boolean _estDejaPortee
 		Montres swatch = new Montres("Swatch",false);
 		Montres rolex = new Montres("Rolex", false);
 		//String _idPersonne, boolean _porteUneMontre

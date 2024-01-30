@@ -47,7 +47,10 @@ public class Cercle {
 		{
 			return true;
 		}
-		else return false;
+		else 
+			{
+			return false;
+			}
 	}
 	public boolean Afficher()
 	{

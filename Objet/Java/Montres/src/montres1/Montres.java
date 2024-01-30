@@ -58,9 +58,7 @@ public class Montres {
 					return false;
 				}
 			}
-<<<<<<< HEAD:Objet/Java/Montres1/src/montres1/Montres.java
-		//-------------------------------------------------------------------------------------------------------------
-=======
+
 			public boolean indiqueHeure()
 			{
 					if(this.modifierHeureDe)
@@ -71,11 +69,11 @@ public class Montres {
 					}
 					else 
 					{
-						System.out.println("-L'heure de la montre n'à pas été modifié, elle est sur " + formater.format(this.heures) + ":" + formater.format(this.minutes) + "\n-Essaie \"boolean test = " + this.idMontre + ".modifierHeuresDe()\"");
+						System.out.println("-L'heure de la montre n'à pas été modifié, elle est sur " + formater.format(this.heures) + ":" + formater.format(this.minutes) + "\n-Essaie \" boolean test = " + this.estPorteePar + ".modifierHeuresDe(" + this.idMontre +"); \"");
 						return false;
 					}
 			}
->>>>>>> bfa43d1dc8040f81ab883086a65fdd662d2c6345:Objet/Java/Montres/src/montres1/Montres.java
+
 	public boolean estPorteePar(Personnes p1)
 	{
 		if(!p1.porteUneMontre && !this.estDejaPortee)
