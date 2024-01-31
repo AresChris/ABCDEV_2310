@@ -24,7 +24,8 @@ public class App {
 		System.out.println("Inscrivez la durée en année : ");
 		annee = sc.nextInt();
 				
-		interetSimple = somme*(1+annee*interet/100);
+	
+		interetSimple = (somme*(interet/100)) + somme;
 		interetComposes = somme*(Math.pow(1+(interet/100),annee));
 		
 		System.out.println("Pour " + somme + "€ investie, la première année. Avec " + interet + "% d'interet. Le total sera de : " + interetSimple );

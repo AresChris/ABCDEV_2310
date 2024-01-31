@@ -149,6 +149,5 @@ public class Robot {
 				+ "\n\"serviabot.chargeBattery();\" pour charger la batterie, il est doté d'une fonction d'alerte au cas où la batterie serait déjà suffisament chargé."
 				+ "\n\"serviabot.donneDateHeure(\"\"); pour lire la date et l'heure actuelle");
 	}
-	
 }
 

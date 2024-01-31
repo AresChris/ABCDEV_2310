@@ -6,49 +6,43 @@ import java.util.Scanner;
 public class App {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		double saisieUser;
-		String leave = "Q";
-		double kms;
-		double miles;
-		
-		
 		Scanner sc = new Scanner(System.in);
-		DecimalFormat formater = new DecimalFormat("00");
 		
-		boolean fin_prog = true;
-		
-		System.out.println("Enter a kms number : ");
-		saisieUser = sc.nextDouble();
-		formater.format(saisieUser);
-		
-		double miles = saisieUser/1.609;
-		formater.format(miles);
-		
-		do {
-			System.out.println(formater.format(saisieUser) + " kms is equal to approx. " + formater.format(miles) + " miles.");
-			System.out.println("Nouveau nombre de kms :");
-			saisieUser = sc.nextDouble();
+		String answer;
+		double miles = 0;
+		double kms = 0;
+		System.out.println("\tConvertisseur kilomètres/miles - miles/kms");
+		System.out.println("K pour convertir des kilomètres en Miles / M pour convertir des miles en kilomètres");
+		String choixConversion = sc.next();
+			if(choixConversion.contains("K") || choixConversion.contains("k"))
+			{
+				System.out.println("Kilomètres = ");
+				kms = sc.nextInt();
+				if(kms <0 || kms > 1000000)
+				{
+					System.out.println("Hors limite, saisissez un nombre entre 1 et 999 999");
+					kms = sc.nextInt();
+				}
+				else
+				{
+					miles = kms/1.609;
+					System.out.println(kms + " kms = " + miles);
+				}
+		} 
+			else 
+		{
+			System.out.println("Miles = ");
+			miles = sc.nextInt();
+			miles = kms * 1.609;
+			System.out.println(miles + "miles = " + kms);
 		}
-		while (); 
+		System.out.println("Voulez-vous faire une autre conversion ? ");
+		answer = sc.next();
+		while(answer.contains("Y") || answer.contains("y"));
 		
-		do {
-			System.out.println("Out of limits, enter another number : ");
-			saisieUser = sc.nextDouble();
-		}
-		while (saisieUser < 0.01 && saisieUser > 1000000);
-			
-			}
-		}
-	
-
-		
-		//	System.out.println("Enter a kms number : ");
-		//	saisieUser = sc.nextDouble();
-		//	formater.format(saisieUser);
-		//	
-	
+	}
+}
 
 
 
