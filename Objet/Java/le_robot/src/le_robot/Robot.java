@@ -144,10 +144,10 @@ public class Robot {
 		System.out.println("\t\tNotice rapide du robot " + this.idRobot
 				+ "\nLe robot " + this.idRobot + " est un robot de soutient ménager. "
 				+ "\nVoici les commandes utiles : "
-				+ "\n\"Serviabot.allumer();\" pour l'allumer"
-				+ "\n\"Serviabot.eteindre();\" pour l'éteindre"
-				+ "\n\"Serviabot.chargeBattery();\" pour charger la batterie, il est doté d'une fonction d'alerte au cas où la batterie serait déjà suffisament chargé."
-				+ "\n\"Serviabot.donneDateHeure(\"\"); pour lire la date et l'heure actuelle");
+				+ "\n\"serviabot.allumer();\" pour l'allumer"
+				+ "\n\"serviabot.eteindre();\" pour l'éteindre"
+				+ "\n\"serviabot.chargeBattery();\" pour charger la batterie, il est doté d'une fonction d'alerte au cas où la batterie serait déjà suffisament chargé."
+				+ "\n\"serviabot.donneDateHeure(\"\"); pour lire la date et l'heure actuelle");
 	}
 	
 }
