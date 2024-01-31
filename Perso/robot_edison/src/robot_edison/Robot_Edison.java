@@ -63,9 +63,58 @@ public class Robot_Edison {
 	// Fin tests booleens
 //------------------------------------------------------------------------------------------------------------------------	
 	// Ajout des programmes et fonctionnalités du robot
-	void menuCalculs() // Sous menu des différents calculs
+	void start()  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
-		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
+		allumer();
+		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + this.idRobot + " est un robot programmable et modulable.\n"
+				+ "Notice :\n1. Allumer\n2. Eteindre\n3. Charger la batterie\n4. Afficher la date et l'heure"
+				+ "\n5. Cellular Automata\n6. Calculs\n7. Nota Bene\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
+				+ "\n");
+		int choixMenu = sc.nextInt();
+			if(choixMenu == 1)
+			{
+				this.allumer();
+			}
+			else if(choixMenu ==2)
+			{
+				this.eteindre();
+			}
+			else if(choixMenu == 3)
+			{
+				this.chargerBatterie();
+			}
+			else if(choixMenu == 4)
+			{
+				this.afficherDateHeure("");
+			}
+			else if(choixMenu == 5)
+			{
+				this.cellularAutomata();
+			}
+			else if(choixMenu == 6)
+			{
+				menuCalculs();
+			}
+			else if(choixMenu == 7)
+			{
+				notaBene();
+			}
+			else if(choixMenu == 0)
+			{
+				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
+						+ "\nNous somme le " + dateFormat.format(date) + 
+						"\nIl est " + hourFormat.format(calendar.getTime()));
+				eteindre();
+			}
+			else
+			{
+				System.out.println("\tSaisie invalide : caractères interdits.");
+				start();
+			}
+	}
+		void menuCalculs() // Sous menu des différents calculs
+	{
+		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications\n\n0. Quitter"
 				+ "\nChoisis en donnant le numéro du programme : ");
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
@@ -84,44 +133,26 @@ public class Robot_Edison {
 		{
 			calculInteret();
 		}
-	}
-		void notice()  // Affiche la notice, regroupe toutes les fonctionnalitées
+		else if(choixMenu == 5)
 		{
-			System.out.print("-------------------------------------------------------------\n\t\tLe robot " + this.idRobot + " est un robot programmable et modulable.\n"
-					+ "Notice :\n1. Allumer\n2. Eteindre\n3. Charger la batterie\n4. Afficher la date et l'heure"
-					+ "\n5. Cellular Automata\n6. Calculs\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
-					+ "\n");
-			int choixMenu = sc.nextInt();
-				if(choixMenu == 1)
-				{
-					this.allumer();
-				}
-				else if(choixMenu ==2)
-				{
-					this.eteindre();
-				}
-				else if(choixMenu == 3)
-				{
-					this.chargerBatterie();
-				}
-				else if(choixMenu == 4)
-				{
-					this.afficherDateHeure("");
-				}
-				else if(choixMenu == 5)
-				{
-					this.cellularAutomata();
-				}
-				else if(choixMenu == 6)
-				{
-					menuCalculs();
-				}
-				else if(choixMenu == 0)
-				{
-					System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
-							+ "\nNous somme le " + dateFormat.format(date) + 
-							"\nIl est " + hourFormat.format(calendar.getTime()));
-				}
+			tableDeMultiplication();
+		}
+		else if(choixMenu == 0)
+		{
+			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
+					+ "\nNous somme le " + dateFormat.format(date) + 
+					"\nIl est " + hourFormat.format(calendar.getTime()));
+			eteindre();
+		}
+		else
+		{
+			System.out.println("\tSaisie invalide.");
+			menuCalculs();
+		}
+	}
+		void menuTableaux()
+		{
+			System.out.println("\tTableaux\n1. Affichage des valeurs d'un tableau\n2. ");
 		}
 		void allumer() 	// Permet d'allumer le robot si il est éteint
 		{
@@ -131,7 +162,7 @@ public class Robot_Edison {
 			}
 			else
 			{
-				System.out.println("Allumage du robot ... ");
+				System.out.println("Démarrage du robot ... ");
 				isOn = true;  // Passe la booleenne isOn = true
 			}
 		}
@@ -158,7 +189,7 @@ public class Robot_Edison {
 			{
 				System.out.println("Le niveau de batterie est actuellement de " + this.batteryLeft
 						+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
-						+ "\nVoulez-vous tout de même le charger ?");
+						+ "\nVoulez-vous tout de même le charger ? Y/N");
 				String str = sc.next();
 					if(str.contains("Y") || str.contains("y"))
 					{
@@ -175,6 +206,7 @@ public class Robot_Edison {
 				this.batteryLeft = 100;   // Le niveau de charge de la batterie passe à 100%
 				System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + this.batteryLeft + "%");
 			}
+			start();
 		}
 		public String afficherDateHeure(String str)
 		{
@@ -182,20 +214,23 @@ public class Robot_Edison {
 			{
 				str = "";
 				System.out.println("Date : "+dateFormat.format(date)+"\nHeure : " + hourFormat.format(calendar.getTime()));
+				start();
 				return str;
 			}
 			else
 			{
-				System.out.println("Mince je dois l'allumer d'abord...\nAllumer ? Y/N");
+				System.out.println("Mince, je dois l'allumer d'abord...\nAllumer ? Y/N");
 				String allumage = sc.next();
 				if(allumage.contains("Y") || allumage.contains("y"))
 				{
 					isOn = true;
 					System.out.println("\t\nDémarrage du robot\n\n");
-					this.afficherDateHeure("");				}
+					this.afficherDateHeure("");	
+					start();}
 				else
 				{
 					System.out.print("Tant pis, peu importe l'heure.");
+					start();
 				}
 				return str;
 			}
@@ -255,6 +290,45 @@ public class Robot_Edison {
 			int surface = longueur * largeur;
 			int perimetre = (longueur + largeur) * 2;
 			System.out.println("\tSurface = " + surface + "cm\n\tPerimètre = " + perimetre + "cm");
+			System.out.println("Afficher le code ? Y/N");
+			String afficher = sc.next();
+			if(afficher.contains("Y") || afficher.contains("y"))
+			{
+				System.out.println("System.out.println(\"\\tCalculs du périmètre et de la surface d'un rectangle \"\n"
+						+ "					+ \"\\nLongueur en cm :\");\n"
+						+ "			int longueur = sc.nextInt();\n"
+						+ "			System.out.println(\"Largeur en cm : \");\n"
+						+ "			int largeur = sc.nextInt();\n"
+						+ "			int surface = longueur * largeur;\n"
+						+ "			int perimetre = (longueur + largeur) * 2;\n"
+						+ "			System.out.println(\"\\tSurface = \" + surface + \"cm\\n\\tPerimètre = \" + perimetre + \"cm\");\n"
+						+ "			System.out.println(\"\\nR pour retourner au menu principal\\n\"\n"
+						+ "					+ \"E pour relancer le dernier programme\"\n"
+						+ "					+ \"\\nB pour revenir au menu précédent\"\n"
+						+ "					+ \"\\nQ pour quitter\"); \n"
+						+ "			String answer = sc.next();\n"
+						+ "			do {\n"
+						+ "				if(answer.contains(\"R\") || answer.contains(\"r\"))\n"
+						+ "				{\n"
+						+ "					this.start();\n"
+						+ "				}\n"
+						+ "				else if(answer.contains(\"E\") || answer.contains(\"e\"))\n"
+						+ "				{\n"
+						+ "					rectangle();\n"
+						+ "				}\n"
+						+ "				else if(answer.contains(\"B\") || answer.contains(\"b\"))\n"
+						+ "				{\n"
+						+ "					menuCalculs();\n"
+						+ "				}\n"
+						+ "				else\n"
+						+ "				{\n"
+						+ "					System.out.println(\"\\n\\n\\tMenu principal\\nLe niveau de batterie est de \" + this.batteryLeft + \"%\"\n"
+						+ "							+ \"\\nNous somme le \" + dateFormat.format(date) + \n"
+						+ "							\"\\nIl est \" + hourFormat.format(calendar.getTime()));\n"
+						+ "				}\n"
+						+ "			} while(answer.contains(\"E\") || answer.contains(\"e\"));"
+						+ "\n------------------------------------------------------------------");
+			}
 			System.out.println("\nR pour retourner au menu principal\n"
 					+ "E pour relancer le dernier programme"
 					+ "\nB pour revenir au menu précédent"
@@ -263,7 +337,7 @@ public class Robot_Edison {
 			do {
 				if(answer.contains("R") || answer.contains("r"))
 				{
-					this.notice();
+					this.start();
 				}
 				else if(answer.contains("E") || answer.contains("e"))
 				{
@@ -278,6 +352,7 @@ public class Robot_Edison {
 					System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
 							+ "\nNous somme le " + dateFormat.format(date) + 
 							"\nIl est " + hourFormat.format(calendar.getTime()));
+					eteindre();
 				}
 			} while(answer.contains("E") || answer.contains("e"));
 		}
@@ -374,11 +449,22 @@ public class Robot_Edison {
 				answer = sc.next();
 					if(answer.contains("R") || answer.contains("r"))
 					{
-						this.notice();
+						this.start();
 					}
 					else if(answer.contains("B") || answer.contains("b"))
 					{
 						menuCalculs();
+					}
+					else if (answer.contains("E") || answer.contains("e"))
+					{
+						convertisseurKmMiles();
+					}
+					else
+					{
+						System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
+								+ "\nNous somme le " + dateFormat.format(date) + 
+								"\nIl est " + hourFormat.format(calendar.getTime()));
+						eteindre();
 					}
 			}
 		}while(answer.contains("Y") || answer.contains("y"));
@@ -406,6 +492,66 @@ public class Robot_Edison {
 			System.out.println(Math.round(somme*100)/100 + "€ investi à " + interet + "% d'interet\nPendant 1 an : " + Math.round(interetSimple*100)/100);
 			System.out.println("Pendant " + annee + " ans : " + Math.round(interetComposes*100)/100);		
 		}
+		void tableDeMultiplication()
+		{
+			String suivant = "";
+			System.out.println("\tTables de multiplication");
+			//int nombre = sc.nextInt();
+			do { 
+				System.out.print("Saisir un nombre entre 1 et 10 : ");
+				int nombre = sc.nextInt();
+					for (int i=0; i <= 10; i++) 
+					{
+					int somme = i*nombre;
+					System.out.println(i + "*" + nombre + " = " + somme);
+					} 		
+					System.out.print("Souhaitez-vous afficher une autre table ? Y/N : ");
+						suivant = sc.next();
+			}	while (suivant.contains("Y") || suivant.contains("y"));
+			System.out.println("\nR pour retourner au menu principal\n"
+					+ "E pour relancer le dernier programme"
+					+ "\nB pour revenir au menu précédent"
+					+ "\nQ pour quitter"); 
+			String answer = sc.next();
+				if(answer.contains("R") || answer.contains("r"))
+				{
+					this.start();
+				}
+				else if(answer.contains("B") || answer.contains("b"))
+				{
+					menuCalculs();
+				}
+				else if(answer.contains("E") || answer.contains("e"))
+				{
+					tableDeMultiplication();
+				}
+				else
+				{
+					System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
+							+ "\nNous somme le " + dateFormat.format(date) + 
+							"\nIl est " + hourFormat.format(calendar.getTime()));
+					eteindre();
+				}
+		}
+		void notaBene()
+		{
+			System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Switch case\n4. Ajouter le code en print sous conditions avec commentaires\n5. Heritages de classes : mettre chaque menu dans une classe différente"
+					+ "\n\n1. Revenir au menu principal\n2. Quitter");
+			//int choixMenu = sc.nextInt();
+			int choixMenu = sc.nextInt();
+			if(choixMenu == 1)
+			{
+				start();
+			}
+			else
+			{
+				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + this.batteryLeft + "%"
+						+ "\nNous somme le " + dateFormat.format(date) + 
+						"\nIl est " + hourFormat.format(calendar.getTime()));
+				eteindre();
+			}
+		}
+		
 	// Fin des programmes du robot
 }
 
