@@ -75,10 +75,15 @@ public class Robot_Edison {
 	}
 //------------------------------------------------------------------------------------------------------------------------	
 	// Ajout des programmes et fonctionnalités du robot
+	
 	public void demarrage()  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
 		getStart();
 	}
+	
+	// Fin du programme main
+	
+	
 	// Getters
 	public static void getMenuTableaux() 
 		{
@@ -135,6 +140,10 @@ public class Robot_Edison {
 	static int getBatteryLeft()
 		{
 		return batteryLeft;
+		}
+	static void getBissextile()
+		{
+		Bissextile.bissextile();
 		}
 	// Fin des getters
 		

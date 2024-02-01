@@ -20,7 +20,7 @@ public class Menu_Calculs {
 	public static void menuCalculs() // Sous menu des différents calculs
 	{
 		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
-				+ "\n6. Menu Principal\n7. Bissextile\n\n0. Quitter\nChoisis en donnant le numéro du programme : ");
+				+ "\n6. Bissextile\n7. Menu Principal \n\n0. Quitter\nChoisis en donnant le numéro du programme : ");
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
 		{
@@ -44,11 +44,11 @@ public class Menu_Calculs {
 		}
 		else if(choixMenu == 6)
 		{
-			getStart();
+			getBissextile();
 		}
 		else if(choixMenu == 7)
 		{
-			
+			getStart();
 		}
 		else if(choixMenu == 0)
 		{
@@ -56,6 +56,7 @@ public class Menu_Calculs {
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
 		}
+		sc.close();
 	}
 	
 	// Getters
@@ -110,7 +111,7 @@ public class Menu_Calculs {
 		}
 	static void getStart()
 		{
-		Robot_Edison.getStart();
+		Start.getStart();
 		}
 	static void getBissextile()
 		{

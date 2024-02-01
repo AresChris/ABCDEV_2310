@@ -77,7 +77,7 @@ public class Cercle {
 				{
 					cercle();
 				}
-				else if(choixMenu.contains("b") || choixMenu.contains("Q"))
+				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
 					getMenuCalculs();
 				}
@@ -103,5 +103,6 @@ public class Cercle {
 		{
 		Allumer_Eteindre.eteindre();
 		}
+	
 	// Getters
 }

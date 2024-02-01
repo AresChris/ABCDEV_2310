@@ -9,11 +9,11 @@ public class Getters {
 		}
 	static void getMenuCalculs()
 		{
-			Menu_Calculs.getMenuCalculs();
+		Menu_Calculs.getMenuCalculs();
 		}
 	static void getChargerBatterie()
 		{
-			Charger_Batterie.chargerBatterie();
+		Charger_Batterie.chargerBatterie();
 		}
 	static void getAfficherHeure()
 		{
@@ -41,7 +41,7 @@ public class Getters {
 		}
 	static void getStart()
 		{
-		Robot_Edison.getStart();
+		Start.getStart();
 		}
 	static int getBatteryLeft()
 		{
@@ -62,6 +62,22 @@ public class Getters {
 	static void getBissextile()
 		{
 		Bissextile.bissextile();
+		}
+	static void getPourPlusDix()
+		{
+		Pour_Plus_Dix.plusDix();
+		}
+	static void getMenuFor()
+		{
+			Boucle_for.menuBoucleFor();
+		}
+	static void getCercle()
+		{
+		Cercle.cercle();
+		}
+	static void getShowValTab()
+		{
+		Show_Val_Tab.showValTab();
 		}
 	// Fin des getters
 }

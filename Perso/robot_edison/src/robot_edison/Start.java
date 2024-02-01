@@ -21,7 +21,7 @@ public class Start {
 	{
 		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + getIdRobot() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
-				+ "\n5. Cellular Automata\n6. Calculs\n7. Nota Bene\n8. Tableaux\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
+				+ "\n5. Cellular Automata\n6. Calculs\n7. Nota Bene\n8. Tableaux\n9. Boucles for\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
 				+ "\n");
 		int choixMenu = sc.nextInt();
 			if(choixMenu == 1)
@@ -55,6 +55,10 @@ public class Start {
 			else if(choixMenu == 8)
 			{
 				getMenuTableaux();
+			}
+			else if(choixMenu == 9)
+			{
+				getMenuFor();
 			}
 			else if(choixMenu == 0)
 			{
@@ -129,6 +133,18 @@ public class Start {
 	static void getEteindre()
 		{
 		Allumer_Eteindre.eteindre();
+		}
+	static void getBissextile()
+		{
+		Bissextile.bissextile();
+		}
+	static void getPourPlusDix()
+		{
+		Pour_Plus_Dix.plusDix();
+		}
+	static void getMenuFor()
+		{
+		Boucle_for.menuBoucleFor();
 		}
 	// Fin des getters
 }
