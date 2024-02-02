@@ -6,9 +6,9 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Scanner;
 
-public class Show_Val_Tab {
+public class PlusPetitPlusGrand {
 	
-	 // Utiles 
+		// Utiles 
 		static Scanner sc = new Scanner(System.in); // Scanner
 		static DecimalFormat decimalFormat = new DecimalFormat("00"); // Formatage à deux chiffres 00
 		static SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy"); // Formatage de la date jj-MM-aaaa
@@ -17,23 +17,29 @@ public class Show_Val_Tab {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static void showValTab()
+	static void petitGrand()
 	{
-		System.out.println("Combien de valeurs dans le tableau ?");
-		int valeursTab = sc.nextInt();
-		int[] tab = new int[valeursTab];
+		int nombres, plusGrand = 0;
+		int position = 0;
 		
-		for(int i=0; i<=tab.length-1; i++)
-		{
-			System.out.println("Nombre " + (i+1) + " :");
-			tab[i] = sc.nextInt();
-		}
-		for(int j=0; j<tab.length; j++)
-		{
-			System.out.println("#" + (j+1 + " : ") + tab[j] + " ");
-		}
-		System.out.println("\nR pour retourner au menu principal"
-				+ "\nE pour relancer le dernier programme"
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.print("Saisissez le nombre de valeurs du tableau : ");
+		nombres = sc.nextInt();
+		
+		int[] tableau = new int[nombres];
+		
+		for(int i = 0; i<=tableau.length-1; i++) {
+			System.out.println("N° " + (i+1) + " :");
+			tableau[i] = sc.nextInt();
+			if(tableau[i] > plusGrand) {
+				plusGrand = tableau[i];
+				position = i + 1;
+			}
+		}	
+		System.out.print("Le plus grand nombre est " + plusGrand + " et il était en position " + position);
+		System.out.println("\nR pour retourner au menu principal\n"
+				+ "E pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"
 				+ "\nQ pour quitter"); 
 		String choixMenu = sc.next();
@@ -43,7 +49,7 @@ public class Show_Val_Tab {
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{
-				showValTab();
+				getInteret();
 			}
 			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
 			{
@@ -53,14 +59,11 @@ public class Show_Val_Tab {
 			{
 				getEteindre();
 			}
+			sc.close();
 	}
-	static void getShowValTab()
+	static void getPetitGrand()
 		{
-		showValTab();
-		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
+		petitGrand();
 		}
 	static void getStart()
 		{
@@ -70,12 +73,12 @@ public class Show_Val_Tab {
 		{
 		Interet_Banque.calculInteret();
 		}
-	static void getMenuCalculs()
-		{
-		Menu_Calculs.getMenuCalculs();
-		}
 	static void getMenuTableaux() 
 		{
 		Menu_Tableaux.getMenuTableaux();
+		}
+	static void getEteindre()
+		{
+		Allumer_Eteindre.eteindre();
 		}
 }

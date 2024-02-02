@@ -7,7 +7,7 @@ public class Pour_Plus_Dix {
 	static Scanner sc = new Scanner(System.in);
 
 	static void plusDix()
-	{
+		{
 		System.out.println("Inscrire un nombre :");
 		int nombre = sc.nextInt();
 		System.out.println("Combien voulez-vous ajouter ?");
@@ -53,6 +53,7 @@ public class Pour_Plus_Dix {
 							getEteindre();
 						}
 				}
+
 	// Getters
 	static void getPourPlusDix()
 	{
@@ -74,6 +75,5 @@ public class Pour_Plus_Dix {
 	{
 	Allumer_Eteindre.eteindre();
 	}
-	
 	// Fin des getters
 }

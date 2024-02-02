@@ -79,5 +79,13 @@ public class Getters {
 		{
 		Show_Val_Tab.showValTab();
 		}
+	static void getMoyenne()
+		{
+		Moyenne.moyenne();
+		}
+	static void getPetitGrand()
+		{
+		PlusPetitPlusGrand.petitGrand();
+		}
 	// Fin des getters
 }

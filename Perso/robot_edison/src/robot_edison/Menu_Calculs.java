@@ -76,7 +76,6 @@ public class Menu_Calculs {
 		{
 		Charger_Batterie.chargerBatterie();
 		}
-		// Fin des getters
 	static void getAfficherHeure()
 		{
 		Afficher_Heure.getAfficherHeure();
