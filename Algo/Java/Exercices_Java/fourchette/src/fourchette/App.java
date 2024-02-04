@@ -11,14 +11,17 @@ public class App {
 		int userChoice;
 		int min = 0;
 		int max = 100;
-		int n = 0 + (int)(Math.random() * ((max - min) + 1));
-		int compteur = 0;
+		
 		
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.print("Entrez un nombre entier de départ : ");
 		userChoice = sc.nextInt();
-
+		
+		int n = 0 + (int)(Math.random() * ((max - min) + 1));
+		
+		
+		int compteur = 0;
 		while (userChoice != n) {
 			if (userChoice < n) {
 				min = userChoice;

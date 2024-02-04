@@ -32,6 +32,10 @@ public class Boucle_for {
 		{
 			getMoyenne();
 		}
+		else if(choixMenu == 4)
+		{
+			getPetitGrand();
+		}
 		else if(choixMenu == 0)
 		{
 			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"

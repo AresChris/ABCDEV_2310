@@ -1,0 +1,67 @@
+Variables
+// Booleens
+    jourValide est un booleen //  Jours entre 1 et 31 // Sinon renvois false
+    moisValide est un booleen // mois entre 1 et 12 // Sinon renvois false
+    dateValide est un booleen // Contient jourValide ET moisValide // Sinon renvoi false
+    monthThirty est un booleen // Contient les mois à 30 jours en entiers
+    monthThirtyOne est un booleen // contient les mois à 31 jours en entiers
+    bissextile est un booleen // Contient la formule de calcule d'une année booleenne
+// Variables du scanner
+    jour est un entier // Contient le jour du scanner
+    mois est un entier // contient le mois du scanner
+    anneeA est un entier // contient l'année du scanner
+Début du programme
+// Initialisation des booleennes
+    Début Si
+        Si(mois ==2 || mois == 4 || mois == 6 || mois == 9 || mois == 11) alors
+            Si(jour<=30)
+            monthThirty <= true
+            Fin Si
+        Fin Si
+    Début Si
+        Si((mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12)) alors
+            si(jour<=31)
+            monthThirtyOne <== true
+        Sin Si
+    Début Si
+        Si(jour > 31 || jour <1) alors
+            jourValide <== false
+        Fin Si
+    Début Si
+        Si(mois > 12 || mois < 1) alors
+            moisValide <== false
+        Fin Si
+    Début Si
+        Si(jourValide && moisValide) alors
+            dateValide <== true
+        Fin Si
+// Début des conditions
+    Début si
+        Si(!bissextile ET dateValide) alors  // Si bissextile est faux ET que dateValide est vrai, on verifie 
+            Si(monthThirtyOne) alors  // Si c'est un mois à 31
+                Si(jour > 29 ET mois == 2) alors // Si la date est le 29 Fevrier // retourne que le jour n'existe pas et l'année n'est pas bissextile
+                    Ecrire "Il n'y à pas de 29 février dans l'année ", anneeA, ", et elle n'est pas bissextile !" 
+                Sinon // Si le jour n'est pas le 29 Fevrier ET !bissextile ET monthThirtyOne est vrai // retourne que la date n'est pas dans une année bissextile
+                    ecrire "La date du " jour + "/", mois, "/", anneeA, " n'est pas valide !"
+            Sinon // Si c'est un mois à 31 ET que l'année n'est PAS bissextile // retourne que le jour est dans une année bissextile
+                Ecrire "La date du " jour + "/", mois, "/", anneeA, " est dans une année bissextile !" 
+        Sinon
+                    Fin Sinon
+                Fin Sinon
+            Fin Sinon
+        Fin Si
+            Si(bissextile ET dateValide) alors  // Si bissextile est vrai ET que dateValide est vrai on vérifie
+                Si(monthThirtyOne)
+                    Si(jour == 29 ET mois == 2)  // Si le jour est le 29 février, que bissextile est vrai et que la date est valide
+                        Ecrire "Le ", jour, "/", mois, "/", anneeA, " est dans une année bissextile."
+                    Sinon
+                        Ecrire "La date du ", jour, "/", mois, "/", anneeA, " n'est pas dans une année bissextile !"
+                Sinon
+                    Ecrire "La date n'est pas valide !"  
+                            Fin Sinon
+                        Fin Sinon
+                    Fin Sinon
+                Fin Si
+        
+
+

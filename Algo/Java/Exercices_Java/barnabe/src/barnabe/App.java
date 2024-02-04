@@ -15,16 +15,27 @@ public class App {
 		s = sc.nextInt();
 		
 		compteur = 0;
-		int j = 0;
-		
-		for(int i=0; i<=s; i++) {
-			s = (s/2) + 1;
-			compteur +=1;
-			j+= 1;
-			System.out.println("Magasin " + j + " : " + s);
-		}
-		System.out.print("Barnabé à dépensé dans " + compteur + " magasins");
-		
+		int depense;
+			for(int i=0; i<=s; i++)	
+			{
+				if(s!=0)
+				{
+					s = (s/= 2) +1;
+					compteur +=1;
+					depense = (s/2) + 1;
+					s = s - depense;
+					System.out.println("Magasin " + compteur + " : " + s + " €");
+				}
+				else if(s == 1)
+				{
+					compteur += 1;
+					depense = (s/2) + 1;
+					s = s - depense;
+					System.out.println("Magasin " + compteur + " : " + s + " €");
+				}
+			}
+		System.out.println("Barnabé à dépensé dans " + compteur + " magasins");
+		System.out.println("il reste " + s + " €");
 		sc.close();
 	}
 

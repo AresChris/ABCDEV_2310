@@ -17,39 +17,196 @@ public class Bissextile {
 				static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 				static DecimalFormat formater = new DecimalFormat("00");
 				// Fin de déclaration des utiles
-			
-	static void bissextile()
+	static void verifierValide()
 	{
-		System.out.println("\t\tBiisextile\n\tVérifie si une date est valide\n\t et si l'année est bissextile\n\t------------------------------\n");
+		int mois = 0;
+		int jour = 0;
+		int anneeA;
+		boolean jourValide = true, moisValide = true, dateValide = true, monthThirty = false, monthThirtyOne = false;
+		
 		System.out.print("Jour : ");
-		int jour = sc.nextInt();
+		jour = sc.nextInt();
 		
 		System.out.print("Numéro du mois : ");
-		int mois = sc.nextInt();
+		mois = sc.nextInt();
 		
 		System.out.print("Année : ");
-		int anneeA = sc.nextInt();
+		anneeA = sc.nextInt();
 		
-
-		boolean bissextile = (anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0;
-
-		if (!bissextile) {
-			if (jour == 29 && mois == 2) {
-				System.out.print("Il n'y à pas de 29 février dans l'année " + anneeA + ", et elle n'est pas bissextile !");
-			} else {
-				System.out.print("la date du " + decimalFormat.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " est dans une année bissextile !");
-			}
+		boolean bissextile = (anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0;  // Initialisation de la booleenne bissextile
+		
+			// Initialisation des booléens en fonction des mois en entier
+		if(mois ==2 || mois == 4 || mois == 6 || mois == 9 || mois == 11)
+		{
+			monthThirty = true;  // mois à 30 jours
 		}
-		if (bissextile) {
-				if (jour == 29 && mois == 2) 
+		if((mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12))
+		{
+			monthThirtyOne = true; // mois à 31 jours
+		}
+			// Initialisation des booleennes jour et mois
+		if(jour > 31 || jour <1)
+		{
+			jourValide = false; // jours compris entre 1 et 31
+		}
+		if(mois > 12 || mois < 1)
+		{
+			moisValide = false; // mois compris entre 1 et 12
+		}
+			// Initialisation de la booleenne qui vérifie que les conditions sont réunies pour que la date soit valide
+		if(jourValide && moisValide)  // si mois à 30 jour ET jour entre 1 et 30 ET mois entre 1 et 12
+		{
+			dateValide = true;
+		}
+		// ----------ie----------------------------------
+		if(!bissextile) // Si l'année n'est pas bissextile
+		{
+			if(monthThirtyOne)  // Si jour compris entre 1 et 31
+			{
+				if (jour == 29 && mois == 2)  // Si le jour est le 29 février
 				{
-					System.out.print("la date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " est dans une année bissextile !");
+					System.out.println("Il n'y à pas de 29 février dans l'année " + anneeA + ", et elle n'est pas bissextile !");
+				} 
+				else  // Si ce n'est pas le 29 Février ou que le mois n'est pas à 30 jours
+				{
+					System.out.print("La date n'est pas valide !");
+				}
+		}
+			else
+			{
+				System.out.print("la date du \" + decimalFormat.format(jour) + \"/\" + formater.format(mois) +\"/\"+ anneeA + \" est dans une année bissextile !"); //
+			}
+		} 
+			else 
+			{
+			if (jour == 29 && mois == 2)
+			{
+				if(dateValide)
+				{
+					System.out.println("la date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " est dans une année bissextile !");
 				}
 				else 
 				{
-					System.out.print("La date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " n'est pas dans une année bissextile !");
+					System.out.println("La date du " + formater.format(jour) + "/" + formater.format(mois) +"/"+ anneeA + " n'est pas dans une année bissextile !");
 				}
 			} 
+			else
+			{
+				System.out.print("La date n'est pas valide !\n");
+			}
+			}
+	}
+	static void bissextile()
+	{
+		System.out.println("\t\tBiisextile\n\tVérifie si une date est valide\n\t et si l'année est bissextile\n\t------------------------------\n");
+		verifierValide();
+		
+		System.out.print("Afficher le code ? Y/N");
+		String affichage = sc.next();
+		if(affichage.contains("Y") || affichage.contains("y"))
+		{
+			System.out.println("\tint mois = 0;\n"
+					+ "		int jour = 0;\n"
+					+ "		int anneeA;\n"
+					+ "		boolean jourValide = true, moisValide = true, dateValide = true, monthThirty = false, monthThirtyOne = false;\n"
+					+ "		\n"
+					+ "		System.out.print(\"Jour : \");\n"
+					+ "		jour = sc.nextInt();\n"
+					+ "		\n"
+					+ "		System.out.print(\"Numéro du mois : \");\n"
+					+ "		mois = sc.nextInt();\n"
+					+ "		\n"
+					+ "		System.out.print(\"Année : \");\n"
+					+ "		anneeA = sc.nextInt();\n"
+					+ "		\n"
+					+ "		boolean bissextile = (anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0;  // Initialisation de la booleenne bissextile\n"
+					+ "		\n"
+					+ "			// Initialisation des booléens en fonction des mois en entier\n"
+					+ "		if(mois ==2 || mois == 4 || mois == 6 || mois == 9 || mois == 11)\n"
+					+ "		{\n"
+					+ "			monthThirty = true;  // mois à 30 jours\n"
+					+ "		}\n"
+					+ "		if((mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12))\n"
+					+ "		{\n"
+					+ "			monthThirtyOne = true; // mois à 31 jours\n"
+					+ "		}\n"
+					+ "			// Initialisation des booleennes jour et mois\n"
+					+ "		if(jour > 31 || jour <1)\n"
+					+ "		{\n"
+					+ "			jourValide = false; // jours compris entre 1 et 31\n"
+					+ "		}\n"
+					+ "		if(mois > 12 || mois < 1)\n"
+					+ "		{\n"
+					+ "			moisValide = false; // mois compris entre 1 et 12\n"
+					+ "		}\n"
+					+ "			// Initialisation de la booleenne qui vérifie que les conditions sont réunies pour que la date soit valide\n"
+					+ "		if(jourValide && moisValide)  // si mois à 30 jour ET jour entre 1 et 30 ET mois entre 1 et 12\n"
+					+ "		{\n"
+					+ "			dateValide = true;\n"
+					+ "		}\n"
+					+ "		// --------------------------------------------\n"
+					+ "		if(!bissextile) \n"
+					+ "		{\n"
+					+ "			if(dateValide)\n"
+					+ "			{\n"
+					+ "				if (jour == 29 && mois == 2) \n"
+					+ "				{\n"
+					+ "					System.out.println(\"Il n'y à pas de 29 février dans l'année \" + anneeA + \", et elle n'est pas bissextile !\");\n"
+					+ "				} \n"
+					+ "				else \n"
+					+ "				{\n"
+					+ "					System.out.println(\"La date n'est pas valide !\");\n"
+					+ "				}\n"
+					+ "		}\n"
+					+ "			else\n"
+					+ "			{\n"
+					+ "				System.out.print(\"la date du \\\" + decimalFormat.format(jour) + \\\"/\\\" + formater.format(mois) +\\\"/\\\"+ anneeA + \\\" est dans une année bissextile !\"); //\n"
+					+ "			}\n"
+					+ "		} \n"
+					+ "			else \n"
+					+ "			{\n"
+					+ "			if (jour == 29 && mois == 2)\n"
+					+ "			{\n"
+					+ "				if(dateValide)\n"
+					+ "				{\n"
+					+ "					System.out.println(\"la date du \" + formater.format(jour) + \"/\" + formater.format(mois) +\"/\"+ anneeA + \" est dans une année bissextile !\");\n"
+					+ "				}\n"
+					+ "				else \n"
+					+ "				{\n"
+					+ "					System.out.println(\"La date du \" + formater.format(jour) + \"/\" + formater.format(mois) +\"/\"+ anneeA + \" n'est pas dans une année bissextile !\");\n"
+					+ "				}\n"
+					+ "			} \n"
+					+ "			else\n"
+					+ "			{\n"
+					+ "				System.out.print(\"La date n'est pas valide !\\n\");\n"
+					+ "			}\n"
+					+ "}\n");
+		}
+		else
+		{
+			System.out.println("\n\n\nR pour retourner au menu principal\n"
+					+ "E pour relancer le dernier programme"
+					+ "\nB pour revenir au menu précédent"
+					+ "\nQ pour quitter"); 
+			String choixMenu = sc.next();
+				if(choixMenu.contains("R") || choixMenu.contains("r"))
+				{
+					getStart();
+				}
+				else if(choixMenu.contains("E") || choixMenu.contains("e"))
+				{
+					getBissextile();
+				}
+				else if(choixMenu.contains("B") || choixMenu.contains("b"))
+				{
+					getMenuCalculs();
+				}
+				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+				{
+					getEteindre();
+				}
+		}
+			
 		  System.out.println("\n\n\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"

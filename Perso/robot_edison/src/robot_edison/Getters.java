@@ -2,7 +2,6 @@ package robot_edison;
 
 public class Getters {
 
-	
 	static void getMenuTableaux() 
 		{
 		Menu_Tableaux.getMenuTableaux();

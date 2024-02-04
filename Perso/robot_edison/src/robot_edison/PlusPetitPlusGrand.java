@@ -30,20 +30,70 @@ public class PlusPetitPlusGrand {
 		int[] tableau = new int[nombres];
 		
 		for(int i = 0; i<=tableau.length-1; i++) {
-			System.out.println("N° " + (i+1) + " :");
+			System.out.print("N° " + (i+1) + " :");
 			tableau[i] = sc.nextInt();
+			System.out.print("");
 			if(tableau[i] > plusGrand) {
 				plusGrand = tableau[i];
 				position = i + 1;
 			}
 		}	
-		System.out.print("Le plus grand nombre est " + plusGrand + " et il était en position " + position);
+		System.out.println("Le plus grand nombre est " + plusGrand + " et il était en position " + position);
+		System.out.println("Afficher le code ? Y/N");
+		String affichage = sc.next();
+		if(affichage.contains("Y") || affichage.contains("y"))
+		{
+			System.out.print("int nombres, plusGrand = 0;\n"
+					+ "int position = 0;\n"
+					+ "		\n"
+					+ "		Scanner sc = new Scanner(System.in);\n"
+					+ "		\n"
+					+ "		System.out.print(\"Saisissez le nombre de valeurs du tableau : \");\n"
+					+ "		nombres = sc.nextInt();\n"
+					+ "		\n"
+					+ "		int[] tableau = new int[nombres];\n"
+					+ "		\n"
+					+ "		for(int i = 0; i<=tableau.length-1; i++) {\n"
+					+ "			System.out.print(\"N° \" + (i+1) + \" :\");\n"
+					+ "			tableau[i] = sc.nextInt();\n"
+					+ "			System.out.print(\"\");\n"
+					+ "			if(tableau[i] > plusGrand) {\n"
+					+ "				plusGrand = tableau[i];\n"
+					+ "				position = i + 1;\n"
+					+ "			}");
+		}
+		else
+		{
+			System.out.println("\nR pour retourner au menu principal\n"
+					+ "E pour relancer le dernier programme"
+					+ "\nB pour revenir au menu précédent"
+					+ "\nQ pour quitter"); 
+			String choixMenu = sc.next();
+			
+				if(choixMenu.contains("R") || choixMenu.contains("r"))
+				{
+					getStart();
+				}
+				else if(choixMenu.contains("E") || choixMenu.contains("e"))
+				{
+					getInteret();
+				}
+				else if(choixMenu.contains("B") || choixMenu.contains("b"))
+				{
+					getMenuTableaux();
+				}
+				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+				{
+					getEteindre();
+				}
+		}
 		System.out.println("\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"
 				+ "\nQ pour quitter"); 
 		String choixMenu = sc.next();
-			if(choixMenu.contains("R"))
+		
+			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
 				getStart();
 			}
@@ -51,7 +101,7 @@ public class PlusPetitPlusGrand {
 			{
 				getInteret();
 			}
-			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
+			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
 				getMenuTableaux();
 			}
