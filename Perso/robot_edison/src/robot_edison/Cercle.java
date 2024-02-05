@@ -27,7 +27,7 @@ public class Cercle {
 		double xC;
 		double yC;
 		// constante PI
-		final double pi = Math.PI;
+		final double pi = Math.round(Math.PI*100.00)/100.00;
 		double perimetre;
 		double diametre;
 		

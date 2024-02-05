@@ -146,6 +146,7 @@ public class Robot_Edison {
 		Bissextile.bissextile();
 		}
 	// Fin des getters
+	
 		
 		
 	// Fin des programmes du robot

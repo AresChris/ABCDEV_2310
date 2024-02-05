@@ -86,5 +86,17 @@ public class Getters {
 		{
 		PlusPetitPlusGrand.petitGrand();
 		}
+	static void getMonthThirty()
+		{
+		Mois.getMonthThirty();
+		}
+	static void getMonthThirtyOne()
+		{
+		Mois.getMonthThirtyOne();
+		}
+	static void getFevrier()
+		{
+		Mois.getFevrier();
+		}
 	// Fin des getters
 }

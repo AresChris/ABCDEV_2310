@@ -35,15 +35,62 @@ public class Interet_Banque {
 				
 		interetSimple = (somme*(interet/100)) + somme;
 		interetComposes = somme*(Math.pow(1+(interet/100),annee));
-		
 		System.out.println(Math.round(somme*100)/100 + "€ investi à " + interet + "% d'interet\nPendant 1 an : " + Math.round(interetSimple*100)/100);
-		System.out.println("Pendant " + annee + " ans : " + Math.round(interetComposes*100)/100);	
+		System.out.println("Pendant " + annee + " ans : " + Math.round(interetComposes*100)/100);
+		System.out.print("Afficher le code ? Y/N");
+		String affichage = sc.next();
+			if(affichage.contains("Y") || affichage.contains("y"))
+			{
+				System.out.println("double interet;\r\n"
+						+ "		double somme;\r\n"
+						+ "		int annee;\r\n"
+						+ "		double interetSimple;\r\n"
+						+ "		double interetComposes;\r\n"
+						+ "\r\n"
+						+ "		System.out.println(\"Inscrivez une somme : \");\r\n"
+						+ "		somme = sc.nextDouble();\r\n"
+						+ "		\r\n"
+						+ "		System.out.println(\"Inscrivez les interêts : \");\r\n"
+						+ "		interet = sc.nextDouble();\r\n"
+						+ "		\r\n"
+						+ "		System.out.println(\"Inscrivez la durée en année : \");\r\n"
+						+ "		annee = sc.nextInt();\r\n"
+						+ "				\r\n"
+						+ "		interetSimple = (somme*(interet/100)) + somme;\r\n"
+						+ "		interetComposes = somme*(Math.pow(1+(interet/100),annee));\r\n"
+						+ "		System.out.println(Math.round(somme*100)/100 + \"€ investi à \" + interet + \"% d'interet\\nPendant 1 an : \" + Math.round(interetSimple*100)/100);\r\n"
+						+ "		System.out.println(\"Pendant \" + annee + \" ans : \" + Math.round(interetComposes*100)/100);");
+			}
+			else
+			{
+				System.out.println("\nR pour retourner au menu principal\n"
+						+ "E pour relancer le dernier programme"
+						+ "\nB pour revenir au menu précédent"
+						+ "\nQ pour quitter"); 
+				String choixMenu = sc.next();
+					if(choixMenu.contains("R") || choixMenu.contains("r"))
+					{
+						getStart();
+					}
+					else if(choixMenu.contains("E") || choixMenu.contains("e"))
+					{
+						calculInteret();
+					}
+					else if(choixMenu.contains("B") || choixMenu.contains("b"))
+					{
+						getMenuCalculs();
+					}
+					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+					{
+						getEteindre();
+					}
+			}
 		System.out.println("\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"
 				+ "\nQ pour quitter"); 
 		String choixMenu = sc.next();
-			if(choixMenu.contains("R"))
+			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
 				getStart();
 			}
@@ -51,7 +98,7 @@ public class Interet_Banque {
 			{
 				calculInteret();
 			}
-			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
+			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
 				getMenuCalculs();
 			}

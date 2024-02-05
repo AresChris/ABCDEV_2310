@@ -48,7 +48,7 @@ public class Moyenne {
 						+ "\nB pour revenir au menu précédent"
 						+ "\nQ pour quitter"); 
 				String choixMenu = sc.next();
-					if(choixMenu.contains("R"))
+					if(choixMenu.contains("R") || choixMenu.contains("r"))
 					{
 						getStart();
 					}

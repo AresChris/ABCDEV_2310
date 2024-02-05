@@ -32,6 +32,48 @@ public class Show_Val_Tab {
 		{
 			System.out.println("#" + (j+1 + " : ") + tab[j] + " ");
 		}
+		System.out.println("Afficher le code ? Y/N");
+		String affichage = sc.next();
+			if(affichage.contains("Y") || affichage.contains("y"))
+			{
+				System.out.println("System.out.println(\"Combien de valeurs dans le tableau ?\");\r\n"
+						+ "		int valeursTab = sc.nextInt();\r\n"
+						+ "		int[] tab = new int[valeursTab];\r\n"
+						+ "		\r\n"
+						+ "		for(int i=0; i<=tab.length-1; i++)\r\n"
+						+ "		{\r\n"
+						+ "			System.out.println(\"Nombre \" + (i+1) + \" :\");\r\n"
+						+ "			tab[i] = sc.nextInt();\r\n"
+						+ "		}\r\n"
+						+ "		for(int j=0; j<tab.length; j++)\r\n"
+						+ "		{\r\n"
+						+ "			System.out.println(\"#\" + (j+1 + \" : \") + tab[j] + \" \");\r\n"
+						+ "		}");
+			}
+			else
+			{
+				System.out.println("\nR pour retourner au menu principal"
+						+ "\nE pour relancer le dernier programme"
+						+ "\nB pour revenir au menu précédent"
+						+ "\nQ pour quitter"); 
+				String choixMenu = sc.next();
+					if(choixMenu.contains("R"))
+					{
+						getStart();
+					}
+					else if(choixMenu.contains("E") || choixMenu.contains("e"))
+					{
+						showValTab();
+					}
+					else if(choixMenu.contains("B") || choixMenu.contains("b"))
+					{
+						getMenuTableaux();
+					}
+					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+					{
+						getEteindre();
+					}
+			}
 		System.out.println("\nR pour retourner au menu principal"
 				+ "\nE pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"
@@ -45,7 +87,7 @@ public class Show_Val_Tab {
 			{
 				showValTab();
 			}
-			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
+			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
 				getMenuTableaux();
 			}
