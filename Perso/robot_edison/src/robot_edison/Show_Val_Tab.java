@@ -19,6 +19,7 @@ public class Show_Val_Tab {
 		
 	static void showValTab()
 	{
+		System.out.println("\tAffichage des valeurs d'un tableau\n");
 		System.out.println("Combien de valeurs dans le tableau ?");
 		int valeursTab = sc.nextInt();
 		int[] tab = new int[valeursTab];
@@ -36,7 +37,7 @@ public class Show_Val_Tab {
 		String affichage = sc.next();
 			if(affichage.contains("Y") || affichage.contains("y"))
 			{
-				System.out.println("System.out.println(\"Combien de valeurs dans le tableau ?\");\r\n"
+				System.out.println("\tSystem.out.println(\"Combien de valeurs dans le tableau ?\");\r\n"
 						+ "		int valeursTab = sc.nextInt();\r\n"
 						+ "		int[] tab = new int[valeursTab];\r\n"
 						+ "		\r\n"

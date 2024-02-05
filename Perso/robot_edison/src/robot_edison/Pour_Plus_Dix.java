@@ -8,6 +8,7 @@ public class Pour_Plus_Dix {
 
 	static void plusDix()
 		{
+		System.out.println("\tAjouter 1 à chaque tour de boucle\n");
 		System.out.println("Inscrire un nombre :");
 		int nombre = sc.nextInt();
 		System.out.println("Combien voulez-vous ajouter ?");

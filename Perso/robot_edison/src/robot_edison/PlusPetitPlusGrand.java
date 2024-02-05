@@ -23,7 +23,7 @@ public class PlusPetitPlusGrand {
 		int position = 0;
 		
 		Scanner sc = new Scanner(System.in);
-		
+		System.out.println("\tTrouver la plus grande valeur d'un tableau\n");
 		System.out.print("Saisissez le nombre de valeurs du tableau : ");
 		nombres = sc.nextInt();
 		
@@ -43,24 +43,27 @@ public class PlusPetitPlusGrand {
 		String affichage = sc.next();
 		if(affichage.contains("Y") || affichage.contains("y"))
 		{
-			System.out.print("int nombres, plusGrand = 0;\n"
-					+ "int position = 0;\n"
+			System.out.print("\tint nombres, plusGrand = 0;\n"
+					+ "\tint position = 0;\n"
 					+ "		\n"
-					+ "		Scanner sc = new Scanner(System.in);\n"
+					+ "\tScanner sc = new Scanner(System.in);\n"
+					+ "\n"
+					+ "\tSystem.out.print(\"Saisissez le nombre de valeurs du tableau : \");\n"
+					+ "\tnombres = sc.nextInt();\n"
+					+ "\n"
+					+ "\tint[] tableau = new int[nombres];\n"
 					+ "		\n"
-					+ "		System.out.print(\"Saisissez le nombre de valeurs du tableau : \");\n"
-					+ "		nombres = sc.nextInt();\n"
-					+ "		\n"
-					+ "		int[] tableau = new int[nombres];\n"
-					+ "		\n"
-					+ "		for(int i = 0; i<=tableau.length-1; i++) {\n"
-					+ "			System.out.print(\"N° \" + (i+1) + \" :\");\n"
-					+ "			tableau[i] = sc.nextInt();\n"
-					+ "			System.out.print(\"\");\n"
-					+ "			if(tableau[i] > plusGrand) {\n"
-					+ "				plusGrand = tableau[i];\n"
-					+ "				position = i + 1;\n"
-					+ "			}");
+					+ "\tfor(int i = 0; i<=tableau.length-1; i++) "
+					+ "\n\t{\n"
+					+ "\t System.out.print(\"N° \" + (i+1) + \" :\");\n"
+					+ "\t tableau[i] = sc.nextInt();\n"
+					+ "\t System.out.print(\"\");\n"
+					+ "\t	if(tableau[i] > plusGrand) "
+					+ "\n\t\t{\n"
+					+ "\t    plusGrand = tableau[i];\n"
+					+ "\t    position = i + 1;\n"
+					+ "\n\t\t}"
+					+ "\n}");
 		}
 		else
 		{

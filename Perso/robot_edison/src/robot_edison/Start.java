@@ -63,8 +63,8 @@ public class Start {
 			else if(choixMenu == 0)
 			{
 				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"
-						+ "\nNous somme le " + dateFormat.format(date) + 
-						"\nIl est " + hourFormat.format(calendar.getTime()));
+						+ "\nNous somme le " + dateFormat.format(date)  
+						+ "\nIl est " + hourFormat.format(calendar.getTime()));
 				getEteindre();
 			}
 			else

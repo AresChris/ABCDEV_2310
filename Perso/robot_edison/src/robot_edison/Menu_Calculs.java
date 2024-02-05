@@ -20,36 +20,44 @@ public class Menu_Calculs {
 	public static void menuCalculs() // Sous menu des différents calculs
 	{
 		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
-				+ "\n6. Bissextile\n7. Menu Principal \n\n0. Quitter\nChoisis en donnant le numéro du programme : ");
+				+ "\n6. Bissextile\n7. Menu Principal \n8. Triangle\n9. Inversion de valeurs\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : ");
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
-		{
+			{
 			getRectangle();
-		}
+			}
 		else if(choixMenu == 2)
-		{
+			{
 			getCercle();
-		}
+			}
 		else if(choixMenu == 3)
-		{
+			{
 			getConvertisseur();
-		}
+			}
 		else if(choixMenu == 4)
-		{
+			{
 			getInteret();
-		}
+			}
 		else if(choixMenu == 5)
-		{
+			{
 			getTableMultiplication();
-		}
+			}
 		else if(choixMenu == 6)
-		{
+			{
 			getBissextile();
-		}
+			}
 		else if(choixMenu == 7)
-		{
+			{
 			getStart();
-		}
+			}
+		else if(choixMenu == 8)
+			{
+			getTriangle();
+			}
+		else if(choixMenu == 9)
+			{
+			getInversion();
+			}
 		else if(choixMenu == 0)
 		{
 			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
@@ -115,6 +123,14 @@ public class Menu_Calculs {
 	static void getBissextile()
 		{
 		Bissextile.bissextile();
+		}
+	static void getTriangle()
+		{
+		Triangle.calculPeriAire();
+		}
+	static void getInversion()
+		{
+		InversionValeur.inversion();
 		}
 		// Fin des Getters
 }

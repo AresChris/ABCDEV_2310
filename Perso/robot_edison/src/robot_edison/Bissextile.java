@@ -22,7 +22,7 @@ public class Bissextile {
 		int mois = 0;
 		int jour = 0;
 		int anneeA;
-		boolean moisValide = true, fevrier = true, monthThirty = true, jourValide = true;
+		boolean moisValide = true, jourValide = true, bissextile;
 		
 		System.out.print("Jour : ");
 		jour = sc.nextInt();
@@ -33,57 +33,70 @@ public class Bissextile {
 		System.out.print("Année : ");
 		anneeA = sc.nextInt();
 		
-		boolean bissextile = (anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0;  // Initialisation de la booleenne bissextile
-		
-			// Initialisation des booléens 
-		// Initialisation de la booléenne fevrier
-		if((mois == 4 || mois == 6 || mois == 9 || mois == 11) && (jour <=30 && jour >=1))
-		{
-			monthThirty = true; // mois à 30 jours
-		}
-		// Initialisation des booléens jour et mois
-			
-		// Initialisation de la booléeens qui vérifie que les conditions sont réunies pour que la date soit valide
-			
-				if((jour>=1 && jour<=30))
+		 
+				if((anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0)
+				{
+					bissextile = true;// Initialisation de la booleenne bissextile
+				}
+				else
+				{
+					bissextile = false;
+				}
+	// Initialisation des booléens jour et mois
+				if(jour>=1 && jour<=31)
 				{
 					jourValide = true;
+				}
+				else 
+				{
+					jourValide = false;
 				}
 			if((mois>=1 && mois<=12))  // Si les booléens date et mois sont true
 			{
 				moisValide = true;
 			}
-	// --------------------------------------------
-			if(moisValide && jourValide && monthThirty)
+			else
 			{
-				if(bissextile)
-					{
-						System.out.println("La date du " + jour + "/" + mois + "/" + anneeA + " est dans une année bissextile.");
-					
-					}else
-					{
-						System.out.println("La date du " + jour + "/" + mois + "/" + anneeA + " n'est pas dans une année bissextile");
-					}
-				// sinon date non valide
+				moisValide = false;
 			}
-			else if(moisValide && !monthThirty)
+	//-------------------------------------------------
+			if(moisValide && jourValide)
 			{
 				if(bissextile)
-				{
-					if(jour <1 || jour > 31)
 					{
-						System.out.println("La date n'est pas valide");
-					}	
-					else
-					{
-						System.out.println("La date du " + jour + "/" + mois + "/" + anneeA + " est dans une année bissextile");
+						if (jour > 29 && mois == 2)
+						{
+							System.out.println("Date non valide");
+						}
+						else if(jour <= 29 && mois == 2)
+						{
+							System.out.println("La date du " + decimalFormat.format(jour) + "/" + decimalFormat.format(mois) + "/" + anneeA + " est dans une année bissextile");
+						}
+						else
+						{
+							System.out.println("La date du " + decimalFormat.format(jour) + "/" + decimalFormat.format(mois) + "/" + anneeA + " est dans une année bissextile");
+						}
 					}
-				}
 				else
+					{
+						if(jour > 29 && mois == 2)
+						{
+							System.out.println("Date non valide");
+						}
+						else if(jour <= 29 && mois == 2)
+						{
+							System.out.println("La date du " + decimalFormat.format(jour) + "/" + decimalFormat.format(mois) + "/" + anneeA + " n'est pas dans une année bissextile");
+						}
+						else
+						{
+							System.out.println("La date du " + decimalFormat.format(jour) + "/" + decimalFormat.format(mois) + "/" + anneeA + " n'est pas dans une année bissextile");
+						}
+					}
+			}
+			else
 				{
-					System.out.println("La date du " + jour + "/" + mois + "/" + anneeA + " est dans une année bissextile");
+					System.out.println("Date non valide");
 				}
-			}		
 	}
 	static void bissextile()
 	{
@@ -97,7 +110,7 @@ public class Bissextile {
 			System.out.println("\tint mois = 0;\n"
 					+ "		int jour = 0;\n"
 					+ "		int anneeA;\n"
-					+ "		boolean jourValide = true, moisValide = true, dateValide = true, monthThirty = false, monthThirtyOne = false;\n"
+					+ "		boolean moisValide = true, jourValide = true, bissextile;\n"
 					+ "		\n"
 					+ "		System.out.print(\"Jour : \");\n"
 					+ "		jour = sc.nextInt();\n"
@@ -108,68 +121,70 @@ public class Bissextile {
 					+ "		System.out.print(\"Année : \");\n"
 					+ "		anneeA = sc.nextInt();\n"
 					+ "		\n"
-					+ "		boolean bissextile = (anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0;  // Initialisation de la booleenne bissextile\n"
-					+ "		\n"
-					+ "			// Initialisation des booléens en fonction des mois en entier\n"
-					+ "		if(mois ==2 || mois == 4 || mois == 6 || mois == 9 || mois == 11)\n"
-					+ "		{\n"
-					+ "			monthThirty = true;  // mois à 30 jours\n"
-					+ "		}\n"
-					+ "		if((mois == 1 || mois == 3 || mois == 5 || mois == 7 || mois == 8 || mois == 10 || mois == 12))\n"
-					+ "		{\n"
-					+ "			monthThirtyOne = true; // mois à 31 jours\n"
-					+ "		}\n"
-					+ "			// Initialisation des booleennes jour et mois\n"
-					+ "		if(jour > 31 || jour <1)\n"
-					+ "		{\n"
-					+ "			jourValide = false; // jours compris entre 1 et 31\n"
-					+ "		}\n"
-					+ "		if(mois > 12 || mois < 1)\n"
-					+ "		{\n"
-					+ "			moisValide = false; // mois compris entre 1 et 12\n"
-					+ "		}\n"
-					+ "			// Initialisation de la booleenne qui vérifie que les conditions sont réunies pour que la date soit valide\n"
-					+ "		if(jourValide && moisValide)  // si mois à 30 jour ET jour entre 1 et 30 ET mois entre 1 et 12\n"
-					+ "		{\n"
-					+ "			dateValide = true;\n"
-					+ "		}\n"
-					+ "		// --------------------------------------------\n"
-					+ "		if(!bissextile) \n"
-					+ "		{\n"
-					+ "			if(dateValide)\n"
-					+ "			{\n"
-					+ "				if (jour == 29 && mois == 2) \n"
+					+ "		 \n"
+					+ "				if((anneeA%4 == 0 && anneeA %100 != 0) || anneeA% 400 == 0)\n"
 					+ "				{\n"
-					+ "					System.out.println(\"Il n'y à pas de 29 février dans l'année \" + anneeA + \", et elle n'est pas bissextile !\");\n"
-					+ "				} \n"
-					+ "				else \n"
-					+ "				{\n"
-					+ "					System.out.println(\"La date n'est pas valide !\");\n"
+					+ "					bissextile = true;// Initialisation de la booleenne bissextile\n"
 					+ "				}\n"
-					+ "		}\n"
-					+ "			else\n"
-					+ "			{\n"
-					+ "				System.out.print(\"la date du \\\" + decimalFormat.format(jour) + \\\"/\\\" + formater.format(mois) +\\\"/\\\"+ anneeA + \\\" est dans une année bissextile !\"); //\n"
-					+ "			}\n"
-					+ "		} \n"
-					+ "			else \n"
-					+ "			{\n"
-					+ "			if (jour == 29 && mois == 2)\n"
-					+ "			{\n"
-					+ "				if(dateValide)\n"
+					+ "				else\n"
 					+ "				{\n"
-					+ "					System.out.println(\"la date du \" + formater.format(jour) + \"/\" + formater.format(mois) +\"/\"+ anneeA + \" est dans une année bissextile !\");\n"
+					+ "					bissextile = false;\n"
+					+ "				}\n"
+					+ "	// Initialisation des booléens jour et mois\n"
+					+ "				if(jour>=1 && jour<=31)\n"
+					+ "				{\n"
+					+ "					jourValide = true;\n"
 					+ "				}\n"
 					+ "				else \n"
 					+ "				{\n"
-					+ "					System.out.println(\"La date du \" + formater.format(jour) + \"/\" + formater.format(mois) +\"/\"+ anneeA + \" n'est pas dans une année bissextile !\");\n"
+					+ "					jourValide = false;\n"
 					+ "				}\n"
-					+ "			} \n"
+					+ "			if((mois>=1 && mois<=12))  // Si les booléens date et mois sont true\n"
+					+ "			{\n"
+					+ "				moisValide = true;\n"
+					+ "			}\n"
 					+ "			else\n"
 					+ "			{\n"
-					+ "				System.out.print(\"La date n'est pas valide !\\n\");\n"
+					+ "				moisValide = false;\n"
 					+ "			}\n"
-					+ "}\n");
+					+ "	//-------------------------------------------------\n"
+					+ "			if(moisValide && jourValide)\n"
+					+ "			{\n"
+					+ "				if(bissextile)\n"
+					+ "					{\n"
+					+ "						if (jour > 29 && mois == 2)\n"
+					+ "						{\n"
+					+ "							System.out.println(\"Date non valide\");\n"
+					+ "						}\n"
+					+ "						else if(jour <= 29 && mois == 2)\n"
+					+ "						{\n"
+					+ "							System.out.println(\"La date du \" + decimalFormat.format(jour) + \"/\" + decimalFormat.format(mois) + \"/\" + anneeA + \" est dans une année bissextile\");\n"
+					+ "						}\n"
+					+ "						else\n"
+					+ "						{\n"
+					+ "							System.out.println(\"La date du \" + decimalFormat.format(jour) + \"/\" + decimalFormat.format(mois) + \"/\" + anneeA + \" est dans une année bissextile\");\n"
+					+ "						}\n"
+					+ "					}\n"
+					+ "				else\n"
+					+ "					{\n"
+					+ "						if(jour > 29 && mois == 2)\n"
+					+ "						{\n"
+					+ "							System.out.println(\"Date non valide\");\n"
+					+ "						}\n"
+					+ "						else if(jour <= 29 && mois == 2)\n"
+					+ "						{\n"
+					+ "							System.out.println(\"La date du \" + decimalFormat.format(jour) + \"/\" + decimalFormat.format(mois) + \"/\" + anneeA + \" n'est pas dans une année bissextile\");\n"
+					+ "						}\n"
+					+ "						else\n"
+					+ "						{\n"
+					+ "							System.out.println(\"La date du \" + decimalFormat.format(jour) + \"/\" + decimalFormat.format(mois) + \"/\" + anneeA + \" n'est pas dans une année bissextile\");\n"
+					+ "						}\n"
+					+ "					}\n"
+					+ "			}\n"
+					+ "			else\n"
+					+ "				{\n"
+					+ "					System.out.println(\"Date non valide\");\n"
+					+ "				}");
 		}
 		else
 		{
@@ -241,18 +256,6 @@ public class Bissextile {
 	static void getEteindre()
 		{
 		Allumer_Eteindre.eteindre();
-		}
-	static void getMonthThirty()
-		{
-		Mois.getMonthThirty();
-		}
-	static void getMonthThirtyOne()
-		{
-		Mois.getMonthThirtyOne();
-		}
-	static void getFevrier()
-		{
-		Mois.getFevrier();
 		}
 	// Fin des Getters
 }

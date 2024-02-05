@@ -41,29 +41,18 @@ public class Boucle_for {
 			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
+			System.out.println("Le robot est éteint pressez A pour l'allumer");
+			String affichage = sc.next();
+				if(affichage.contains("A") || affichage.contains("a"))
+				{
+					getStart();
+				}
+				else
+				{
+					getStart();
+				}
 		}
-	}	
-		/*
-		 * 
-		 String choixMenu = sc.next();
-			if(choixMenu.contains("R"))
-			{
-				getStart();
-			}
-			else if(choixMenu.contains("E") || choixMenu.contains("e"))
-			{
-				calculInteret();
-			}
-			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
-			{
-				getMenuCalculs();
-			}
-			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-			{
-				getEteindre();
-			}
-		 */
-
+	}
 	static void getMenuFor()
 		{
 		menuBoucleFor();

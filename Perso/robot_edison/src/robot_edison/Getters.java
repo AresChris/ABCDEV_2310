@@ -68,7 +68,7 @@ public class Getters {
 		}
 	static void getMenuFor()
 		{
-			Boucle_for.menuBoucleFor();
+		Boucle_for.menuBoucleFor();
 		}
 	static void getCercle()
 		{
@@ -86,17 +86,14 @@ public class Getters {
 		{
 		PlusPetitPlusGrand.petitGrand();
 		}
-	static void getMonthThirty()
+	static void getTriangle()
 		{
-		Mois.getMonthThirty();
+		Triangle.calculPeriAire();
 		}
-	static void getMonthThirtyOne()
+	static void getInversion()
 		{
-		Mois.getMonthThirtyOne();
-		}
-	static void getFevrier()
-		{
-		Mois.getFevrier();
+		InversionValeur.inversion();
 		}
 	// Fin des getters
+	
 }
