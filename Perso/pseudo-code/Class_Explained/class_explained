@@ -1,0 +1,58 @@
+package test;
+
+public class Main {
+    public static void main(String[] args) {
+        Example exampleA = new Example("AAA", "AAA", "123");
+        Example exampleB = new Example("BBB", "BBB", "456");
+        Example exampleC = new Example("CCC", "CCC", "789");
+
+
+        System.out.println(Example.CONSTANTE);  //Accés directe car c'est static
+        Example.staticFunction();               //Accés directe depuis la classe car c'est static
+
+        exampleA.prenom = "test";       //Possible car les classes `Main` et `Example` sont dans le même package
+        exampleA.nom = "test";          //Possible car la variable est public -> donc accéssible depuis n'importe ou
+        //exampleA.matricule = "test";  //Impossible car la variable est `private`
+        exampleA.setMatricule("123456789"); //On utilise donc le `setter` et non un accés directe
+        System.out.println(exampleA.displayName());         //Possible car la fonction est public. et vas afficher `test test` -> Car on a changer nom et prénom dans l'objet de exampleA
+        System.out.println(exampleB.displayName());     //Possible comme pour exempleA, mais affichera `BBB BBB`
+
+        System.out.println(exampleC.getMatricule());    //Affichera `789`
+    }
+}
+
+
+package test;
+
+public class Example {
+
+    public static final String CONSTANTE = "Example de constante";
+
+    public static void staticFunction() {
+        System.out.println("This is my static function");
+    }
+
+    public String nom;
+
+    String prenom;
+
+    private String matricule;
+
+    public Example(String nom, String prenom, String matricule) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.matricule = matricule;
+    }
+
+    public String displayName() {
+        return this.nom + " " + this.prenom;
+    }
+
+    public String getMatricule() {
+        return matricule;
+    }
+
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
+    }
+}

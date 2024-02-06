@@ -8,13 +8,13 @@ import java.util.Scanner;
 
 public class Robot_Edison {
 
-	private static boolean isOn;
-	static int batteryLeft;
-	static String idRobot;
+	private boolean isOn; // test si est allumé
+	private int batteryLeft; // batterie restante
+	private String idRobot; // nom du robot
 	
-	public boolean turnOn;
-	public boolean turnOff;
-	public boolean chargeBattery;
+	public boolean turnOn; // Allumer
+	public boolean turnOff; // Eteindre
+	public boolean chargeBattery; // Charger
 	public int menu;  // Accès rapide aux fonctionnalités via le switch-case
 	
 	 // Utiles 
@@ -83,6 +83,13 @@ public class Robot_Edison {
 	
 	// Fin du programme main
 	
+	// Getter de l'objet
+	public int getBattery()
+	{
+		return batteryLeft;
+	}
+	
+	// Fin des getters de l'objet
 	
 	// Getters
 	public static void getMenuTableaux() 

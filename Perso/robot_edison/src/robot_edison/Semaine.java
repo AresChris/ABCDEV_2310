@@ -26,17 +26,17 @@ public class Semaine {
 	
 	 Semaine titleSemaine()
 		{
-		Semaine.LUNDI = title("Lundi");
-		Semaine.MARDI = title("Mardi");
-		Semaine.MERCREDI = title("Mercredi");
-		Semaine.JEUDI = title("Jeudi");
-		Semaine.VENDREDI = title("Vendredi");
-		Semaine.SAMEDI = title("Samedi");
-		Semaine.DIMANCHE = title("dimanche");
-		return title("");
+		EnumSemaine.LUNDI = title("Lundi");
+		EnumSemaine.MARDI = title("Mardi");
+		EnumSemaine.MERCREDI = title("Mercredi");
+		EnumSemaine.JEUDI = title("Jeudi");
+		EnumSemaine.VENDREDI = title("Vendredi");
+		EnumSemaine.SAMEDI = title("Samedi");
+		EnumSemaine.DIMANCHE = title("dimanche");
+		return title();
 		}
 	
-	private Semaine title(String string) {
+	private EnumSemaine title(String string) {
 		
 		return titleSemaine();
 	}
