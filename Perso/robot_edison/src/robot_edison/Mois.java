@@ -5,7 +5,21 @@ import java.util.List;
 
 public enum Mois {
 
-	JANVIER(1, 31),
+	/* switch (Mois)
+		JANVIER -- retourner 1
+		FEVRIER -- retourner 2
+		etc.
+		
+			switch (methode)
+				case JANVIER:
+					'code'
+					break;
+				case FEVRIER:
+					'code'
+					break;
+				etc.
+	*/
+	JANVIER(1, 31),  
 	FEVRIER(2, 28),
 	MARS(3, 31),
 	AVRIL(4, 30),
@@ -23,10 +37,10 @@ public enum Mois {
 		
 		// Constructeur dans Class et enum
 		Mois(int _mois, int _jours)
-		{
+			{
 			this.mois = _mois;
 			this.jours = _jours;
-		}	
+			}	
 		
 	static void setFevrier(int _anneeA)
 	{
@@ -52,8 +66,7 @@ public enum Mois {
 		{
 		Mois FEVRIER;
 		return getFevrier();
-		}
-				
+		}			
 }		
 		//private static final List<Integer> MOIS = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12); // Mois et leur index
 

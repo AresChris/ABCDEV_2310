@@ -19,8 +19,8 @@ public class Nota_Bene {
 		
 	static void notaBene()
 	{
-		System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Switch case\n4. Ajouter le code en print sous conditions avec commentaires\n"
-				+ "5. Tableaux boucle for !!"
+		System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Switch case\n4. Utiliser Enum Class sur le programme 'Semaine'\n"
+				+ "5. Tableaux boucle for !!\n6. Finir 'Triangle'"
 				+ "\n\n1. Revenir au menu principal\n2. Quitter");
 		//int choixMenu = sc.nextInt();
 		int choixMenu = sc.nextInt();

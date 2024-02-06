@@ -12,7 +12,7 @@ public class Triangle {
 		System.out.println("Saisis les valeurs des trois cotés :\n");
 		
 		System.out.print("A : ");
-		double a = sc.nextInt();
+		double a = sc.nextInt(); // base
 		System.out.print("");
 		
 		System.out.print("B : ");
@@ -24,10 +24,13 @@ public class Triangle {
 		System.out.print("");
 		
 	double p = a + b + c; // calcul du périmetre
+	// double hauteur = Math.pow(a*b, 2) + Math.pow(a*c, 2) - 2 *(a*b) *(a*c)*Math.cos(b*a*c);
+	double hauteur = Math.pow(b*c, 2);
 	double aire = Math.sqrt(((p/2-a)*(p/2-b)*(p/2-c))); // calcul de l'aire; // variable aire
 	
 	
-	System.out.println("L'aire du triangle est d'environ : " + Math.round(aire*100.000)/100.000); 
+	System.out.println("\"Le calcul de l'aire n'est pas encore fait :\nL'aire du triangle est d'environ : " + Math.round(aire*100.000)/100.000); 
+	System.out.println("La hauteur : " + hauteur);
 	System.out.println("Le périmètre du triangles est de : " + p);
 		System.out.println("Afficher le code ? Y/N");
 		String answer = sc.next();
@@ -72,8 +75,7 @@ public class Triangle {
 						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 						{
 							getEteindre();
-						}
-						
+						}			
 }	
 	static void getTriangle()
 		{
@@ -91,6 +93,5 @@ public class Triangle {
 		{
 		Allumer_Eteindre.eteindre();
 		}
-	
 }	
 

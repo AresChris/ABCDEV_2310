@@ -1,5 +1,7 @@
 package robot_edison;
 
+import java.util.Scanner;
+
 public class Getters {
 
 	static void getMenuTableaux() 
@@ -20,7 +22,7 @@ public class Getters {
 		}
 	static void getCellularAutomata()
 		{
-		 Cellular_Automata.cellularAutomata();
+		Cellular_Automata.cellularAutomata();
 		}
 	static void getRectangle()
 		{
@@ -94,6 +96,67 @@ public class Getters {
 		{
 		InversionValeur.inversion();
 		}
+	static void getJourSemaine()
+		{
+		Semaine.jourSemaine("");
+		}
+	
 	// Fin des getters
 	
+	// Datas à copier
+	static void datas()
+	{
+	Scanner sc = new Scanner(System.in);
+	System.out.println("Afficher le code ? Y/N");
+	String affichage = sc.next();
+	if(affichage.contains("Y") || affichage.contains("y"))
+	{
+		System.out.print("\tint nombres, plusGrand = 0;\n"
+				+ "\tint position = 0;\n"
+				+ "		\n"
+				+ "\tScanner sc = new Scanner(System.in);\n"
+				+ "\n"
+				+ "\tSystem.out.print(\"Saisissez le nombre de valeurs du tableau : \");\n"
+				+ "\tnombres = sc.nextInt();\n"
+				+ "\n"
+				+ "\tint[] tableau = new int[nombres];\n"
+				+ "		\n"
+				+ "\tfor(int i = 0; i<=tableau.length-1; i++) "
+				+ "\n\t{\n"
+				+ "\t System.out.print(\"N° \" + (i+1) + \" :\");\n"
+				+ "\t tableau[i] = sc.nextInt();\n"
+				+ "\t System.out.print(\"\");\n"
+				+ "\t	if(tableau[i] > plusGrand) "
+				+ "\n\t\t{\n"
+				+ "\t    plusGrand = tableau[i];\n"
+				+ "\t    position = i + 1;\n"
+				+ "\n\t\t}"
+				+ "\n}");
+	}
+	
+	
+		System.out.println("\nR pour retourner au menu principal\n"
+				+ "E pour relancer le dernier programme"
+				+ "\nB pour revenir au menu précédent"
+				+ "\nQ pour quitter"); 
+		String choixMenu = sc.next();
+		
+			if(choixMenu.contains("R") || choixMenu.contains("r"))
+				{
+				getStart();
+				}
+			else if(choixMenu.contains("E") || choixMenu.contains("e"))
+				{
+				// Lien vers le programme en cours -- relancer le programme
+				}
+			else if(choixMenu.contains("B") || choixMenu.contains("b"))
+				{
+				// Lien vers le menu précédent
+				}
+			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+				{
+				getEteindre();
+				}
+	}
+	// Fin des datas à copier
 }

@@ -43,27 +43,59 @@ public class Moyenne {
 				System.out.println("La moyenne est de " + moyenne); // affiche la moyenne, aide à vérifier l'exactitude du résultat
 				System.out.println("Il y à " + supMoyenne + " notes au dessus de la moyenne"); // résultat du nombre de notes au dessus de la moyenne
 				
-				System.out.println("\nR pour retourner au menu principal"
-						+ "\nE pour relancer le dernier programme"
-						+ "\nB pour revenir au menu précédent"
-						+ "\nQ pour quitter"); 
-				String choixMenu = sc.next();
-					if(choixMenu.contains("R") || choixMenu.contains("r"))
-					{
-						getStart();
-					}
-					else if(choixMenu.contains("E") || choixMenu.contains("e"))
-					{
-						getShowValTab();
-					}
-					else if(choixMenu.contains("B") || choixMenu.contains("b"))
-					{
-						getMenuFor();
-					}
-					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-					{
-						getEteindre();
-					}
+				System.out.println("Afficher le code ? Y/N");
+				String affichage = sc.next();
+				if(affichage.contains("Y") || affichage.contains("y"))
+				{
+					System.out.print("\tint nbNotes = sc.nextInt();  	// saisie de l'utilisateur\r\n"
+							+ "		double[] tabNotes = new double[nbNotes]; // tableau contenant la saisie de l'utilisateur, détermine sa longueur\r\n"
+							+ "\r\n"
+							+ "		double moyenne = 0;\r\n"
+							+ "		int supMoyenne = 0;\r\n"
+							+ "		double somme = 0;\r\n"
+							+ "		\r\n"
+							+ "			for(int i = 0; i<tabNotes.length; i++)\r\n"
+							+ "			{\r\n"
+							+ "				System.out.print(\"Note \" + (i+1) + \":\");\r\n"
+							+ "				tabNotes[i] = sc.nextInt();\r\n"
+							+ "				System.out.print(\"\");\r\n"
+							+ "				somme = somme + tabNotes[i];\r\n"
+							+ "			}\r\n"
+							+ "			moyenne = somme / nbNotes;\r\n"
+							+ "			for(int j=0; j<tabNotes.length; j++)\r\n"
+							+ "			{\r\n"
+							+ "				if(tabNotes[j] > moyenne)\r\n"
+							+ "				{\r\n"
+							+ "					supMoyenne +=1;\r\n"
+							+ "				}\r\n"
+							+ "			}\r\n"
+							+ "				System.out.println(\"La moyenne est de \" + moyenne); // affiche la moyenne, aide à vérifier l'exactitude du résultat\r\n"
+							+ "				System.out.println(\"Il y à \" + supMoyenne + \" notes au dessus de la moyenne\"); // résultat du nombre de notes au dessus de la moyenne");
+				}
+				
+				
+					System.out.println("\nR pour retourner au menu principal\n"
+							+ "E pour relancer le dernier programme"
+							+ "\nB pour revenir au menu précédent"
+							+ "\nQ pour quitter"); 
+					String choixMenu = sc.next();
+					
+						if(choixMenu.contains("R") || choixMenu.contains("r"))
+							{
+							getStart();
+							}
+						else if(choixMenu.contains("E") || choixMenu.contains("e"))
+							{
+							getMoyenne();
+							}
+						else if(choixMenu.contains("B") || choixMenu.contains("b"))
+							{
+							getMenuFor();
+							}
+						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+							{
+							getEteindre();
+							}
 	}
 	static void getMoyenne()
 		{
