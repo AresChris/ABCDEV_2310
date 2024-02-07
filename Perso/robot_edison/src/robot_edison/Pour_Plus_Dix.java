@@ -6,7 +6,7 @@ public class Pour_Plus_Dix {
 
 	static Scanner sc = new Scanner(System.in);
 
-	static void plusDix()
+	public boolean plusDix()
 		{
 		System.out.println("\tAjouter 1 à chaque tour de boucle\n");
 		System.out.println("Inscrire un nombre :");
@@ -53,28 +53,25 @@ public class Pour_Plus_Dix {
 						{
 							getEteindre();
 						}
+						return true;
 				}
 
 	// Getters
-	static void getPourPlusDix()
-	{
-		plusDix();
-	}
-	static void getMenuFor()
-	{
-		Boucle_for.menuBoucleFor();
-	}
-	static void getStart()
-	{
-	Start.getStart();
-	}
-	static void getCercle()
-	{
-	Cercle.cercle();
-	}
-	static void getEteindre()
-	{
-	Allumer_Eteindre.eteindre();
-	}
+	public boolean getPourPlusDix()
+		{
+		return plusDix();
+		}
+	public boolean getStart()
+		{
+		return getStart();
+		}
+	public boolean getMenuFor()
+		{
+		return getMenuFor();
+		}
+	public boolean getEteindre()
+		{
+		return getEteindre();
+		}
 	// Fin des getters
 }

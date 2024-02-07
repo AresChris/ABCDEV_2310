@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="ageMajeurMineur/src"/>
+	<classpathentry kind="src" path="exercice_1/src"/>
+	<classpathentry kind="src" path="exercice_2/src"/>
+	<classpathentry kind="src" path="exercice_3/src"/>
+	<classpathentry kind="src" path="exercice_4/src"/>
+	<classpathentry kind="src" path="exercice_5/src"/>
+	<classpathentry kind="src" path="exercice_6/src"/>
+	<classpathentry kind="src" path="exercices/src"/>
+	<classpathentry kind="src" path="plusGrand/src"/>
+	<classpathentry kind="output" path="ageMajeurMineur/bin"/>
+</classpath>

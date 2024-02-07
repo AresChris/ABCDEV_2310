@@ -28,135 +28,105 @@ public class Robot_Edison {
 	
 	// Constructeur
 	public Robot_Edison(boolean _isOn, int _batteryLeft, String _idRobot)
-	{
+		{
 		isOn = _isOn;
 		batteryLeft = _batteryLeft;
 		idRobot = _idRobot;
-	}
+		}
 	public Robot_Edison()
-	{
+		{
 		isOn = false;
 		batteryLeft = 80;
 		idRobot = "Edison";
-	}
+		}
+	Robot_Edison robot_edison = new Robot_Edison(true, 80, "Edison");
 	// Fin de la déclaration du constructeur
 	
 	// Tests booleens
-	public boolean testIsOn()
-	{
-		if(isOn)
-		{
-			System.out.println("Oui, le robot est allumé");
-			return true;
-		}
-		else
-		{
-			System.out.println("Non, le robot est éteint");
-			return false;
-		}
-	}
-	void testBatteryLeft()
-	{
-		System.out.println("Il reste " + batteryLeft + "% de batterie dans le robot.");
-	}
-	 // Fin tests booleens
 	
-	// isOn
-	public static boolean isOn()
-	{
-		if(isOn)
+	public boolean testIsOn()
 		{
+			if(isOn)
+				{
+				System.out.println("Oui, le robot est allumé");
+				return true;
+				}
+			else
+				{
+				System.out.println("Non, le robot est éteint");
+				return false;
+				}
+		}
+	public boolean chargerBattery()
+		{
+			if(batteryLeft == 100)  // Si la batterie est à 100%
+				{
+				System.out.println("La batterie est déjà chargée à 100%");
+				return false;
+				}
+			else if(getBatteryLeft() > 30)  // Si le niveau de batterie est superieur à 30%
+			{
+				System.out.println("Le niveau de batterie est actuellement de " + getBatteryLeft()
+						+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
+						+ "\nVoulez-vous tout de même le charger ? Y/N");
+				String str = sc.next();
+					if(str.contains("Y") || str.contains("y"))
+						{
+						batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
+						System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
+						getStart();
+						return true;	
+						}
+					else
+						{
+						System.out.println("\n\tLe niveau de charge est inchangé : " + getBatteryLeft() + "%");
+						getStart();
+						return false;
+						}
+			}
 			return true;
 		}
-		else
-		{
-			return false;
-		}
-	}
 //------------------------------------------------------------------------------------------------------------------------	
 	// Ajout des programmes et fonctionnalités du robot
 	
-	public void demarrage()  // Affiche la notice, regroupe toutes les fonctionnalitées
-	{
-		getStart();
-	}
+	// Programme Main
+	public boolean demarrage()  // Affiche la notice, regroupe toutes les fonctionnalitées
+		{
+		return getStart();
+		}
+	// Fin du programme Main
 	
-	// Fin du programme main
-	
-	// Getter de l'objet
-	public int getBattery()
-	{
-		return batteryLeft;
-	}
-	
-	// Fin des getters de l'objet
-	
+	// Setter de l'objet
+		public void setBatteryLeft(int batteryLeft)
+			{
+			this.batteryLeft = batteryLeft;
+			}
+		public void setIdRobot(String idRobot)
+			{
+			this.idRobot = idRobot;
+			}
+	// Fin des setters de l'objet
+		// Getters du robot
+		public int getBatteryLeft()
+			{
+			return batteryLeft;
+			}	
+		public String getId()
+			{
+			return idRobot;
+			}	
+		public boolean getIsOn()
+			{
+			return isOn;
+			}
+		// Fin des getters du robot
+		
 	// Getters
-	public static void getMenuTableaux() 
+	public boolean getStart()
 		{
-			Menu_Tableaux.getMenuTableaux();
+		return getStart();
 		}
-	public static void getMenuCalculs()
-		{
-			Menu_Calculs.getMenuCalculs();
-		}
-	public static void getAllumer()
-		{
-			Allumer_Eteindre.getAllumer();	
-		}
-	public static void getChargerBatterie()
-		{
-			Charger_Batterie.chargerBatterie();
-		}
-	public static void getAfficherHeure()
-		{
-		Afficher_Heure.afficherDateHeure();
-		}
-	public static void getCellularAutomata()
-		{
-		 Cellular_Automata.cellularAutomata();
-		}
-	public static void getRectangle()
-		{
-		Rectangle.rectangle();
-		}
-	public static void getCercle()
-		{
-		Cercle.cercle();
-		}
-	public static void getConvertisseur()
-		{
-		Convertisseur_km_miles.convertisseurKmMiles();
-		}
-	public static void getInteret()
-		{
-		Interet_Banque.calculInteret();
-		}		
-	public static void getTableMultiplication()
-		{
-		Table_Multiplication.tableDeMultiplication();
-		}
-	public static void getStart()
-		{
-		Start.start();
-		}
-	static boolean getIson()
-		{
-		return isOn();
-		}
-	static int getBatteryLeft()
-		{
-		return batteryLeft;
-		}
-	static void getBissextile()
-		{
-		Bissextile.bissextile();
-		}
-	// Fin des getters
-	
-		
-		
-	// Fin des programmes du robot
+	// Fin des getters	
 }
 
 

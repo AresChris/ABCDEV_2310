@@ -15,7 +15,7 @@ public class Boucle_for {
 			static Date date = new Date(); // retourne la date actuelle
 			static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 			// Fin de déclaration des utiles
-	static void menuBoucleFor()
+	public boolean menuBoucleFor()
 	{
 		System.out.println("\tBoucles for");
 		System.out.println("\n\n1. Ajouter 1 à chaque tour de boucle\n2. Afficher les valeurs d'un tableau\n3. Moyenne\n4. Trouver la plus grande valeur\n\n0. Quitter");
@@ -52,33 +52,36 @@ public class Boucle_for {
 					getStart();
 				}
 		}
+		return true;
 	}
-	static void getMenuFor()
+	// Getters
+	public boolean getMenuFor()
 		{
-		menuBoucleFor();
+		return menuBoucleFor();
 		}
-	static void getPourPlusDix()
+	public boolean getPourPlusDix()
 		{
-		Pour_Plus_Dix.plusDix();
+		return getPourPlusDix();
 		}
-	static void getStart()
+	public boolean getPetitGrand()
 		{
-		Start.getStart();
+		return  getPetitGrand();
 		}
-	static int getBatteryLeft()
+	public boolean getShowValTab()
 		{
-		return Robot_Edison.batteryLeft;
+		return getShowValTab();
 		}
-	static void getShowValTab()
+	public boolean getMoyenne()
 		{
-		Show_Val_Tab.showValTab();
+		return getMoyenne();
 		}
-	static void getMoyenne()
+	public boolean getStart()
 		{
-		Moyenne.moyenne();
+		return getStart();
 		}
-	static void getPetitGrand()
+	public int getBatteryLeft()
 		{
-		PlusPetitPlusGrand.petitGrand();
+		return getBatteryLeft();
 		}
+	// Fin des getters
 }

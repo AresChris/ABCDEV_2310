@@ -4,107 +4,118 @@ import java.util.Scanner;
 
 public class Getters {
 
-	static void getMenuTableaux() 
-		{
-		Menu_Tableaux.getMenuTableaux();
-		}
-	static void getMenuCalculs()
-		{
-		Menu_Calculs.getMenuCalculs();
-		}
-	static void getChargerBatterie()
-		{
-		Charger_Batterie.chargerBatterie();
-		}
-	static void getAfficherHeure()
-		{
-		Afficher_Heure.afficherDateHeure();
-		}
-	static void getCellularAutomata()
-		{
-		Cellular_Automata.cellularAutomata();
-		}
-	static void getRectangle()
-		{
-		Rectangle.rectangle();
-		}
-	static void getConvertisseur()
-		{
-		Convertisseur_km_miles.convertisseurKmMiles();
-		}
-	static void getInteret()
-		{
-		Interet_Banque.calculInteret();
-		}
-	static void getTableMultiplication()
-		{
-		Table_Multiplication.tableDeMultiplication();
-		}
-	static void getStart()
-		{
-		Start.getStart();
-		}
-	static int getBatteryLeft()
-		{
-		return Robot_Edison.batteryLeft;
-		}
-	static String getIdRobot()
-		{
-		return Robot_Edison.idRobot;
-		}
-	public static void getAllumer()
-		{
-		Allumer_Eteindre.allumer();
-		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
-		}
-	static void getBissextile()
-		{
-		Bissextile.bissextile();
-		}
-	static void getPourPlusDix()
-		{
-		Pour_Plus_Dix.plusDix();
-		}
-	static void getMenuFor()
-		{
-		Boucle_for.menuBoucleFor();
-		}
-	static void getCercle()
-		{
-		Cercle.cercle();
-		}
-	static void getShowValTab()
-		{
-		Show_Val_Tab.showValTab();
-		}
-	static void getMoyenne()
-		{
-		Moyenne.moyenne();
-		}
-	static void getPetitGrand()
-		{
-		PlusPetitPlusGrand.petitGrand();
-		}
-	static void getTriangle()
-		{
-		Triangle.calculPeriAire();
-		}
-	static void getInversion()
-		{
-		InversionValeur.inversion();
-		}
-	static void getJourSemaine()
-		{
-		Semaine.jourSemaine("");
-		}
 	
-	// Fin des getters
+	// Getters des menus
+	public boolean getMenuTableaux()
+		{
+		return getMenuTableaux();
+		}
+	public boolean getMenuCalcul()
+		{
+		return getMenuCalcul();
+		}
+	public boolean getStart()
+		{
+		return getStart();
+		}
+	public boolean getMenuFor()
+		{
+		return getMenuFor();
+		}
+	// Fin des getters menus
 	
+	// Getters du robot
+	public boolean getAllumer()
+		{
+		return getAllumer();
+		}
+	public boolean getEteindre()
+		{
+		return getEteindre();
+		}
+	public boolean getChargerBatterie()
+		{
+		return getChargerBatterie();
+		}
+	public String getAfficherHeure()
+		{
+		return getAfficherHeure();
+		}
+	public int getBatteryLeft()
+		{
+		return getBatteryLeft();
+		}
+	public String getId()
+		{
+		return getId();
+		}
+	public boolean getIsOn()
+		{
+		return getIsOn();
+		}
+	// Fin des getters du robot
+	
+	// Getters des programmes
+	public boolean getCellularAutomata()
+		{
+		 return getCellularAutomata();
+		}
+	public boolean getCercle()
+		{
+		return getCercle();
+		}
+	public boolean getRectangle()
+		{
+		return getRectangle();
+		}
+	public boolean getConvertisseur()
+		{
+		return getConvertisseur();
+		}
+	public boolean getCalculInteret()
+		{
+		return getCalculInteret();
+		}
+	public int getTableDeMultiplication()
+		{
+		return getTableDeMultiplication();
+		}
+	public boolean getBissextile()
+		{
+		return getBissextile();
+		}
+	public boolean getPourPlusDix()
+		{
+		return getPourPlusDix();
+		}
+	public boolean getShowValTab()
+		{
+		return getShowValTab();
+		}
+	public boolean getMoyenne()
+		{
+		return getMoyenne();
+		}
+	public boolean getPetitGrand()
+		{
+		return  getPetitGrand();
+		}
+	public boolean getTriangle()
+		{
+		return getTriangle();
+		}
+	public boolean getInversion()
+		{
+		return getInversion();
+		}
+	public String getJourSemaine()
+		{
+		return getJourSemaine();
+		}
+	// Fin des getters programmes
+
 	// Datas à copier
-	static void datas()
+	public String datas()
 	{
 	Scanner sc = new Scanner(System.in);
 	System.out.println("Afficher le code ? Y/N");
@@ -133,7 +144,7 @@ public class Getters {
 				+ "\n\t\t}"
 				+ "\n}");
 	}
-	
+		sc.close();
 	
 		System.out.println("\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
@@ -157,6 +168,8 @@ public class Getters {
 				{
 				getEteindre();
 				}
-	}
+		return affichage;
+	} 
 	// Fin des datas à copier
+
 }

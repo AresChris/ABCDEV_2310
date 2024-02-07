@@ -15,7 +15,7 @@ public class Moyenne {
 				static Date date = new Date(); // retourne la date actuelle
 				static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 				// Fin de déclaration des utiles
-	static void moyenne()
+	public boolean moyenne()
 	{
 		System.out.println("Combien de notes ?"); // determine la longueur du tableau
 		int nbNotes = sc.nextInt();  	// saisie de l'utilisateur
@@ -96,25 +96,24 @@ public class Moyenne {
 							{
 							getEteindre();
 							}
+						return true;
 	}
-	static void getMoyenne()
+	// Getters
+	public boolean getMoyenne()
 		{
-		moyenne();
+		return moyenne();
 		}
-	static void getShowValTab()
+	public boolean getStart()
 		{
-		Show_Val_Tab.showValTab();
+		return getStart();
 		}
-	static void getStart()
+	public boolean getEteindre()
 		{
-		Start.getStart();
+		return getEteindre();
 		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
-		}
-	static void getMenuFor()
-		{
-		Boucle_for.menuBoucleFor();
-		}
+	public boolean getMenuFor()
+	{
+	return getMenuFor();
+	}
+	// Fin des getters
 }

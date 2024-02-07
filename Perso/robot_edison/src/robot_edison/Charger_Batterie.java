@@ -16,51 +16,48 @@ public class Charger_Batterie {
 		Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 	
-		static int batteryLeft;
-	static boolean chargerBatterie()  // Permet de charger la batterie à 100%
+		
+		
+	
+	public boolean chargerBatterie()  // Permet de charger la batterie à 100%
 	{
-		if(batteryLeft == 100)  // Si la batterie est à 100%
+		if(this.getBatteryLeft() == 100)  // Si la batterie est à 100%
 		{
 			System.out.println("La batterie est déjà chargée à 100%");
-			return false;
 		}
-		else if(batteryLeft > 30)  // Si le niveau de batterie est superieur à 30%
+		else if(this.getBatteryLeft() > 30)  // Si le niveau de batterie est superieur à 30%
 		{
-			System.out.println("Le niveau de batterie est actuellement de " + batteryLeft
+			System.out.println("Le niveau de batterie est actuellement de " + getBatteryLeft()
 					+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
 					+ "\nVoulez-vous tout de même le charger ? Y/N");
 			String str = sc.next();
 				if(str.contains("Y") || str.contains("y"))
 				{
-					batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
-					System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + batteryLeft + "%");
-					getStart();
-					return true;	
+					System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
 				}
 				else
 				{
-					System.out.println("\n\tLe niveau de charge est inchangé : " + batteryLeft + "%");
-					getStart();
-					return false;
+					System.out.println("\n\tLe niveau de charge est inchangé : " + getBatteryLeft() + "%");
 				}
 		}
 		else  // Si le niveau de batterie est inferieur à 30%
 		{
-			batteryLeft = 100;   // Le niveau de charge de la batterie passe à 100%
-			System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + batteryLeft + "%");
-			getStart();
-			return true;
+			System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
 		}
-		
+		getStart();
+		return true;
 	}
 	
-	static void getCharger()
-	{
-		chargerBatterie();
-	}
-	static void getStart()
-	{
-		Start.start();
-	}
-	
+	public boolean getChargerBatterie()
+		{
+		return getChargerBatterie();
+		}
+	public int getBatteryLeft()
+		{
+		return this.getBatteryLeft();
+		}
+	public boolean getStart()
+		{
+		return getStart();
+		}
 }

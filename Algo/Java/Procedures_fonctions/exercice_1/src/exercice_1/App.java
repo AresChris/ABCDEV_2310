@@ -16,12 +16,12 @@ public class App {
 		
 		System.out.println("Saisir le deuxième nombre : ");
 		b = sc.nextInt();
-		
+		System.out.println("L'ancienne valeur de a : " + a);
+		System.out.println("L'ancienne valeur de b : " + b);
 		c = a;
 		a = b;
 		b = c;
-		System.out.println("L'ancienne valeur de a : " + a);
-		System.out.println("L'ancienne valeur de b : " + b);
+		
 		System.out.println("La nouvelle valeur de a : " + a);
 		System.out.println("La nouvelle valeur de b : " + b);
 	}

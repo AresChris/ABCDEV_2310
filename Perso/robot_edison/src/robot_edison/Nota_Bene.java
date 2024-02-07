@@ -36,24 +36,14 @@ public class Nota_Bene {
 			getEteindre();
 		}
 	}
-	public static void getAllumer()
-		{
-	Allumer_Eteindre.allumer();
-		}
-	static void getEteindre()
-		{
-	Allumer_Eteindre.eteindre();
-		}
-	static void getStart()
+	// Getters
+	public boolean getStart()
 	{
-		Start.start();
+	return getStart();
 	}
-	static int getBatteryLeft()
+	public boolean getEteindre()
 	{
-		return Robot_Edison.batteryLeft;
+	return getEteindre();
 	}
-	static void getNotaBene()
-	{
-		notaBene();
-	}
+	// Fin des getters
 }

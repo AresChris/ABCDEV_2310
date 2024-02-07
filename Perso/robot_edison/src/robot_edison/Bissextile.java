@@ -98,7 +98,7 @@ public class Bissextile {
 					System.out.println("Date non valide");
 				}
 	}
-	static void bissextile()
+	public boolean bissextile()
 	{
 		System.out.println("\t\tBiisextile\n\tVérifie si une date est valide\n\t et si l'année est bissextile\n\t------------------------------\n");
 		verifierValide();
@@ -203,7 +203,7 @@ public class Bissextile {
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					getMenuCalculs();
+					getMenuCalcul();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
@@ -226,7 +226,7 @@ public class Bissextile {
 			}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
-				getMenuCalculs();
+				getMenuCalcul();
 			}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 			{
@@ -234,28 +234,25 @@ public class Bissextile {
 			}
 		 
 		sc.close();
+		return true;
 	}
 	
 	// Getters
-	static void getBissextile()
+	public boolean getBissextile()
 		{
-		bissextile();
+		return bissextile();
 		}
-	static void getStart()
+	public boolean getStart()
 		{
-		Start.getStart();
+		return getStart();
 		}
-	static void getInteret()
+	public boolean getMenuCalcul()
 		{
-		Interet_Banque.calculInteret();
+		return getMenuCalcul();
 		}
-	static void getMenuCalculs()
+	public boolean getEteindre()
 		{
-		Menu_Calculs.getMenuCalculs();
-		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
+		return getEteindre();
 		}
 	// Fin des Getters
 }

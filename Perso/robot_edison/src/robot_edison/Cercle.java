@@ -1,4 +1,5 @@
-’’package robot_edison;
+package robot_edison;
+
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -17,7 +18,7 @@ public class Cercle {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	static void cercle()
+	public boolean cercle()
 	{
 		double rayon;
 		//coordonnees variables du point A
@@ -131,7 +132,7 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					getStart();
+					//getStart();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
@@ -139,11 +140,11 @@ public class Cercle {
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					getMenuCalculs();
+					//getMenuCalculs();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-					getEteindre();
+					//getEteindre();
 				}
 			}
 				System.out.println("\nR pour retourner au menu principal\n"
@@ -153,7 +154,7 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					getStart();
+					//getStart();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
@@ -161,29 +162,18 @@ public class Cercle {
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					getMenuCalculs();
+					//getMenuCalculs();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-					getEteindre();
+					//getEteindre();
 				}
+				return true;
 		}
 	// Getters
-	static void getStart()
+	public boolean getCercle()
 		{
-		Robot_Edison.getStart();
-		}
-	static void getCercle()
-		{
-		cercle();
-		}
-	static void getMenuCalculs()
-		{
-		Menu_Calculs.getMenuCalculs();
-		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
+		return cercle();
 		}
 	
 	// Getters

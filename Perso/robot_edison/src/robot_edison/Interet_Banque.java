@@ -16,7 +16,7 @@ public class Interet_Banque {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	static void calculInteret()
+	public boolean calculInteret()
 	{
 		double interet;
 		double somme;
@@ -78,7 +78,7 @@ public class Interet_Banque {
 					}
 					else if(choixMenu.contains("B") || choixMenu.contains("b"))
 					{
-						getMenuCalculs();
+						getMenuCalcul();
 					}
 					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 					{
@@ -100,29 +100,30 @@ public class Interet_Banque {
 			}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
-				getMenuCalculs();
+				getMenuCalcul();
 			}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 			{
 				getEteindre();
 			}
+			return true;
 	}
 	// Getters
-	static void getStart()
+	public boolean getCalculInteret()
 		{
-	Robot_Edison.getStart();
+			return calculInteret();
 		}
-
-	static void getMenuCalculs()
+	public boolean getStart()
 		{
-	Menu_Calculs.getMenuCalculs();
+		return getStart();
 		}
-	static void getEteindre()
+	public boolean getEteindre()
 		{
-	Allumer_Eteindre.eteindre();
+		return getEteindre();
 		}
-	static void getInteret()
+	public boolean getMenuCalcul()
 		{
-		calculInteret();
+		return getMenuCalcul();
 		}
+	// Fin des getters
 }

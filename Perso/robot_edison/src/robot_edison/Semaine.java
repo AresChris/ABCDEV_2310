@@ -24,7 +24,7 @@ public class Semaine {
 	static Semaine SAMEDI = new Semaine();
 	static Semaine DIMANCHE = new Semaine();
 	
-	 Semaine titleSemaine()
+	 EnumSemaine titleSemaine()
 		{
 		EnumSemaine.LUNDI = title("Lundi");
 		EnumSemaine.MARDI = title("Mardi");
@@ -33,7 +33,7 @@ public class Semaine {
 		EnumSemaine.VENDREDI = title("Vendredi");
 		EnumSemaine.SAMEDI = title("Samedi");
 		EnumSemaine.DIMANCHE = title("dimanche");
-		return title();
+		return title("");
 		}
 	
 	private EnumSemaine title(String string) {
@@ -41,7 +41,7 @@ public class Semaine {
 		return titleSemaine();
 	}
 
-	static String jourSemaine(String str)
+	public boolean jourSemaine()
 		{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\tListe des jours de la semaine"); // Index en int et nom en String
@@ -137,7 +137,7 @@ public class Semaine {
 						getEteindre();
 						}
 					sc.close();
-				return str;
+				return true;
 			}
 	// Getters des jours de la semaine
 	static String getLundi()
@@ -205,17 +205,18 @@ public class Semaine {
 				}
 			// Fin des setters des jours de la semaine
 	// Getters
-	static void getEteindre()
+	
+	public boolean getJourSemaine()
 		{
-		Allumer_Eteindre.eteindre();
+		return jourSemaine();
 		}
-	static void getStart()
+	public boolean getEteindre()
 		{
-		Start.getStart();
+		return getEteindre();
 		}
-	static void getJourSemaine()
+	public boolean getStart()
 		{
-		Semaine.jourSemaine("");
+		return getStart();
 		}
 	// Fin des getters
 

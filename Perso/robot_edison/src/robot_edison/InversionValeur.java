@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InversionValeur {
 	
-	public static void inversion() {
+	public boolean inversion() {
 		
 		System.out.println("\tInverser deux valeurs\n");
 		int a = 0;
@@ -51,7 +51,7 @@ public class InversionValeur {
 					+ "		System.out.println(\"La nouvelle valeur de b : \" + b);\n");
 		}
 		
-		
+		sc.close();
 			System.out.println("\nR pour retourner au menu principal\n"
 					+ "E pour relancer le dernier programme"
 					+ "\nB pour revenir au menu précédent"
@@ -68,29 +68,31 @@ public class InversionValeur {
 					}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 					{
-					 getMenuCalculs();
+					 getMenuCalcul();
 					}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 					{
 					getEteindre();
 					}
+				return true;
+				
 	}
 	// Getters
-	static void getInversion()
+	public boolean getInversion()
 		{
-		inversion();
+		return inversion();
 		}
-	static void getEteindre()
+	public boolean getEteindre()
 		{
-		Allumer_Eteindre.eteindre();
+		return getEteindre();
 		}
-	static void getStart()
+	public boolean getMenuCalcul()
 		{
-		Start.getStart();
+		return getMenuCalcul();
 		}
-	static void getMenuCalculs()
+	public boolean getStart()
 		{
-		Menu_Calculs.getMenuCalculs();
+		return getStart();
 		}
 	// Fin des getters
 }

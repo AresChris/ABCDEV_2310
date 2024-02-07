@@ -16,7 +16,7 @@ public class Convertisseur_km_miles {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	static void convertisseurKmMiles()
+	public boolean convertisseurKmMiles()
 	{
 		String answer;
 		double miles = 0;
@@ -114,7 +114,7 @@ public class Convertisseur_km_miles {
 				}
 				else if(answer.contains("B") || answer.contains("b"))
 				{
-					getMenuCalculs();
+					getMenuCalcul();
 				}
 				else if (answer.contains("E") || answer.contains("e"))
 				{
@@ -139,7 +139,7 @@ public class Convertisseur_km_miles {
 			}
 			else if(answer.contains("B") || answer.contains("b"))
 			{
-				getMenuCalculs();
+				getMenuCalcul();
 			}
 			else if (answer.contains("E") || answer.contains("e"))
 			{
@@ -151,28 +151,26 @@ public class Convertisseur_km_miles {
 						+ "\nNous somme le " + dateFormat.format(date) + 
 						"\nIl est " + hourFormat.format(calendar.getTime()));
 				getAllumer();
-			}		
+			}
+			return true;	
 }
 	// Getters
-	static void getConvertisseur()
-	{
-		convertisseurKmMiles();
-	}
-	static void getStart()
-	{
-		Start.start();
-	}
-	public static void getMenuCalculs()
-	{
-		Menu_Calculs.getMenuCalculs();
-	}
-	public static void getAllumer()
-	{
-		Allumer_Eteindre.allumer();
-	}
-	static void getEteindre()
-	{
-		Allumer_Eteindre.eteindre();
-	}
-	//Fin des getters
+	public boolean getConvertisseur()
+		{
+		return convertisseurKmMiles();
+		}
+	public boolean getStart()
+		{
+		return getStart();
+		}
+	public boolean getMenuCalcul()
+		{
+		return getMenuCalcul();
+		}
+	public boolean getAllumer()
+		{
+		return getAllumer();
+		}
+	
+	// Fin des getters
 }

@@ -16,7 +16,7 @@ public class Table_Multiplication {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	static void tableDeMultiplication()
+	public boolean tableDeMultiplication()
 	{
 		String suivant = "";
 		System.out.println("\tTables de multiplication");
@@ -64,7 +64,7 @@ public class Table_Multiplication {
 					}
 					else if(answer.contains("B") || answer.contains("b"))
 					{
-						getMenuCalculs();
+						getMenuCalcul();
 					}
 					else if(answer.contains("E") || answer.contains("e"))
 					{
@@ -94,7 +94,7 @@ public class Table_Multiplication {
 			}
 			else if(answer.contains("B") || answer.contains("b"))
 			{
-				getMenuCalculs();
+				getMenuCalcul();
 			}
 			else if(answer.contains("E") || answer.contains("e"))
 			{
@@ -106,17 +106,20 @@ public class Table_Multiplication {
 						+ "\nNous somme le " + dateFormat.format(date) + 
 						"\nIl est " + hourFormat.format(calendar.getTime()));
 			}
+			return true;
 	}
-	static void getTableMultiplication()
-	{
-		tableDeMultiplication();
-	}
-	static void getStart()
-	{
-		Start.start();
-	}
-	public static void getMenuCalculs()
-	{
-		Menu_Calculs.getMenuCalculs();
-	}
+	// Getters
+	public boolean getTableDeMultiplication()
+		{
+		return tableDeMultiplication();
+		}
+	public boolean getStart()
+		{
+		return getStart();
+		}
+	public boolean getMenuCalcul()
+		{
+		return getMenuCalcul();
+		}
+	// Fin des getters
 }

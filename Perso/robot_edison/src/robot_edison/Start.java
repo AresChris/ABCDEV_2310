@@ -18,9 +18,12 @@ public class Start {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static void start()  // Affiche la notice, regroupe toutes les fonctionnalitées
+		
+		private Start edison;
+		
+	public boolean start()  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
-		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + getIdRobot() + " est un robot programmable et modulable.\n"
+		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + getId() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
 				+ "\n5. Cellular Automata\n6. Calculs\n7. Tableaux\n8. Boucles for\n9. Jours de la semaine\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
 				+ "\n");
@@ -35,7 +38,7 @@ public class Start {
 				}
 			else if(choixMenu == 3)
 				{
-				getChargerBatterie();
+				getBatteryLeft();
 				}
 			else if(choixMenu == 4)
 				{
@@ -47,7 +50,7 @@ public class Start {
 				}
 			else if(choixMenu == 6)
 				{
-				getMenuCalculs();
+				getMenuCalcul();
 				}
 			else if(choixMenu == 7)
 				{
@@ -67,7 +70,7 @@ public class Start {
 				}
 			else if(choixMenu == 0)
 				{
-				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"
+				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison + "%"
 						+ "\nNous somme le " + dateFormat.format(date)  
 						+ "\nIl est " + hourFormat.format(calendar.getTime()));
 				getEteindre();
@@ -77,83 +80,53 @@ public class Start {
 				System.out.println("\tSaisie invalide : caractères interdits.");
 				start();
 				}
+			return true;
 	}
-	// Getters
-	static void getMenuTableaux() 
+	
+	// Getters des Class
+	public boolean getStart()
 		{
-		Menu_Tableaux.getMenuTableaux();
+		return start();
 		}
-	static void getMenuCalculs()
+	public String getId()
 		{
-			Menu_Calculs.getMenuCalculs();
+		return getId();
 		}
-	static void getChargerBatterie()
+	public boolean getEteindre()
 		{
-			Charger_Batterie.chargerBatterie();
+		return getEteindre();
 		}
-	static void getAfficherHeure()
+	public String getJourSemaine()
 		{
-		Afficher_Heure.afficherDateHeure();
+		return getJourSemaine();
 		}
-	static void getCellularAutomata()
+	public boolean getCellularAutomata()
 		{
-		 Cellular_Automata.cellularAutomata();
+		 return getCellularAutomata();
 		}
-	static void getRectangle()
+	public int getBatteryLeft()
 		{
-		Rectangle.rectangle();
+		return this.getBatteryLeft();
 		}
-	static void getConvertisseur()
+	public boolean getAllumer()
 		{
-		Convertisseur_km_miles.convertisseurKmMiles();
+		return getAllumer();
 		}
-	static void getInteret()
+	public String getAfficherHeure()
 		{
-		Interet_Banque.calculInteret();
+		return getAfficherHeure();
 		}
-	static void getTableMultiplication()
+	public boolean getMenuCalcul()
 		{
-		Table_Multiplication.tableDeMultiplication();
+		return getMenuCalcul();
 		}
-	static void getCharger()
+	public boolean getMenuTableaux()
 		{
-		Charger_Batterie.chargerBatterie();
+		return getMenuTableaux();
 		}
-	static void getStart()
+	public boolean getMenuFor()
 		{
-		start();
-		}
-	static int getBatteryLeft()
-		{
-		return Robot_Edison.batteryLeft;
-		}
-	static String getIdRobot()
-		{
-		return Robot_Edison.idRobot;
-		}
-	public static void getAllumer()
-		{
-		Allumer_Eteindre.allumer();
-		}
-	static void getEteindre()
-		{
-		Allumer_Eteindre.eteindre();
-		}
-	static void getBissextile()
-		{
-		Bissextile.bissextile();
-		}
-	static void getPourPlusDix()
-		{
-		Pour_Plus_Dix.plusDix();
-		}
-	static void getMenuFor()
-		{
-		Boucle_for.menuBoucleFor();
-		}
-	static void getJourSemaine()
-		{
-		Semaine.jourSemaine("");
+		return getMenuFor();
 		}
 	// Fin des getters
 }

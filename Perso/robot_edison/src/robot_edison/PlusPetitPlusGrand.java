@@ -17,7 +17,7 @@ public class PlusPetitPlusGrand {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static void petitGrand()
+	public boolean petitGrand()
 	{
 		int nombres, plusGrand = 0;
 		int position = 0;
@@ -79,7 +79,7 @@ public class PlusPetitPlusGrand {
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
-					getInteret();
+					getCalculInteret();
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
@@ -97,41 +97,44 @@ public class PlusPetitPlusGrand {
 		String choixMenu = sc.next();
 		
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
-			{
+				{
 				getStart();
-			}
+				}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
-			{
-				getInteret();
-			}
+				{
+				getCalculInteret();
+				}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
-			{
+				{
 				getMenuTableaux();
-			}
+				}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-			{
+				{
 				getEteindre();
-			}
+				}
 			sc.close();
+			return true;
 	}
-	static void getPetitGrand()
+	// Getters
+	public boolean getPetitGrand()
 		{
-		petitGrand();
+		return petitGrand();
 		}
-	static void getStart()
+	public boolean getEteindre()
 		{
-		Start.getStart();
+		return getEteindre();
 		}
-	static void getInteret()
+	public boolean getStart()
 		{
-		Interet_Banque.calculInteret();
+		return getStart();
 		}
-	static void getMenuTableaux() 
+	public boolean getMenuTableaux()
 		{
-		Menu_Tableaux.getMenuTableaux();
+		return getMenuTableaux();
 		}
-	static void getEteindre()
+	public boolean getCalculInteret()
 		{
-		Allumer_Eteindre.eteindre();
+		return getCalculInteret();
 		}
+	// Fin des getters
 }

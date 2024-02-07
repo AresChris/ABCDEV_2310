@@ -21,7 +21,7 @@ public class Allumer_Eteindre {
 	
 	// Boutton ON/OFF
 	//-----------------------------------------------------------------------------------
-	static void allumer()
+	public boolean allumer()
 		{
 		if(!isOn)
 		{
@@ -33,9 +33,9 @@ public class Allumer_Eteindre {
 		{
 			System.out.println("Le robot était déjà allumé");
 		}
-		getStart();
+		return getStart();
 		}
-	static void eteindre()
+	public boolean eteindre()
 	{
 		System.out.println("Extinction du robot...\nPressez A pour allumer");
 		isOn = false;
@@ -45,19 +45,20 @@ public class Allumer_Eteindre {
 			isOn = true;
 			getStart();
 		}
+		return false;
 	}
 	// Getters
-	public static void getAllumer()
+	public boolean getAllumer()
 		{
-		allumer();
+		return allumer();
 		}
-	static void getEteindre()
+	public boolean getEteindre()
 		{
-		eteindre();
+		return eteindre();
 		}
-	static void getStart()
+	public boolean getStart()
 		{
-		Start.getStart();
+		return getStart();
 		}
 	// Fin des getters
 }

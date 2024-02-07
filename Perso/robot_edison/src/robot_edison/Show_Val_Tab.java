@@ -17,7 +17,7 @@ public class Show_Val_Tab {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static void showValTab()
+	public boolean showValTab()
 	{
 		System.out.println("\tAffichage des valeurs d'un tableau\n");
 		System.out.println("Combien de valeurs dans le tableau ?");
@@ -96,29 +96,24 @@ public class Show_Val_Tab {
 			{
 				getEteindre();
 			}
+			return false;
 	}
-	static void getShowValTab()
+	// Getters
+	public boolean getShowValTab()
 		{
-		showValTab();
+		return showValTab();
 		}
-	static void getEteindre()
+	public boolean getStart()
 		{
-		Allumer_Eteindre.eteindre();
+		return getStart();
 		}
-	static void getStart()
+	public boolean getMenuTableaux()
 		{
-		Start.getStart();
+		return getMenuTableaux();
 		}
-	static void getInteret()
+	public boolean getEteindre()
 		{
-		Interet_Banque.calculInteret();
+		return getEteindre();
 		}
-	static void getMenuCalculs()
-		{
-		Menu_Calculs.getMenuCalculs();
-		}
-	static void getMenuTableaux() 
-		{
-		Menu_Tableaux.getMenuTableaux();
-		}
+	// Fin des getters
 }

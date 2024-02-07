@@ -17,7 +17,7 @@ public class Menu_Tableaux {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		public static int batteryLeft;
-	static void menuTableaux() 
+	public boolean menuTableaux() 
 	{
 		System.out.println("\tTableaux\n1. Affichage des valeurs d'un tableau\n2. Trouver la plus grande valeur\n0. Quitter");
 		int choixMenu = sc.nextInt();
@@ -37,29 +37,28 @@ public class Menu_Tableaux {
 				System.out.print("Le robot est éteint, pressez A pour allumer");
 				String affichage = sc.next();
 					if(affichage.contains("A") || affichage.contains("a"))
-					{
+						{
 						getStart();
-					}
+						}
 				}
+			return true;
 	}
-	public static void getMenuTableaux()
+	// Getters
+	public boolean getMenuTableaux() 
 		{
-		menuTableaux();
+		return menuTableaux();
 		}
-	static void getPetitGrand()
+	public boolean getStart()
 		{
-		PlusPetitPlusGrand.petitGrand();
+		return getStart();
 		}
-	static void getShowValTab()
+	public boolean getShowValTab()
 		{
-		Show_Val_Tab.showValTab();
+		return getShowValTab();
 		}
-	static void getEteindre()
+	public boolean getPetitGrand()
 		{
-		Allumer_Eteindre.eteindre();
+		return  getPetitGrand();
 		}
-	static void getStart()
-		{
-		Start.getStart();
-		}
+	// Fin des getters
 }

@@ -17,7 +17,7 @@ public class Menu_Calculs {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		public static int batteryLeft;
 	// Fin des utiles	
-	public static void menuCalculs() // Sous menu des différents calculs
+	public boolean menuCalcul() // Sous menu des différents calculs
 	{
 		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
 				+ "\n6. Bissextile\n7. Menu Principal \n8. Triangle\n9. Inversion de valeurs\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : ");
@@ -36,11 +36,11 @@ public class Menu_Calculs {
 			}
 		else if(choixMenu == 4)
 			{
-			getInteret();
+			getCalculInteret();
 			}
 		else if(choixMenu == 5)
 			{
-			getTableMultiplication();
+			getTableDeMultiplication();
 			}
 		else if(choixMenu == 6)
 			{
@@ -65,74 +65,51 @@ public class Menu_Calculs {
 					"\nIl est " + hourFormat.format(calendar.getTime()));
 		}
 		sc.close();
+		return true;
 	}
-	
 	// Getters
-	public void getMenuTableaux() 
+	public boolean getMenuCalcul()
 		{
-		Menu_Tableaux.getMenuTableaux();
+		return menuCalcul();
 		}
-	public void getAllumer()
+	public boolean getStart()
 		{
-		Allumer_Eteindre.getAllumer();	
+		return getStart();
 		}
-	public void getEteindre()
+	public boolean getRectangle()
 		{
-		Allumer_Eteindre.getEteindre();
+		return getRectangle();
 		}
-	public void getChargerBatterie()
+	public boolean getConvertisseur()
 		{
-		Charger_Batterie.chargerBatterie();
+		return getConvertisseur();
 		}
-	static void getAfficherHeure()
+	public boolean getCercle()
 		{
-		Afficher_Heure.getAfficherHeure();
+		return getCercle();
 		}
-	static void getCellularAutomata()
+	public boolean getCalculInteret()
 		{
-		Cellular_Automata.cellularAutomata();
+		return getCalculInteret();
 		}
-	static void getRectangle()
+	public boolean getTriangle()
 		{
-		Rectangle.rectangle();
+		return getTriangle();
 		}
-	static void getMenuCalculs()
+	public boolean getInversion()
 		{
-		menuCalculs();
+		return getInversion();
 		}
-	static void getCercle()
+	public int getTableDeMultiplication()
 		{
-		Cercle.cercle();
+		return getTableDeMultiplication();
 		}
-	static void getConvertisseur()
+	public boolean getBissextile()
 		{
-		Convertisseur_km_miles.convertisseurKmMiles();
+		return getBissextile();
 		}
-	static void getInteret()
-		{
-		Interet_Banque.calculInteret();
-		}
-	static void getTableMultiplication()
-		{
-		Table_Multiplication.tableDeMultiplication();
-		}
-	static void getStart()
-		{
-		Start.getStart();
-		}
-	static void getBissextile()
-		{
-		Bissextile.bissextile();
-		}
-	static void getTriangle()
-		{
-		Triangle.calculPeriAire();
-		}
-	static void getInversion()
-		{
-		InversionValeur.inversion();
-		}
-		// Fin des Getters
+	// Fin des getters
+	
 }
 
 	

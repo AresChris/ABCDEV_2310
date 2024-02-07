@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Triangle {
 	
-	static void calculPeriAire()
+	public boolean calculPeriAire()
 	{
 	Scanner sc = new Scanner(System.in);
 	
@@ -55,6 +55,7 @@ public class Triangle {
 						+ "		double aire = Math.sqrt(((p/2-a)*(p/2-b)*(p/2-c))); // calcul de l'aire; // variable aire\n"
 						+ "	");
 			}
+		
 					System.out.println("\nR pour retourner au menu principal\n"
 							+ "E pour relancer le dernier programme"
 							+ "\nB pour revenir au menu précédent"
@@ -70,28 +71,34 @@ public class Triangle {
 						}
 						else if(choixMenu.contains("B") || choixMenu.contains("b"))
 						{
-							getMenuCalculs();
+							getMenuCalcul();
 						}
 						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 						{
 							getEteindre();
-						}			
+						}
+						sc.close();
+						return true;			
 }	
-	static void getTriangle()
+	
+	// Getters
+	public boolean getTriangle()
 		{
-		calculPeriAire();
+		return calculPeriAire();
 		}
-	static void getStart()
+	public boolean getMenuCalcul()
 		{
-		Start.getStart();
+		return getMenuCalcul();
 		}
-	static void getMenuCalculs()
+	public boolean getStart()
 		{
-		Menu_Calculs.menuCalculs();
+		return getStart();
 		}
-	static void getEteindre()
+	public boolean getEteindre()
 		{
-		Allumer_Eteindre.eteindre();
+		return getEteindre();
 		}
+	// Fin des getters
+	
 }	
 
