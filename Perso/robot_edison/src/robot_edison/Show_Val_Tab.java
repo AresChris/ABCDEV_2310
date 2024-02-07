@@ -17,7 +17,7 @@ public class Show_Val_Tab {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	public boolean showValTab()
+	public void showValTab(Robot_Edison edison)
 	{
 		System.out.println("\tAffichage des valeurs d'un tableau\n");
 		System.out.println("Combien de valeurs dans le tableau ?");
@@ -60,19 +60,19 @@ public class Show_Val_Tab {
 				String choixMenu = sc.next();
 					if(choixMenu.contains("R"))
 					{
-						getStart();
+						edison.start();
 					}
 					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 					{
-						showValTab();
+						edison.getShowValTab();
 					}
 					else if(choixMenu.contains("B") || choixMenu.contains("b"))
 					{
-						getMenuTableaux();
+						edison.getMenuTableaux();
 					}
 					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 					{
-						getEteindre();
+						edison.getEteindre();
 					}
 			}
 		System.out.println("\nR pour retourner au menu principal"
@@ -82,38 +82,19 @@ public class Show_Val_Tab {
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R"))
 			{
-				getStart();
+				edison.start();
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{
-				showValTab();
+				edison.getShowValTab();
 			}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
-				getMenuTableaux();
+				edison.getMenuTableaux();
 			}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 			{
-				getEteindre();
+				edison.getEteindre();
 			}
-			return false;
 	}
-	// Getters
-	public boolean getShowValTab()
-		{
-		return showValTab();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuTableaux()
-		{
-		return getMenuTableaux();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	// Fin des getters
 }

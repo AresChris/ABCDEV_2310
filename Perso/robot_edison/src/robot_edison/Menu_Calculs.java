@@ -17,46 +17,46 @@ public class Menu_Calculs {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		public static int batteryLeft;
 	// Fin des utiles	
-	public boolean menuCalcul() // Sous menu des différents calculs
+	public boolean menuCalcul(Robot_Edison edison) // Sous menu des différents calculs
 	{
 		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
 				+ "\n6. Bissextile\n7. Menu Principal \n8. Triangle\n9. Inversion de valeurs\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : ");
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
 			{
-			getRectangle();
+			edison.getRectangle();
 			}
 		else if(choixMenu == 2)
 			{
-			getCercle();
+			edison.getCercle();
 			}
 		else if(choixMenu == 3)
 			{
-			getConvertisseur();
+			edison.getConvertisseur();
 			}
 		else if(choixMenu == 4)
 			{
-			getCalculInteret();
+			edison.getCalculInteret();
 			}
 		else if(choixMenu == 5)
 			{
-			getTableDeMultiplication();
+			edison.getTableDeMultiplication();
 			}
 		else if(choixMenu == 6)
 			{
-			getBissextile();
+			edison.getBissextile();
 			}
 		else if(choixMenu == 7)
 			{
-			getStart();
+			edison.start();
 			}
 		else if(choixMenu == 8)
 			{
-			getTriangle();
+			edison.getTriangle();
 			}
 		else if(choixMenu == 9)
 			{
-			getInversion();
+			edison.getInversion();
 			}
 		else if(choixMenu == 0)
 		{
@@ -66,50 +66,7 @@ public class Menu_Calculs {
 		}
 		sc.close();
 		return true;
-	}
-	// Getters
-	public boolean getMenuCalcul()
-		{
-		return menuCalcul();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getRectangle()
-		{
-		return getRectangle();
-		}
-	public boolean getConvertisseur()
-		{
-		return getConvertisseur();
-		}
-	public boolean getCercle()
-		{
-		return getCercle();
-		}
-	public boolean getCalculInteret()
-		{
-		return getCalculInteret();
-		}
-	public boolean getTriangle()
-		{
-		return getTriangle();
-		}
-	public boolean getInversion()
-		{
-		return getInversion();
-		}
-	public int getTableDeMultiplication()
-		{
-		return getTableDeMultiplication();
-		}
-	public boolean getBissextile()
-		{
-		return getBissextile();
-		}
-	// Fin des getters
-	
+	}	
 }
 
 	

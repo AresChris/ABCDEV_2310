@@ -15,73 +15,48 @@ public class Boucle_for {
 			static Date date = new Date(); // retourne la date actuelle
 			static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 			// Fin de déclaration des utiles
-	public boolean menuBoucleFor()
+	public boolean menuBoucleFor(Robot_Edison edison)
 	{
 		System.out.println("\tBoucles for");
 		System.out.println("\n\n1. Ajouter 1 à chaque tour de boucle\n2. Afficher les valeurs d'un tableau\n3. Moyenne\n4. Trouver la plus grande valeur\n\n0. Quitter");
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
 		{
-			getPourPlusDix();
+			edison.getPourPlusDix();
 		}
 		else if(choixMenu == 2)
 		{
-			getShowValTab();
+			edison.getShowValTab();
 		}
 		else if(choixMenu == 3)
 		{
-			getMoyenne();
+			edison.getMoyenne();
 		}
 		else if(choixMenu == 4)
 		{
-			getPetitGrand();
+			edison.getPetitGrand();
 		}
 		else if(choixMenu == 0)
 		{
-			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"
+			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison.getBatteryLeft() + "%"
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
 			System.out.println("Le robot est éteint pressez A pour l'allumer");
 			String affichage = sc.next();
 				if(affichage.contains("A") || affichage.contains("a"))
 				{
-					getStart();
+					edison.start();
 				}
 				else
 				{
-					getStart();
+					edison.start();
 				}
 		}
 		return true;
 	}
-	// Getters
-	public boolean getMenuFor()
-		{
-		return menuBoucleFor();
-		}
-	public boolean getPourPlusDix()
-		{
-		return getPourPlusDix();
-		}
-	public boolean getPetitGrand()
-		{
-		return  getPetitGrand();
-		}
-	public boolean getShowValTab()
-		{
-		return getShowValTab();
-		}
-	public boolean getMoyenne()
-		{
-		return getMoyenne();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public int getBatteryLeft()
-		{
-		return getBatteryLeft();
-		}
-	// Fin des getters
+	public boolean menuBoucleFor()
+	{
+		return this.menuBoucleFor();
+	}
+	
 }

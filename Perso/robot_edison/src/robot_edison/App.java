@@ -20,7 +20,7 @@ public class App {
 //---------------------------------------------------------------------------------------------------------
 		Robot_Edison edison = new Robot_Edison(false, 80, "edison");
 		
-		edison.demarrage();
+		edison.start();
 
 	}
 }

@@ -16,7 +16,7 @@ public class Interet_Banque {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean calculInteret()
+	public boolean calculInteret(Robot_Edison edison)
 	{
 		double interet;
 		double somme;
@@ -70,19 +70,19 @@ public class Interet_Banque {
 				String choixMenu = sc.next();
 					if(choixMenu.contains("R") || choixMenu.contains("r"))
 					{
-						getStart();
+						edison.start();
 					}
 					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 					{
-						calculInteret();
+						edison.getCalculInteret();
 					}
 					else if(choixMenu.contains("B") || choixMenu.contains("b"))
 					{
-						getMenuCalcul();
+						edison.getMenuCalcul();
 					}
 					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 					{
-						getEteindre();
+						edison.getEteindre();
 					}
 			}
 		System.out.println("\nR pour retourner au menu principal\n"
@@ -92,38 +92,20 @@ public class Interet_Banque {
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
-				getStart();
+				edison.start();
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{
-				calculInteret();
+				edison.getCalculInteret();
 			}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
-				getMenuCalcul();
+				edison.getMenuCalcul();
 			}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 			{
-				getEteindre();
+				edison.getEteindre();
 			}
 			return true;
 	}
-	// Getters
-	public boolean getCalculInteret()
-		{
-			return calculInteret();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	// Fin des getters
 }

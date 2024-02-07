@@ -17,7 +17,7 @@ public class Nota_Bene {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static void notaBene()
+	static void notaBene(Robot_Edison edison)
 	{
 		System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Switch case\n4. Utiliser Enum Class sur le programme 'Semaine'\n"
 				+ "5. Tableaux boucle for !!\n6. Finir 'Triangle'"
@@ -26,24 +26,18 @@ public class Nota_Bene {
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
 		{
-			getStart();
+			edison.start();
 		}
 		else
 		{
-			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + getBatteryLeft() + "%"
+			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison.getBatteryLeft() + "%"
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
-			getEteindre();
+			edison.getEteindre();
 		}
 	}
-	// Getters
-	public boolean getStart()
-	{
-	return getStart();
-	}
-	public boolean getEteindre()
-	{
-	return getEteindre();
-	}
-	// Fin des getters
+	void notaBene()
+		{
+		this.notaBene();
+		}
 }

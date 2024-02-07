@@ -26,6 +26,8 @@ public class Robot_Edison {
 	static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 	// Fin de déclaration des utiles
 	
+	
+			
 	// Constructeur
 	public Robot_Edison(boolean _isOn, int _batteryLeft, String _idRobot)
 		{
@@ -39,11 +41,10 @@ public class Robot_Edison {
 		batteryLeft = 80;
 		idRobot = "Edison";
 		}
-	Robot_Edison robot_edison = new Robot_Edison(true, 80, "Edison");
+	
 	// Fin de la déclaration du constructeur
 	
 	// Tests booleens
-	
 	public boolean testIsOn()
 		{
 			if(isOn)
@@ -57,7 +58,7 @@ public class Robot_Edison {
 				return false;
 				}
 		}
-	public boolean chargerBattery()
+	public boolean chargerBattery(Robot_Edison edison)
 		{
 			if(batteryLeft == 100)  // Si la batterie est à 100%
 				{
@@ -74,13 +75,13 @@ public class Robot_Edison {
 						{
 						batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
 						System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
-						getStart();
+						start();
 						return true;	
 						}
 					else
 						{
 						System.out.println("\n\tLe niveau de charge est inchangé : " + getBatteryLeft() + "%");
-						getStart();
+						start();
 						return false;
 						}
 			}
@@ -90,9 +91,17 @@ public class Robot_Edison {
 	// Ajout des programmes et fonctionnalités du robot
 	
 	// Programme Main
-	public boolean demarrage()  // Affiche la notice, regroupe toutes les fonctionnalitées
+	static void start()
 		{
-		return getStart();
+		start();
+		}
+	void getMenuTableaux()
+		{
+		getMenuTableaux();
+		}
+	void getMenuCalcul()
+		{
+		getMenuCalcul();
 		}
 	// Fin du programme Main
 	
@@ -106,28 +115,114 @@ public class Robot_Edison {
 			this.idRobot = idRobot;
 			}
 	// Fin des setters de l'objet
-		// Getters du robot
-		public int getBatteryLeft()
+			// Getters du robot
+			public int getBatteryLeft()
+				{
+				return batteryLeft;
+				}	
+			public String getId()
+				{
+				return idRobot;
+				}	
+			public boolean getIsOn()
+				{
+				return isOn;
+				}
+			public String getAfficherHeure()
+				{
+				return getAfficherHeure();
+				}
+			// Fin des getters du robot
+		// 
+		public void getEteindre()
 			{
-			return batteryLeft;
-			}	
-		public String getId()
-			{
-			return idRobot;
-			}	
-		public boolean getIsOn()
-			{
-			return isOn;
+			getEteindre();
 			}
-		// Fin des getters du robot
+		public void getAllumer()
+			{
+			getAllumer();
+			}
+		public void getChargerBatterie()
+			{
+			getChargerBatterie();
+			}
+		public void getCellularAutomata()
+			{
+			getCellularAutomata();
+			}
+		public void getCercle()
+			{
+			getCercle();
+			}
+		public void getRectangle()
+			{
+			getRectangle();
+			}
+		public void getConvertisseur()
+			{
+			getConvertisseur();
+			}
+		public void getCalculInteret()
+			{
+			getCalculInteret();
+			}
+		public void getTableDeMultiplication()
+			{
+			getTableDeMultiplication();
+			}
+		public void getBissextile()
+			{
+			getBissextile();
+			}
+		public void getPourPlusDix()
+			{
+			getPourPlusDix();
+			}
+		public void getShowValTab()
+			{
+			getShowValTab();
+			}
+		public void getMoyenne()
+			{
+			getMoyenne();
+			}
+		public void getPetitGrand()
+			{
+			getPetitGrand();
+			}
+		public void getTriangle()
+			{
+			getTriangle();
+			}
+		public void getInversion()
+			{
+			getInversion();
+			}
+		public String getJourSemaine()
+			{
+			return getJourSemaine();
+			}	
+		public boolean menuBoucleFor()
+			{
+			return this.menuBoucleFor();
+			}	
+		public void petitGrand()
+			{
+			this.petitGrand();
+			}
+		void notaBene()
+			{
+			this.notaBene();
+			}
+}	
+
+	
 		
-	// Getters
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	// Fin des getters	
-}
+		
+			
+			
+	
+
 
 
 

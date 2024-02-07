@@ -16,7 +16,7 @@ public class Convertisseur_km_miles {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean convertisseurKmMiles()
+	public boolean convertisseurKmMiles(Robot_Edison edison)
 	{
 		String answer;
 		double miles = 0;
@@ -110,22 +110,22 @@ public class Convertisseur_km_miles {
 			answer = sc.next();
 				if(answer.contains("R") || answer.contains("r"))
 				{
-					getStart();
+					edison.start();
 				}
 				else if(answer.contains("B") || answer.contains("b"))
 				{
-					getMenuCalcul();
+					edison.getMenuCalcul();
 				}
 				else if (answer.contains("E") || answer.contains("e"))
 				{
-					convertisseurKmMiles();
+					edison.getConvertisseur();
 				}
 				else
 				{
 					System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
 							+ "\nNous somme le " + dateFormat.format(date) + 
 							"\nIl est " + hourFormat.format(calendar.getTime()));
-					getAllumer();
+					edison.getAllumer();
 				}
 		}
 		System.out.println("\nR pour retourner au menu principal"
@@ -135,42 +135,23 @@ public class Convertisseur_km_miles {
 		answer = sc.next();
 			if(answer.contains("R") || answer.contains("r"))
 			{
-				getStart();
+				edison.start();
 			}
 			else if(answer.contains("B") || answer.contains("b"))
 			{
-				getMenuCalcul();
+				edison.getMenuCalcul();
 			}
 			else if (answer.contains("E") || answer.contains("e"))
 			{
-				convertisseurKmMiles();
+				edison.getConvertisseur();
 			}
 			else
 			{
 				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
 						+ "\nNous somme le " + dateFormat.format(date) + 
 						"\nIl est " + hourFormat.format(calendar.getTime()));
-				getAllumer();
+				edison.getAllumer();
 			}
 			return true;	
-}
-	// Getters
-	public boolean getConvertisseur()
-		{
-		return convertisseurKmMiles();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getAllumer()
-		{
-		return getAllumer();
-		}
-	
-	// Fin des getters
+	}
 }

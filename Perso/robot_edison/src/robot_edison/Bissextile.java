@@ -17,7 +17,8 @@ public class Bissextile {
 				static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 				static DecimalFormat formater = new DecimalFormat("00");
 				// Fin de déclaration des utiles
-	static void verifierValide()
+				
+	static void verifierValide() 
 	{
 		int mois = 0;
 		int jour = 0;
@@ -98,7 +99,7 @@ public class Bissextile {
 					System.out.println("Date non valide");
 				}
 	}
-	public boolean bissextile()
+	public boolean bissextile(Robot_Edison edison)
 	{
 		System.out.println("\t\tBiisextile\n\tVérifie si une date est valide\n\t et si l'année est bissextile\n\t------------------------------\n");
 		verifierValide();
@@ -195,19 +196,19 @@ public class Bissextile {
 			String choixMenu = sc.next();
 				if(choixMenu.contains("R") || choixMenu.contains("r"))
 				{
-					getStart();
+					edison.start();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
-					getBissextile();
+					edison.getBissextile();
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					getMenuCalcul();
+					edison.getMenuCalcul();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-					getEteindre();
+					edison.getEteindre();
 				}
 		}
 			
@@ -218,41 +219,24 @@ public class Bissextile {
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
-				getStart();
+				edison.start();
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{
-				getBissextile();
+				edison.getBissextile();
 			}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 			{
-				getMenuCalcul();
+				edison.getMenuCalcul();
 			}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 			{
-				getEteindre();
+				edison.getEteindre();
 			}
 		 
 		sc.close();
 		return true;
 	}
 	
-	// Getters
-	public boolean getBissextile()
-		{
-		return bissextile();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	// Fin des Getters
+	
 }

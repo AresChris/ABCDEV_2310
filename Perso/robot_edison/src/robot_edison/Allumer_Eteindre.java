@@ -21,21 +21,21 @@ public class Allumer_Eteindre {
 	
 	// Boutton ON/OFF
 	//-----------------------------------------------------------------------------------
-	public boolean allumer()
+	public void allumer(Robot_Edison edison)
 		{
 		if(!isOn)
 		{
 			System.out.println("Démarrage du robot");
 			isOn = true;
-			getStart();
+			start();
 		}
 		else
 		{
 			System.out.println("Le robot était déjà allumé");
 		}
-		return getStart();
+		edison.start();
 		}
-	public boolean eteindre()
+	public void eteindre(Robot_Edison edison)
 	{
 		System.out.println("Extinction du robot...\nPressez A pour allumer");
 		isOn = false;
@@ -43,22 +43,21 @@ public class Allumer_Eteindre {
 		if(allumage.contains("A") || allumage.contains("a"))
 		{
 			isOn = true;
-			getStart();
+			edison.start();
 		}
-		return false;
 	}
 	// Getters
-	public boolean getAllumer()
+	public void getAllumer()
 		{
-		return allumer();
+		this.allumer(null);
 		}
-	public boolean getEteindre()
+	public void getEteindre()
 		{
-		return eteindre();
+		this.eteindre(null);
 		}
-	public boolean getStart()
+	public void start()
 		{
-		return getStart();
+		start();
 		}
 	// Fin des getters
 }

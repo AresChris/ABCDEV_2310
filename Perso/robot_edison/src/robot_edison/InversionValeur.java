@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class InversionValeur {
 	
-	public boolean inversion() {
+	public boolean inversion(Robot_Edison edison) {
 		
 		System.out.println("\tInverser deux valeurs\n");
 		int a = 0;
@@ -60,39 +60,20 @@ public class InversionValeur {
 			
 				if(choixMenu.contains("R") || choixMenu.contains("r"))
 					{
-					getStart();
+					edison.start();
 					}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 					{
-					getInversion();
+					edison.getInversion();
 					}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 					{
-					 getMenuCalcul();
+					 edison.getMenuCalcul();
 					}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 					{
-					getEteindre();
+					edison.getEteindre();
 					}
-				return true;
-				
+				return true;		
 	}
-	// Getters
-	public boolean getInversion()
-		{
-		return inversion();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	// Fin des getters
 }

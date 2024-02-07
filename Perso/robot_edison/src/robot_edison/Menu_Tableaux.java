@@ -17,48 +17,30 @@ public class Menu_Tableaux {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		public static int batteryLeft;
-	public boolean menuTableaux() 
+		
+	public static void menuTableaux(Robot_Edison edison) 
 	{
 		System.out.println("\tTableaux\n1. Affichage des valeurs d'un tableau\n2. Trouver la plus grande valeur\n0. Quitter");
 		int choixMenu = sc.nextInt();
 			if(choixMenu == 1)
 				{
-				getShowValTab();
+				edison.getShowValTab();
 				}
 			else if(choixMenu == 2)
 				{
-				getPetitGrand();
+				edison.petitGrand();
 				}
 			else if(choixMenu == 0)
 				{
-				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
+				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison.getBatteryLeft() + "%"
 						+ "\nNous somme le " + dateFormat.format(date) + 
 						"\nIl est " + hourFormat.format(calendar.getTime()));
 				System.out.print("Le robot est éteint, pressez A pour allumer");
 				String affichage = sc.next();
 					if(affichage.contains("A") || affichage.contains("a"))
 						{
-						getStart();
+						edison.start();
 						}
 				}
-			return true;
 	}
-	// Getters
-	public boolean getMenuTableaux() 
-		{
-		return menuTableaux();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getShowValTab()
-		{
-		return getShowValTab();
-		}
-	public boolean getPetitGrand()
-		{
-		return  getPetitGrand();
-		}
-	// Fin des getters
 }

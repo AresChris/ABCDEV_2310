@@ -2,7 +2,7 @@ package robot_edison;
 
 public class Cellular_Automata {
 
-	public boolean cellularAutomata()
+	public boolean cellularAutomata(Robot_Edison edison)
 	{
 		// La couleur du carré est différent selon le mode utilisé (Sombre ou Clair)
 		String whiteSquare = "■"; // 1
@@ -46,17 +46,9 @@ public class Cellular_Automata {
 					}
 				}
 			}
+		// edison.start();  poser un retour
 		System.out.println("\n");
 		return true;
 		}
-	// Getters
-	public boolean getCellularAutomata()
-		{
-		 return cellularAutomata();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	// Fin des getters
+
 }

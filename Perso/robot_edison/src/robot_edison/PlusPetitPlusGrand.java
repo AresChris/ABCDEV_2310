@@ -17,7 +17,7 @@ public class PlusPetitPlusGrand {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	public boolean petitGrand()
+	public boolean petitGrand(Robot_Edison edison)
 	{
 		int nombres, plusGrand = 0;
 		int position = 0;
@@ -74,21 +74,21 @@ public class PlusPetitPlusGrand {
 			String choixMenu = sc.next();
 			
 				if(choixMenu.contains("R") || choixMenu.contains("r"))
-				{
-					getStart();
-				}
+					{
+					edison.start();
+					}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
-				{
-					getCalculInteret();
-				}
+					{
+					edison.getCalculInteret();
+					}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
-				{
-					getMenuTableaux();
-				}
+					{
+					edison.getMenuTableaux();
+					}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-				{
-					getEteindre();
-				}
+					{
+					edison.getEteindre();
+					}
 		}
 		System.out.println("\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
@@ -98,43 +98,26 @@ public class PlusPetitPlusGrand {
 		
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 				{
-				getStart();
+				edison.start();
 				}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
-				getCalculInteret();
+				edison.getCalculInteret();
 				}
 			else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-				getMenuTableaux();
+				edison.getMenuTableaux();
 				}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-				getEteindre();
+				edison.getEteindre();
 				}
 			sc.close();
 			return true;
 	}
-	// Getters
-	public boolean getPetitGrand()
+	public void petitGrand()
 		{
-		return petitGrand();
+		this.petitGrand();
 		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuTableaux()
-		{
-		return getMenuTableaux();
-		}
-	public boolean getCalculInteret()
-		{
-		return getCalculInteret();
-		}
-	// Fin des getters
+	
 }

@@ -19,45 +19,33 @@ public class Charger_Batterie {
 		
 		
 	
-	public boolean chargerBatterie()  // Permet de charger la batterie à 100%
+	public boolean chargerBatterie(Robot_Edison edison)  // Permet de charger la batterie à 100%
 	{
-		if(this.getBatteryLeft() == 100)  // Si la batterie est à 100%
+		if(edison.getBatteryLeft() == 100)  // Si la batterie est à 100%
 		{
 			System.out.println("La batterie est déjà chargée à 100%");
 		}
-		else if(this.getBatteryLeft() > 30)  // Si le niveau de batterie est superieur à 30%
+		else if(edison.getBatteryLeft() > 30)  // Si le niveau de batterie est superieur à 30%
 		{
-			System.out.println("Le niveau de batterie est actuellement de " + getBatteryLeft()
+			System.out.println("Le niveau de batterie est actuellement de " + edison.getBatteryLeft()
 					+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
 					+ "\nVoulez-vous tout de même le charger ? Y/N");
 			String str = sc.next();
 				if(str.contains("Y") || str.contains("y"))
 				{
-					System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
+					System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + edison.getBatteryLeft() + "%");
 				}
 				else
 				{
-					System.out.println("\n\tLe niveau de charge est inchangé : " + getBatteryLeft() + "%");
+					System.out.println("\n\tLe niveau de charge est inchangé : " + edison.getBatteryLeft() + "%");
 				}
 		}
 		else  // Si le niveau de batterie est inferieur à 30%
 		{
-			System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
+			System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + edison.getBatteryLeft() + "%");
 		}
-		getStart();
+		edison.start();
 		return true;
 	}
 	
-	public boolean getChargerBatterie()
-		{
-		return getChargerBatterie();
-		}
-	public int getBatteryLeft()
-		{
-		return this.getBatteryLeft();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
 }

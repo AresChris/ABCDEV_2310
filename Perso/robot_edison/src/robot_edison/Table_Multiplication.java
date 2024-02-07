@@ -16,7 +16,7 @@ public class Table_Multiplication {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean tableDeMultiplication()
+	public boolean tableDeMultiplication(Robot_Edison edison)
 	{
 		String suivant = "";
 		System.out.println("\tTables de multiplication");
@@ -60,15 +60,15 @@ public class Table_Multiplication {
 				String answer = sc.next();
 					if(answer.contains("R") || answer.contains("r"))
 					{
-						getStart();
+						edison.start();
 					}
 					else if(answer.contains("B") || answer.contains("b"))
 					{
-						getMenuCalcul();
+						edison.getMenuCalcul();
 					}
 					else if(answer.contains("E") || answer.contains("e"))
 					{
-						tableDeMultiplication();
+						edison.getTableDeMultiplication();
 					}
 					else
 					{
@@ -79,7 +79,7 @@ public class Table_Multiplication {
 						affichage = sc.next();
 							if(affichage.contains("A") || affichage.contains("a"))
 							{
-								getStart();
+								edison.start();
 							}
 					}
 			}
@@ -90,15 +90,15 @@ public class Table_Multiplication {
 		String answer = sc.next();
 			if(answer.contains("R") || answer.contains("r"))
 			{
-				getStart();
+				edison.start();
 			}
 			else if(answer.contains("B") || answer.contains("b"))
 			{
-				getMenuCalcul();
+				edison.getMenuCalcul();
 			}
 			else if(answer.contains("E") || answer.contains("e"))
 			{
-				tableDeMultiplication();
+				edison.getTableDeMultiplication();
 			}
 			else
 			{
@@ -108,18 +108,4 @@ public class Table_Multiplication {
 			}
 			return true;
 	}
-	// Getters
-	public boolean getTableDeMultiplication()
-		{
-		return tableDeMultiplication();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	// Fin des getters
 }

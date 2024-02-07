@@ -18,115 +18,69 @@ public class Start {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-		
-		private Start edison;
-		
-	public boolean start()  // Affiche la notice, regroupe toutes les fonctionnalitées
+
+	public static void demarrer(Robot_Edison edison)  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
-		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + getId() + " est un robot programmable et modulable.\n"
+		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + edison.getId() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
 				+ "\n5. Cellular Automata\n6. Calculs\n7. Tableaux\n8. Boucles for\n9. Jours de la semaine\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
 				+ "\n");
 		int choixMenu = sc.nextInt();
 			if(choixMenu == 1)
 				{
-				getEteindre();
+				edison.getEteindre();
 				}
 			else if(choixMenu == 2)
 				{
-				getAllumer();
+				edison.getAllumer();
 				}
 			else if(choixMenu == 3)
 				{
-				getBatteryLeft();
+				edison.getBatteryLeft();
 				}
 			else if(choixMenu == 4)
 				{
-				getAfficherHeure();
+				edison.getAfficherHeure();
 				}
 			else if(choixMenu == 5)
 				{
-				getCellularAutomata();
+				edison.getCellularAutomata();
 				}
 			else if(choixMenu == 6)
 				{
-				getMenuCalcul();
+				edison.getMenuCalcul();
 				}
 			else if(choixMenu == 7)
 				{
-				getMenuTableaux();
+				edison.getMenuTableaux();
 				}
 			else if(choixMenu == 8)
 				{
-				getMenuFor();
+				edison.menuBoucleFor();
 				}
 			else if(choixMenu == 9)
 				{
-				getJourSemaine();
+				edison.getJourSemaine();
 				}
 			else if(choixMenu == 123)
 				{
-				Nota_Bene.notaBene();
+				edison.notaBene();
 				}
 			else if(choixMenu == 0)
 				{
-				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison + "%"
+				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison.getBatteryLeft() + "%"
 						+ "\nNous somme le " + dateFormat.format(date)  
 						+ "\nIl est " + hourFormat.format(calendar.getTime()));
-				getEteindre();
+				edison.getEteindre();
 				}
 			else
 				{
 				System.out.println("\tSaisie invalide : caractères interdits.");
-				start();
+				edison.start();
 				}
-			return true;
 	}
-	
-	// Getters des Class
-	public boolean getStart()
+	static void start()
 		{
-		return start();
+		demarrer(null);
 		}
-	public String getId()
-		{
-		return getId();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	public String getJourSemaine()
-		{
-		return getJourSemaine();
-		}
-	public boolean getCellularAutomata()
-		{
-		 return getCellularAutomata();
-		}
-	public int getBatteryLeft()
-		{
-		return this.getBatteryLeft();
-		}
-	public boolean getAllumer()
-		{
-		return getAllumer();
-		}
-	public String getAfficherHeure()
-		{
-		return getAfficherHeure();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getMenuTableaux()
-		{
-		return getMenuTableaux();
-		}
-	public boolean getMenuFor()
-		{
-		return getMenuFor();
-		}
-	// Fin des getters
 }

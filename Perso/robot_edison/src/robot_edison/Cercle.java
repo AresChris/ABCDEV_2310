@@ -18,7 +18,7 @@ public class Cercle {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean cercle()
+	public boolean cercle(Robot_Edison edison)
 	{
 		double rayon;
 		//coordonnees variables du point A
@@ -132,19 +132,19 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					//getStart();
+					edison.start();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
-					cercle();
+					edison.getCercle();
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					//getMenuCalculs();
+					edison.getMenuCalcul();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-					//getEteindre();
+					edison.getEteindre();
 				}
 			}
 				System.out.println("\nR pour retourner au menu principal\n"
@@ -154,27 +154,21 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					//getStart();
+					edison.start();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
-					cercle();
+					edison.getCercle();
 				}
 				else if(choixMenu.contains("B") || choixMenu.contains("b"))
 				{
-					//getMenuCalculs();
+					edison.getMenuCalcul();
 				}
 				else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 				{
-					//getEteindre();
+					edison.getEteindre();
 				}
 				return true;
 		}
-	// Getters
-	public boolean getCercle()
-		{
-		return cercle();
-		}
-	
-	// Getters
+
 }

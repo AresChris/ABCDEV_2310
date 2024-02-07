@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Triangle {
 	
-	public boolean calculPeriAire()
+	public boolean calculPeriAire(Robot_Edison edison)
 	{
 	Scanner sc = new Scanner(System.in);
 	
@@ -63,42 +63,22 @@ public class Triangle {
 					String choixMenu = sc.next();
 						if(choixMenu.contains("R"))
 						{
-							getStart();
+							edison.start();
 						}
 						else if(choixMenu.contains("E") || choixMenu.contains("e"))
 						{
-							getTriangle();
+							edison.getTriangle();
 						}
 						else if(choixMenu.contains("B") || choixMenu.contains("b"))
 						{
-							getMenuCalcul();
+							edison.getMenuCalcul();
 						}
 						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 						{
-							getEteindre();
+							edison.getEteindre();
 						}
 						sc.close();
 						return true;			
-}	
-	
-	// Getters
-	public boolean getTriangle()
-		{
-		return calculPeriAire();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	// Fin des getters
-	
+	}	
 }	
 

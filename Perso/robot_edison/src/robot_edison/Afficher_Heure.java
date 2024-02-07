@@ -18,21 +18,21 @@ public class Afficher_Heure {
 		// Fin de déclaration des utiles
 		
 		
-	public String afficherDateHeure()
+	public String afficherDateHeure(Robot_Edison edison)
 		{
 		System.out.println("Date : "+dateFormat.format(date)+"\nHeure : " + hourFormat.format(calendar.getTime()));
-		getStart();
+		edison.start();
 		return null;	
 		}
 	
-	public String getAfficherHeure()
-		{
-		return afficherDateHeure();
-		}
 	// Getters
-	public boolean getStart()
-	{
-	return getStart();
-	}
+	public String getAfficherHeure(Robot_Edison edison)
+		{
+		return afficherDateHeure(edison);
+		}
+	public void start()
+		{
+		start();
+		}
 	// Fin des getters
 }

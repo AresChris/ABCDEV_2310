@@ -33,7 +33,6 @@ public class Semaine {
 		EnumSemaine.VENDREDI = title("Vendredi");
 		EnumSemaine.SAMEDI = title("Samedi");
 		EnumSemaine.DIMANCHE = title("dimanche");
-		return title("");
 		}
 	
 	private EnumSemaine title(String string) {
@@ -41,7 +40,7 @@ public class Semaine {
 		return titleSemaine();
 	}
 
-	public boolean jourSemaine()
+	public boolean jourSemaine(Robot_Edison edison)
 		{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\tListe des jours de la semaine"); // Index en int et nom en String
@@ -126,15 +125,15 @@ public class Semaine {
 				
 					if(choixMenu.contains("R") || choixMenu.contains("r"))
 						{
-						getStart();
+						edison.start();
 						}
 					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 						{
-						getJourSemaine();
+						edison.getJourSemaine();
 						}
 					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 						{
-						getEteindre();
+						edison.getEteindre();
 						}
 					sc.close();
 				return true;
@@ -204,23 +203,4 @@ public class Semaine {
 				return str = "Le " + nomJour + " est en position " + index + " dans la semaine";				
 				}
 			// Fin des setters des jours de la semaine
-	// Getters
-	
-	public boolean getJourSemaine()
-		{
-		return jourSemaine();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	// Fin des getters
-
-	
-	
-	
 }
