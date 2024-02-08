@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Triangle {
 	
-	public boolean calculPeriAire(Robot_Edison edison)
+	public static boolean calculPeriAire(Robot_Edison edison)
 	{
 	Scanner sc = new Scanner(System.in);
 	
@@ -35,7 +35,7 @@ public class Triangle {
 		System.out.println("Afficher le code ? Y/N");
 		String answer = sc.next();
 			if(answer.contains("Y") || answer.contains("y"))
-			{
+				{
 				System.out.println("\t	System.out.println(\"\\tCalcul de l'aire et périmètre d'un triangle\\n\");\n"
 						+ "		System.out.println(\"Saisis les valeurs des trois cotés :\\n\");\n"
 						+ "		\n"
@@ -54,7 +54,7 @@ public class Triangle {
 						+ "		double p = a + b + c; // calcul du périmetre\n"
 						+ "		double aire = Math.sqrt(((p/2-a)*(p/2-b)*(p/2-c))); // calcul de l'aire; // variable aire\n"
 						+ "	");
-			}
+				}
 		
 					System.out.println("\nR pour retourner au menu principal\n"
 							+ "E pour relancer le dernier programme"
@@ -62,21 +62,21 @@ public class Triangle {
 							+ "\nQ pour quitter"); 
 					String choixMenu = sc.next();
 						if(choixMenu.contains("R"))
-						{
-							edison.start();
-						}
+							{
+							Start.demarrer(edison);
+							}
 						else if(choixMenu.contains("E") || choixMenu.contains("e"))
-						{
+							{
 							edison.getTriangle();
-						}
+							}
 						else if(choixMenu.contains("B") || choixMenu.contains("b"))
-						{
+							{
 							edison.getMenuCalcul();
-						}
+							}
 						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-						{
+							{
 							edison.getEteindre();
-						}
+							}
 						sc.close();
 						return true;			
 	}	

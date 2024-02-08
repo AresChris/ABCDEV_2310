@@ -18,7 +18,7 @@ public class Rectangle {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean rectangle()
+	public static boolean rectangle(Robot_Edison edison)
 	{
 		System.out.println("\tCalculs du périmètre et de la surface d'un rectangle "
 				+ "\nLongueur en cm :");
@@ -73,39 +73,21 @@ public class Rectangle {
 				+ "\nQ pour quitter"); 
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R"))
-			{
-				getStart();
-			}
+				{
+				Start.demarrer(edison);
+				}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
-			{
-				rectangle();
-			}
+				{
+				edison.getRectangle();
+				}
 			else if(choixMenu.contains("b") || choixMenu.contains("Q"))
-			{
-				getMenuCalcul();
-			}
+				{
+				edison.getMenuCalcul();
+				}
 			else if(choixMenu.contains("Q") || choixMenu.contains("q"))
-			{
-				getEteindre();
-			}
+				{
+				edison.getEteindre();
+				}
 			return true;
-}
-	// Getters
-	public boolean getRectangle()
-		{
-		return rectangle();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuCalcul()
-		{
-		return getMenuCalcul();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
-	// Fin des getters
+	}
 }

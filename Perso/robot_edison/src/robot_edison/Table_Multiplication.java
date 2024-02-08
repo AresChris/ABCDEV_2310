@@ -16,7 +16,7 @@ public class Table_Multiplication {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean tableDeMultiplication(Robot_Edison edison)
+	public static boolean tableDeMultiplication(Robot_Edison edison)
 	{
 		String suivant = "";
 		System.out.println("\tTables de multiplication");
@@ -25,17 +25,17 @@ public class Table_Multiplication {
 			System.out.print("Saisir un nombre entre 1 et 10 : ");
 			int nombre = sc.nextInt();
 				for (int i=0; i <= 10; i++) 
-				{
-				int somme = i*nombre;
-				System.out.println(i + "*" + nombre + " = " + somme);
-				} 		
+					{
+					int somme = i*nombre;
+					System.out.println(i + "*" + nombre + " = " + somme);
+					} 		
 				System.out.print("Souhaitez-vous afficher une autre table ? Y/N : ");
 					suivant = sc.next();
-		}	while (suivant.contains("Y") || suivant.contains("y"));
+			}while (suivant.contains("Y") || suivant.contains("y"));
 		System.out.println("Afficher le code ? Y/N ");
 		String affichage = sc.next();
 			if(affichage.contains("Y") || affichage.contains("y"))
-			{
+				{
 				System.out.println("String suivant = \"\";\r\n"
 						+ "		System.out.println(\"\\tTables de multiplication\");\r\n"
 						+ "		//int nombre = sc.nextInt();\r\n"
@@ -50,62 +50,62 @@ public class Table_Multiplication {
 						+ "				System.out.print(\"Souhaitez-vous afficher une autre table ? Y/N : \");\r\n"
 						+ "					suivant = sc.next();\r\n"
 						+ "		}	while (suivant.contains(\"Y\") || suivant.contains(\"y\"));");
-			}
+				}
 			else
-			{
+				{
 				System.out.println("\nR pour retourner au menu principal\n"
 						+ "E pour relancer le dernier programme"
 						+ "\nB pour revenir au menu précédent"
 						+ "\nQ pour quitter"); 
 				String answer = sc.next();
 					if(answer.contains("R") || answer.contains("r"))
-					{
-						edison.start();
-					}
+						{
+						Start.demarrer(edison);
+						}
 					else if(answer.contains("B") || answer.contains("b"))
-					{
+						{
 						edison.getMenuCalcul();
-					}
+						}
 					else if(answer.contains("E") || answer.contains("e"))
-					{
+						{
 						edison.getTableDeMultiplication();
-					}
+						}
 					else
-					{
+						{
 						System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
 								+ "\nNous somme le " + dateFormat.format(date) + 
 								"\nIl est " + hourFormat.format(calendar.getTime()));
 						System.out.println("Le robot est éteint, pressez A pour allumer");
 						affichage = sc.next();
 							if(affichage.contains("A") || affichage.contains("a"))
-							{
-								edison.start();
-							}
-					}
-			}
+								{
+								Start.demarrer(edison);
+								}
+						}
+				}
 		System.out.println("\nR pour retourner au menu principal\n"
 				+ "E pour relancer le dernier programme"
 				+ "\nB pour revenir au menu précédent"
 				+ "\nQ pour quitter"); 
 		String answer = sc.next();
 			if(answer.contains("R") || answer.contains("r"))
-			{
-				edison.start();
-			}
+				{
+				Start.demarrer(edison);
+				}
 			else if(answer.contains("B") || answer.contains("b"))
-			{
+				{
 				edison.getMenuCalcul();
-			}
+				}
 			else if(answer.contains("E") || answer.contains("e"))
-			{
+				{
 				edison.getTableDeMultiplication();
-			}
+				}
 			else
-			{
+				{
 				System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
 						+ "\nNous somme le " + dateFormat.format(date) + 
 						"\nIl est " + hourFormat.format(calendar.getTime()));
-			}
+				}
 			return true;
 	}
 }

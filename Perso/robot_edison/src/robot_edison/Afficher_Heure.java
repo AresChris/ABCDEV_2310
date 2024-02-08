@@ -8,6 +8,8 @@ import java.util.Scanner;
 
 public class Afficher_Heure {
 
+	Robot_Edison edison = new Robot_Edison(false, 0, null);
+	
 	 // Utiles 
 		static Scanner sc = new Scanner(System.in); // Scanner
 		static DecimalFormat decimalFormat = new DecimalFormat("00"); // Formatage à deux chiffres 00
@@ -18,11 +20,11 @@ public class Afficher_Heure {
 		// Fin de déclaration des utiles
 		
 		
-	public String afficherDateHeure(Robot_Edison edison)
+	public static String afficherDateHeure(Robot_Edison edison)
 		{
 		System.out.println("Date : "+dateFormat.format(date)+"\nHeure : " + hourFormat.format(calendar.getTime()));
-		edison.start();
-		return null;	
+		Start.demarrer(edison);
+		return afficherDateHeure(edison);	
 		}
 	
 	// Getters

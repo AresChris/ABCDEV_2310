@@ -6,7 +6,7 @@ public class Pour_Plus_Dix {
 
 	static Scanner sc = new Scanner(System.in);
 
-	public boolean plusDix()
+	public static boolean plusDix(Robot_Edison edison)
 		{
 		System.out.println("\tAjouter 1 à chaque tour de boucle\n");
 		System.out.println("Inscrire un nombre :");
@@ -14,10 +14,11 @@ public class Pour_Plus_Dix {
 		System.out.println("Combien voulez-vous ajouter ?");
 		int tourDeBoucle = sc.nextInt();
 
-		for (int i=0; i < tourDeBoucle; i++) {
+		for (int i=0; i < tourDeBoucle; i++) 
+			{
 			nombre += 1;
 			System.out.println("nombre " + (i+1) +" :" + nombre);
-		}
+			}
 		System.out.println("Afficher le code ? Y/N");
 		String answer = sc.next();
 			if(answer.contains("Y") || answer.contains("y"))
@@ -32,46 +33,30 @@ public class Pour_Plus_Dix {
 						+ "\n\t\tSystem.out.println(\"nombre \" + (i+1) +\" :\" + nombre);  // print le nombre à chaque tour de boucle ayant pris +1"
 						+ "\t\n\t\t}");
 			}
-					System.out.println("\nR pour retourner au menu principal\n"
+				System.out.println("\nR pour retourner au menu principal\n"
 							+ "E pour relancer le dernier programme"
 							+ "\nB pour revenir au menu précédent"
 							+ "\nQ pour quitter"); 
-					String choixMenu = sc.next();
-						if(choixMenu.contains("R"))
+				String choixMenu = sc.next();
+					if(choixMenu.contains("R"))
 						{
-							getStart();
+						Start.demarrer(edison);
 						}
-						else if(choixMenu.contains("E") || choixMenu.contains("e"))
+					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 						{
-							getPourPlusDix();
+						edison.getPourPlusDix();
 						}
-						else if(choixMenu.contains("B") || choixMenu.contains("b"))
+					else if(choixMenu.contains("B") || choixMenu.contains("b"))
 						{
-							getMenuFor();
+						edison.menuBoucleFor();
 						}
-						else if(choixMenu.contains("Q") || choixMenu.contains("q"))
+					else if(choixMenu.contains("Q") || choixMenu.contains("q"))
 						{
-							getEteindre();
+						edison.getEteindre();
 						}
-						return true;
-				}
+					return true;
+			}
 
-	// Getters
-	public boolean getPourPlusDix()
-		{
-		return plusDix();
-		}
-	public boolean getStart()
-		{
-		return getStart();
-		}
-	public boolean getMenuFor()
-		{
-		return getMenuFor();
-		}
-	public boolean getEteindre()
-		{
-		return getEteindre();
-		}
+	
 	// Fin des getters
 }

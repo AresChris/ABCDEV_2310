@@ -39,7 +39,7 @@ public class Menu_Tableaux {
 				String affichage = sc.next();
 					if(affichage.contains("A") || affichage.contains("a"))
 						{
-						edison.start();
+						edison.demarrer();
 						}
 				}
 	}

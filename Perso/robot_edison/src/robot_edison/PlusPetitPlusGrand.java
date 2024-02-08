@@ -17,7 +17,7 @@ public class PlusPetitPlusGrand {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	public boolean petitGrand(Robot_Edison edison)
+	public static boolean petitGrand(Robot_Edison edison)
 	{
 		int nombres, plusGrand = 0;
 		int position = 0;
@@ -75,7 +75,7 @@ public class PlusPetitPlusGrand {
 			
 				if(choixMenu.contains("R") || choixMenu.contains("r"))
 					{
-					edison.start();
+					edison.demarrer();
 					}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 					{
@@ -98,7 +98,7 @@ public class PlusPetitPlusGrand {
 		
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 				{
-				edison.start();
+				edison.demarrer();
 				}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{

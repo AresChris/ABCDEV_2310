@@ -16,7 +16,7 @@ public class Convertisseur_km_miles {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean convertisseurKmMiles(Robot_Edison edison)
+	public static boolean convertisseurKmMiles(Robot_Edison edison)
 	{
 		String answer;
 		double miles = 0;
@@ -110,7 +110,7 @@ public class Convertisseur_km_miles {
 			answer = sc.next();
 				if(answer.contains("R") || answer.contains("r"))
 				{
-					edison.start();
+					edison.demarrer();
 				}
 				else if(answer.contains("B") || answer.contains("b"))
 				{
@@ -135,7 +135,7 @@ public class Convertisseur_km_miles {
 		answer = sc.next();
 			if(answer.contains("R") || answer.contains("r"))
 			{
-				edison.start();
+				edison.demarrer();
 			}
 			else if(answer.contains("B") || answer.contains("b"))
 			{

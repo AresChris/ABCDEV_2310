@@ -99,7 +99,7 @@ public class Bissextile {
 					System.out.println("Date non valide");
 				}
 	}
-	public boolean bissextile(Robot_Edison edison)
+	public static boolean bissextile(Robot_Edison edison)
 	{
 		System.out.println("\t\tBiisextile\n\tVérifie si une date est valide\n\t et si l'année est bissextile\n\t------------------------------\n");
 		verifierValide();
@@ -196,7 +196,7 @@ public class Bissextile {
 			String choixMenu = sc.next();
 				if(choixMenu.contains("R") || choixMenu.contains("r"))
 				{
-					edison.start();
+					edison.demarrer();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
@@ -219,7 +219,7 @@ public class Bissextile {
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
-				edison.start();
+				edison.demarrer();
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{

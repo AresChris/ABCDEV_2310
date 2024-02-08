@@ -18,8 +18,9 @@ public class Start {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-
-	public void demarrer(Robot_Edison edison)  // Affiche la notice, regroupe toutes les fonctionnalitées
+		//Robot_Edison edison = new Robot_Edison(false, 0, null);
+		
+	public static void demarrer(Robot_Edison edison)  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
 		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + edison.getId() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
@@ -28,7 +29,7 @@ public class Start {
 		int choixMenu = sc.nextInt();
 			if(choixMenu == 1)
 				{
-				edison.getEteindre();
+				edison.eteindre();
 				}
 			else if(choixMenu == 2)
 				{
@@ -80,8 +81,5 @@ public class Start {
 				}		
 			
 	}
-	/*public void demarrer()
-		{
-		edison.demarrer();
-		}*/
+	
 }

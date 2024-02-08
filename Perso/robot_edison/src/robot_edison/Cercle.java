@@ -18,7 +18,7 @@ public class Cercle {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean cercle(Robot_Edison edison)
+	public static boolean cercle(Robot_Edison edison)
 	{
 		double rayon;
 		//coordonnees variables du point A
@@ -132,7 +132,7 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					edison.start();
+					edison.demarrer();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{
@@ -154,7 +154,7 @@ public class Cercle {
 				String choixMenu = sc.next();
 				if(choixMenu.contains("R"))
 				{
-					edison.start();
+					edison.demarrer();
 				}
 				else if(choixMenu.contains("E") || choixMenu.contains("e"))
 				{

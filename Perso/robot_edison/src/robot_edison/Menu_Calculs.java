@@ -17,7 +17,8 @@ public class Menu_Calculs {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		public static int batteryLeft;
 	// Fin des utiles	
-	public boolean menuCalcul(Robot_Edison edison) // Sous menu des différents calculs
+		
+	public static boolean menuCalcul(Robot_Edison edison) // Sous menu des différents calculs
 	{
 		System.out.println("\tCalculs\n1. Rectangle\n2. Cercle\n3. Convertisseur km/miles\n4. Calculs d'interêts\n5. Table de multiplications"
 				+ "\n6. Bissextile\n7. Menu Principal \n8. Triangle\n9. Inversion de valeurs\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : ");
@@ -48,7 +49,7 @@ public class Menu_Calculs {
 			}
 		else if(choixMenu == 7)
 			{
-			edison.start();
+			edison.demarrer();
 			}
 		else if(choixMenu == 8)
 			{
@@ -59,11 +60,11 @@ public class Menu_Calculs {
 			edison.getInversion();
 			}
 		else if(choixMenu == 0)
-		{
+			{
 			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + batteryLeft + "%"
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
-		}
+			}
 		sc.close();
 		return true;
 	}	

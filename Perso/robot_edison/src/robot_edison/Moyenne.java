@@ -15,7 +15,7 @@ public class Moyenne {
 				static Date date = new Date(); // retourne la date actuelle
 				static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 				// Fin de déclaration des utiles
-	public boolean moyenne(Robot_Edison edison)
+	public static boolean moyenne(Robot_Edison edison)
 	{
 		System.out.println("Combien de notes ?"); // determine la longueur du tableau
 		int nbNotes = sc.nextInt();  	// saisie de l'utilisateur
@@ -82,7 +82,7 @@ public class Moyenne {
 					
 						if(choixMenu.contains("R") || choixMenu.contains("r"))
 							{
-							edison.start();
+							edison.demarrer();
 							}
 						else if(choixMenu.contains("E") || choixMenu.contains("e"))
 							{

@@ -2,7 +2,7 @@ package robot_edison;
 
 public class Cellular_Automata {
 
-	public boolean cellularAutomata(Robot_Edison edison)
+	public static boolean cellularAutomata()
 	{
 		// La couleur du carré est différent selon le mode utilisé (Sombre ou Clair)
 		String whiteSquare = "■"; // 1

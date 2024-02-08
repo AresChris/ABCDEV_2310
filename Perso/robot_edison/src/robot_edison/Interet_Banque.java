@@ -16,7 +16,7 @@ public class Interet_Banque {
 			public static int batteryLeft;
 		// Fin des utiles	
 			
-	public boolean calculInteret(Robot_Edison edison)
+	public static boolean calculInteret(Robot_Edison edison)
 	{
 		double interet;
 		double somme;
@@ -70,7 +70,7 @@ public class Interet_Banque {
 				String choixMenu = sc.next();
 					if(choixMenu.contains("R") || choixMenu.contains("r"))
 					{
-						edison.start();
+						edison.demarrer();
 					}
 					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 					{
@@ -92,7 +92,7 @@ public class Interet_Banque {
 		String choixMenu = sc.next();
 			if(choixMenu.contains("R") || choixMenu.contains("r"))
 			{
-				edison.start();
+				edison.demarrer();
 			}
 			else if(choixMenu.contains("E") || choixMenu.contains("e"))
 			{

@@ -63,8 +63,23 @@ public class Robot_Edison {
 		System.out.println("La batterie restante est de : " + batteryLeft);
 		return batteryLeft;
 	}
-	
+	public boolean isOn()
+	{
+		if(!this.isOn) 
+			{
+			System.out.println("Le robot est éteint ...");
+			this.isOn = false;
+			return false;
+			}
+		else
+			{
+			System.out.println("Le robot est allumé ...");
+			return true;
+			}
+	}
 	// Fin des tests booleens
+//----------------------------------------------------
+	// Programmes de la Class Robot_Edison
 	public int chargerBattery()
 		{
 			if(this.batteryLeft == 100)  // Si la batterie est à 100%
@@ -90,23 +105,52 @@ public class Robot_Edison {
 						}
 			}
 			return this.getBatteryLeft();
-			
 		}
+	public boolean allumer()
+		{
+		if(!this.isOn())
+			{
+			System.out.println("Démarrage du robot");
+			this.isOn = true;
+			Start.demarrer(this);
+			return true;
+			}
+		else
+			{
+			System.out.println("Le robot était déjà allumé");
+			}
+			this.demarrer();
+			return true;
+		}
+	public boolean eteindre()
+	{
+		if(this.isOn)
+		{
+			System.out.println("Extinction du robot ...");
+			this.isOn = false;
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	//Fin des programmes de la Class Robot_Edison
 //------------------------------------------------------------------------------------------------------------------------	
 	// Ajout des programmes et fonctionnalités du robot
 	
 	// Programme Main
 	public void demarrer()
 		{
-		this.demarrer();
+		Start.demarrer(this);
 		}
 	void getMenuTableaux()
 		{
-		getMenuTableaux();
+		Menu_Tableaux.menuTableaux(this);
 		}
-	void getMenuCalcul()
+	boolean getMenuCalcul()
 		{
-		getMenuCalcul();
+		return Menu_Calculs.menuCalcul(this);
 		}
 	// Fin du programme Main
 	
@@ -119,6 +163,10 @@ public class Robot_Edison {
 			{
 			this.idRobot = _idRobot;
 			}
+		public void setIsOn(boolean _isOn)
+			{
+			this.isOn = _isOn;
+			}
 	// Fin des setters de l'objet
 			// Getters du robot
 			public int getBatteryLeft()
@@ -129,100 +177,97 @@ public class Robot_Edison {
 				{
 				return idRobot;
 				}	
-			public boolean getIsOn()
+			public boolean getIsOn(boolean isOn)
 				{
-				return isOn;
+				return isOn();
 				}
 			public String getAfficherHeure()
 				{
-				return getAfficherHeure();
+				return Afficher_Heure.afficherDateHeure(this);
+				}
+			public boolean getEteindre()
+				{
+				return Allumer_Eteindre.eteindre(this);
+				}
+			public boolean getAllumer()
+				{
+				return Allumer_Eteindre.allumer(this);
+				}
+			public int chargerBatterie()
+				{
+				return this.chargerBatterie();
 				}
 			// Fin des getters du robot
 		// boolean tests
 			boolean getTestIsOn()
-			{
+				{
 				return testIsOn();
-			}
+				}
 		// Fin des boolean tests
-		public boolean getEteindre()
+		
+		public boolean getCellularAutomata()
 			{
-			return getEteindre();
+			return Cellular_Automata.cellularAutomata();
 			}
-		public boolean getAllumer()
+		public boolean getCercle()
 			{
-			return this.getAllumer();
+			return Cercle.cercle(this);
 			}
-		public int chargerBatterie()
+		public boolean getRectangle()
 			{
-			return this.chargerBatterie();
+			return Rectangle.rectangle(this);
 			}
-		public void getCellularAutomata()
+		public boolean getConvertisseur()
 			{
-			getCellularAutomata();
+			return Convertisseur_km_miles.convertisseurKmMiles(this);
 			}
-		public void getCercle()
+		public boolean getCalculInteret()
 			{
-			getCercle();
+			return Interet_Banque.calculInteret(this);
 			}
-		public void getRectangle()
+		public boolean getTableDeMultiplication()
 			{
-			getRectangle();
+			return Table_Multiplication.tableDeMultiplication(this);
 			}
-		public void getConvertisseur()
+		public boolean getBissextile()
 			{
-			getConvertisseur();
+			return Bissextile.bissextile(this);
 			}
-		public void getCalculInteret()
+		public boolean getPourPlusDix()
 			{
-			getCalculInteret();
+			return Pour_Plus_Dix.plusDix(this);
 			}
-		public void getTableDeMultiplication()
+		public boolean getShowValTab()
 			{
-			getTableDeMultiplication();
+			return Show_Val_Tab.showValTab(this);
 			}
-		public void getBissextile()
+		public boolean getMoyenne()
 			{
-			getBissextile();
+			return Moyenne.moyenne(this);
 			}
-		public void getPourPlusDix()
+		public boolean getPetitGrand()
 			{
-			getPourPlusDix();
+			return PlusPetitPlusGrand.petitGrand(this);
 			}
-		public void getShowValTab()
+		public boolean getTriangle()
 			{
-			getShowValTab();
+			return Triangle.calculPeriAire(this);
 			}
-		public void getMoyenne()
+		public boolean getInversion()
 			{
-			getMoyenne();
+			return InversionValeur.inversion(this);
 			}
-		public void getPetitGrand()
+		public boolean getJourSemaine()
 			{
-			getPetitGrand();
-			}
-		public void getTriangle()
-			{
-			getTriangle();
-			}
-		public void getInversion()
-			{
-			getInversion();
-			}
-		public String getJourSemaine()
-			{
-			return getJourSemaine();
+			return Semaine.jourSemaine(this);
 			}	
 		public boolean menuBoucleFor()
 			{
-			return this.menuBoucleFor();
+			return Boucle_for.menuBoucleFor(this);
 			}	
-		public void petitGrand()
-			{
-			this.petitGrand();
-			}
 		void notaBene()
 			{
-			this.notaBene();
+			Nota_Bene.notaBene(this);
 			}
 }	
 

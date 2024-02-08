@@ -41,7 +41,7 @@ public class Semaine {
 		return titleSemaine();
 	}
 
-	public boolean jourSemaine(Robot_Edison edison)
+	public static boolean jourSemaine(Robot_Edison edison)
 		{
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\tListe des jours de la semaine"); // Index en int et nom en String

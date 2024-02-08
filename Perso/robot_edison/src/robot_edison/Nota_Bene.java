@@ -25,19 +25,15 @@ public class Nota_Bene {
 		//int choixMenu = sc.nextInt();
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
-		{
+			{
 			edison.demarrer();
-		}
+			}
 		else
-		{
+			{
 			System.out.println("\n\n\tMenu principal\nLe niveau de batterie est de " + edison.getBatteryLeft() + "%"
 					+ "\nNous somme le " + dateFormat.format(date) + 
 					"\nIl est " + hourFormat.format(calendar.getTime()));
 			edison.getEteindre();
-		}
+			}
 	}
-	void notaBene()
-		{
-		this.notaBene();
-		}
 }

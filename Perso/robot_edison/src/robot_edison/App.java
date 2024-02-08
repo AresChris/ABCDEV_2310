@@ -19,26 +19,9 @@ public class App {
 	// Fin des utils
 //---------------------------------------------------------------------------------------------------------
 		Robot_Edison edison = new Robot_Edison(false, 80, "edison");
-		//Robot_Edison testEdison = new Robot_Edison(false, 80, "Test Edison");
-		//edison.demarrer();
-		//edison.combienBatterie();
-		//edison.chargerBatterie();  
-		//boolean test = edison.getTestIsOn();  -- Ca compile
-		//boolean test2 = edison.getAllumer();  -- Ca ne compile pas
-		/*
-		 		Robot_Edison edison = new Robot_Edison(false, 80, "edison");
-		 		----------------------------
-		 		Robot_Edison est la Class
-		 		' edison ' : est l'instance  -- L'objet dans lequel sont les attributs définis dans la Class (en private)
-		 		(false, 80, "edison") sont les attributs de l'instance de la Class Robot_Edison
-		 		
-		 		void setAttribut()
-		 			{
-		 			this.attribut;  -- définie que l'attribut est utilisé par l'instance
-		 			}
-		 		----------------------------
-		 		
-		 */
+
+		edison.demarrer();
+		
 	}
 }
 

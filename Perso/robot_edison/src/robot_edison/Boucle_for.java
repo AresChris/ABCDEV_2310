@@ -15,7 +15,7 @@ public class Boucle_for {
 			static Date date = new Date(); // retourne la date actuelle
 			static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 			// Fin de déclaration des utiles
-	public boolean menuBoucleFor(Robot_Edison edison)
+	public static boolean menuBoucleFor(Robot_Edison edison)
 	{
 		System.out.println("\tBoucles for");
 		System.out.println("\n\n1. Ajouter 1 à chaque tour de boucle\n2. Afficher les valeurs d'un tableau\n3. Moyenne\n4. Trouver la plus grande valeur\n\n0. Quitter");
@@ -45,11 +45,11 @@ public class Boucle_for {
 			String affichage = sc.next();
 				if(affichage.contains("A") || affichage.contains("a"))
 				{
-					edison.start();
+					edison.demarrer();
 				}
 				else
 				{
-					edison.start();
+					edison.demarrer();
 				}
 		}
 		return true;

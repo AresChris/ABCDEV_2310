@@ -44,7 +44,7 @@ public class Charger_Batterie {
 		{
 			System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + edison.getBatteryLeft() + "%");
 		}
-		edison.start();
+		edison.demarrer();
 		return true;
 	}
 	
