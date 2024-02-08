@@ -26,7 +26,6 @@ public class Allumer_Eteindre {
 		if(!edison.getIsOn(true))
 			{
 			System.out.println("Démarrage du robot");
-			//this.getIsOn();
 			Start.demarrer(edison);
 			return true;
 			}
@@ -40,19 +39,13 @@ public class Allumer_Eteindre {
 	public static boolean eteindre(Robot_Edison edison)
 		{
 		System.out.println("Extinction du robot...\nPressez A pour allumer");
-		//edison.getIsOn() = false;
 		String demarrage = sc.next();
 		if(demarrage.contains("A") || demarrage.contains("a")) 
 			{
-				if(edison.getIsOn(true))
-					{
-					//	
-					}
-				else
-					{
-					// 
-					}
+			edison.allumer();
 			}
-		return true; 
+		return true;
 		}
-}
+		 
+	}
+

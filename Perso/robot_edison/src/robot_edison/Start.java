@@ -24,12 +24,12 @@ public class Start {
 	{
 		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + edison.getId() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
-				+ "\n5. Cellular Automata\n6. Calculs\n7. Tableaux\n8. Boucles for\n9. Jours de la semaine\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
+				+ "\n5. Cellular Automata\n6. Calculs\n7. Tableaux\n8. Boucles for\n9. Jours de la semaine\n10. Afficher le niveau de batterie\n\n0. Quitter\n\nChoisis en donnant le numéro du programme : "
 				+ "\n");
 		int choixMenu = sc.nextInt();
 			if(choixMenu == 1)
 				{
-				edison.eteindre();
+				edison.getEteindre();
 				}
 			else if(choixMenu == 2)
 				{
@@ -37,7 +37,7 @@ public class Start {
 				}
 			else if(choixMenu == 3)
 				{
-				edison.getBatteryLeft();
+				edison.chargerBattery();
 				}
 			else if(choixMenu == 4)
 				{
@@ -62,6 +62,10 @@ public class Start {
 			else if(choixMenu == 9)
 				{
 				edison.getJourSemaine();
+				}
+			else if(choixMenu == 10)
+				{
+				edison.afficherBatterie();
 				}
 			else if(choixMenu == 123)
 				{

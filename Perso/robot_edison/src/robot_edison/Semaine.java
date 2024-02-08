@@ -24,22 +24,41 @@ public class Semaine {
 	static Semaine SAMEDI = new Semaine();
 	static Semaine DIMANCHE = new Semaine();
 	
-	 EnumSemaine titleSemaine()
+	// Definition des paramètres semaine String title -- nom du jour en chaine de caractères
+	 Semaine nomJour(String title)
 		{
-		EnumSemaine.LUNDI = title("Lundi");
-		EnumSemaine.MARDI = title("Mardi");
-		EnumSemaine.MERCREDI = title("Mercredi");
-		EnumSemaine.JEUDI = title("Jeudi");
-		EnumSemaine.VENDREDI = title("Vendredi");
-		EnumSemaine.SAMEDI = title("Samedi");
-		EnumSemaine.DIMANCHE = title("dimanche");
-		return titleSemaine();
+		Semaine.LUNDI = title("Lundi");
+		Semaine.MARDI = title("Mardi");
+		Semaine.MERCREDI = title("Mercredi");
+		Semaine.JEUDI = title("Jeudi");
+		Semaine.VENDREDI = title("Vendredi");
+		Semaine.SAMEDI = title("Samedi");
+		Semaine.DIMANCHE = title("dimanche");
+		return title("");
 		}
-	
-	private EnumSemaine title(String string) {
-		
-		return titleSemaine();
-	}
+	// Definition des paramètres semaine int index -- index du jour en int (sa position dans la semaine en partant du lundi)
+	 Semaine index(int index)
+	 	{
+		 Semaine.LUNDI = index(1);
+		 Semaine.MARDI = index(2);
+		 Semaine.MERCREDI = index(3);
+		 Semaine.JEUDI = index(4);
+		 Semaine.VENDREDI = index(5);
+		 Semaine.SAMEDI = index(6);
+		 Semaine.DIMANCHE = index(7);
+		 return index(index);
+	 	}
+	 // Fin des des paramètres des jours de la semaine
+
+	private Semaine title(String string) 
+		{
+		return title("");
+		}
+	private Semaine indexJour(int index)
+		{
+		return index(index);
+		}
+
 
 	public static boolean jourSemaine(Robot_Edison edison)
 		{
@@ -50,7 +69,7 @@ public class Semaine {
 		switch (index)
 			{
 			case 1:
-				Semaine.nomJour = getLundi();
+				//Semaine.LUNDI = 
 				System.out.println("Le " + nomJour + " est en position " + index + " dans la semaine");
 				break;
 			case 2:
@@ -139,69 +158,5 @@ public class Semaine {
 					sc.close();
 				return true;
 			}
-	// Getters des jours de la semaine
-	static String getLundi()
-		{
-		return setLundi();
-		}
-	static String getMardi()
-		{
-		return setMardi();
-		}
-	static String getMercredi()
-		{
-		return setMercredi();
-		}
-	static String getJeudi()
-		{
-		return setJeudi();
-		}
-	static String getVendredi()
-		{
-		return setVendredi();
-		}
-	static String getSamedi()
-		{
-		return setSamedi();
-		}
-	static String getDimanche()
-		{
-		return setDimanche();
-		}
-	// Fin des getters des jours de la semaine
 	
-			// Setters des jours de la semaine
-			static String setLundi()
-				{
-				return nomJour = "Lundi";
-				}
-			static String setMardi()
-				{
-				return nomJour = "Mardi";
-				}
-			static String setMercredi()
-				{
-				return nomJour ="Mercredi";
-				}
-			static String setJeudi()
-				{
-				return nomJour = "Jeudi";
-				}
-			static String setVendredi()
-				{
-				return nomJour = "Vendredi";
-				}
-			static String setSamedi()
-				{
-				return nomJour = "Samedi";
-				}
-			static String setDimanche()
-				{
-				return nomJour = "Dimanche";
-				}
-			public String toString(String str) 
-				{
-				return str = "Le " + nomJour + " est en position " + index + " dans la semaine";				
-				}
-			// Fin des setters des jours de la semaine
 }

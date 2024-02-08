@@ -28,7 +28,7 @@ public class Menu_Tableaux {
 				}
 			else if(choixMenu == 2)
 				{
-				edison.petitGrand();
+				edison.getPetitGrand();
 				}
 			else if(choixMenu == 0)
 				{

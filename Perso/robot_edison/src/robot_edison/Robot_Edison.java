@@ -12,6 +12,7 @@ public class Robot_Edison {
 	private int batteryLeft; // batterie restante
 	private String idRobot; // nom du robot
 	
+	public static final double BATTERIE_LOST_PER_SECOND = 1.0d;
 	public boolean turnOn; // Allumer
 	public boolean turnOff; // Eteindre
 	public boolean chargeBattery; // Charger
@@ -39,7 +40,7 @@ public class Robot_Edison {
 	public Robot_Edison()
 		{
 		isOn = false;
-		batteryLeft = 80;
+		batteryLeft = 70;
 		idRobot = "Edison";
 		}
 	// Fin de la déclaration du constructeur
@@ -58,53 +59,61 @@ public class Robot_Edison {
 				return false;
 				}
 		}
-	public int combienBatterie()
+	public double combienBatterie()
 	{
-		System.out.println("La batterie restante est de : " + batteryLeft);
-		return batteryLeft;
+		System.out.println("La batterie restante est de : " + this.batteryLeft);
+		return this.batteryLeft;
 	}
 	public boolean isOn()
 	{
 		if(!this.isOn) 
 			{
-			System.out.println("Le robot est éteint ...");
+			System.out.println("Le robot était éteint ...");
 			this.isOn = false;
 			return false;
 			}
 		else
 			{
-			System.out.println("Le robot est allumé ...");
+			System.out.println("Le robot était allumé ...");
 			return true;
 			}
 	}
 	// Fin des tests booleens
 //----------------------------------------------------
 	// Programmes de la Class Robot_Edison
-	public int chargerBattery()
+	public boolean chargerBattery()
 		{
 			if(this.batteryLeft == 100)  // Si la batterie est à 100%
 				{
 				System.out.println("La batterie est déjà chargée à 100%");
+				return false;
 				}
 			else if(this.batteryLeft > 30)  // Si le niveau de batterie est superieur à 30%
-			{
+				{
 				System.out.println("Le niveau de batterie est actuellement de " + this.getBatteryLeft()
 						+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
 						+ "\nVoulez-vous tout de même le charger ? Y/N");
 				String str = sc.next();
 					if(str.contains("Y") || str.contains("y"))
 						{
-						this.batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
+						this.batteryLeft = 100;   // Le niveau de charge de la batterie passe à 100%
 						System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + this.getBatteryLeft() + "%");
-						//this.demarrer();	
+						this.demarrer();
+						//return true;
 						}
 					else
 						{
 						System.out.println("\n\tLe niveau de charge est inchangé : " + this.getBatteryLeft() + "%");
-						//this.demarrer();
+						this.demarrer();
+						//return false;
 						}
-			}
-			return this.getBatteryLeft();
+				}
+			else
+				{
+				System.out.println("La batterie est en charge ..."
+						+ "\nNiveau de batterie " + this.getBatteryLeft() + "%");
+				}
+			return true;
 		}
 	public boolean allumer()
 		{
@@ -135,10 +144,27 @@ public class Robot_Edison {
 			return false;
 		}
 	}
+	/*void oneSecondIsPassed()
+		{
+		if(this.isOn)
+			{
+			this.batteryLeft -= Robot_Edison.BATTERIE_LOST_PER_SECOND;
+				if(this.batteryLeft <= 0.0d)
+					{
+					this.isOn = false;
+					this.eteindre();
+					}
+			}
+		}*/
+	double afficherBatterie()
+	{
+		System.out.println("Il reste " + this.batteryLeft + "% de batterie\n\n\n");
+		this.demarrer();
+		return batteryLeft;
+	}
 	//Fin des programmes de la Class Robot_Edison
 //------------------------------------------------------------------------------------------------------------------------	
-	// Ajout des programmes et fonctionnalités du robot
-	
+  // Ajout des programmes et fonctionnalités du robot
 	// Programme Main
 	public void demarrer()
 		{
@@ -171,15 +197,15 @@ public class Robot_Edison {
 			// Getters du robot
 			public int getBatteryLeft()
 				{
-				return batteryLeft;
+				return this.batteryLeft;
 				}	
 			public String getId()
 				{
 				return idRobot;
 				}	
-			public boolean getIsOn(boolean isOn)
+			public boolean getIsOn(boolean _isOn)
 				{
-				return isOn();
+				return _isOn;
 				}
 			public String getAfficherHeure()
 				{
@@ -193,11 +219,6 @@ public class Robot_Edison {
 				{
 				return Allumer_Eteindre.allumer(this);
 				}
-			public int chargerBatterie()
-				{
-				return this.chargerBatterie();
-				}
-			// Fin des getters du robot
 		// boolean tests
 			boolean getTestIsOn()
 				{

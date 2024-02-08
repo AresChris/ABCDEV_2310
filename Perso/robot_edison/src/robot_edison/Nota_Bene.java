@@ -18,8 +18,8 @@ public class Nota_Bene {
 		// Fin de déclaration des utiles
 		
 	static void notaBene(Robot_Edison edison)
-	{
-		System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Switch case\n4. Utiliser Enum Class sur le programme 'Semaine'\n"
+		{
+		System.out.println("\tRetravailler\n1. Char[] tableaux\n2. Inverser valeurs dans un tableau\n3. Utiliser Enum Class sur le programme 'Semaine'\n"
 				+ "5. Tableaux boucle for !!\n6. Finir 'Triangle'"
 				+ "\n\n1. Revenir au menu principal\n2. Quitter");
 		//int choixMenu = sc.nextInt();
@@ -35,5 +35,5 @@ public class Nota_Bene {
 					"\nIl est " + hourFormat.format(calendar.getTime()));
 			edison.getEteindre();
 			}
-	}
+		}
 }

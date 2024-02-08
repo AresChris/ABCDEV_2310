@@ -1,23 +1,8 @@
 package robot_edison;
 
 
-
 public enum Mois {
 
-	/* switch (Mois)
-		JANVIER -- retourner 1
-		FEVRIER -- retourner 2
-		etc.
-		
-			switch (methode)
-				case JANVIER:
-					'code'
-					break;
-				case FEVRIER:
-					'code'
-					break;
-				etc.
-	*/
 	JANVIER(1, 31),  
 	FEVRIER(2, 28),
 	MARS(3, 31),
@@ -42,17 +27,17 @@ public enum Mois {
 			}	
 		
 	static void setFevrier(int _anneeA)
-	{
+		{
 		boolean estBissextile = (_anneeA%4 ==0 && _anneeA%100 != 0) || _anneeA%400 == 0;
 			if(Mois.FEVRIER.mois == 2 && estBissextile)
-			{
+				{
 				Mois.FEVRIER.jours = 29;
-			}
+				}
 			else if(Mois.FEVRIER.mois == 2 && !estBissextile)
-			{
+				{
 				Mois.FEVRIER.jours = 28;
-			}
-	}
+				}
+		}
 	static Mois[] getMonthThirty()
 		{
 		return new Mois[] {AVRIL, SEPTEMBRE, NOVEMBRE}; // new -- nouveau tableau
@@ -67,7 +52,7 @@ public enum Mois {
 		return getFevrier();
 		}			
 }		
-		//private static final List<Integer> MOIS = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 10, 11, 12); // Mois et leur index
+		
 
 
 
