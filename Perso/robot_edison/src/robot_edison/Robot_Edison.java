@@ -29,8 +29,9 @@ public class Robot_Edison {
 	
 			
 	// Constructeur
-	public Robot_Edison(boolean _isOn, int _batteryLeft, String _idRobot)
+	public Robot_Edison(boolean _isOn, int _batteryLeft, String _idRobot) // Class : Robot_Edison
 		{
+		// Instances de Class
 		isOn = _isOn;
 		batteryLeft = _batteryLeft;
 		idRobot = _idRobot;
@@ -41,13 +42,12 @@ public class Robot_Edison {
 		batteryLeft = 80;
 		idRobot = "Edison";
 		}
-	
 	// Fin de la déclaration du constructeur
 	
 	// Tests booleens
 	public boolean testIsOn()
 		{
-			if(isOn)
+			if(this.isOn)
 				{
 				System.out.println("Oui, le robot est allumé");
 				return true;
@@ -58,42 +58,47 @@ public class Robot_Edison {
 				return false;
 				}
 		}
-	public boolean chargerBattery(Robot_Edison edison)
+	public int combienBatterie()
+	{
+		System.out.println("La batterie restante est de : " + batteryLeft);
+		return batteryLeft;
+	}
+	
+	// Fin des tests booleens
+	public int chargerBattery()
 		{
-			if(batteryLeft == 100)  // Si la batterie est à 100%
+			if(this.batteryLeft == 100)  // Si la batterie est à 100%
 				{
 				System.out.println("La batterie est déjà chargée à 100%");
-				return false;
 				}
-			else if(getBatteryLeft() > 30)  // Si le niveau de batterie est superieur à 30%
+			else if(this.batteryLeft > 30)  // Si le niveau de batterie est superieur à 30%
 			{
-				System.out.println("Le niveau de batterie est actuellement de " + getBatteryLeft()
+				System.out.println("Le niveau de batterie est actuellement de " + this.getBatteryLeft()
 						+ "%, charger votre appareil maintenant pourrait réduire sa durée de vie."
 						+ "\nVoulez-vous tout de même le charger ? Y/N");
 				String str = sc.next();
 					if(str.contains("Y") || str.contains("y"))
 						{
-						batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
-						System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + getBatteryLeft() + "%");
-						start();
-						return true;	
+						this.batteryLeft = 100;   // Le niveau de charge de la batterie pass à 100%
+						System.out.println("\n\tLa batterie est en charge ...\n\nNiveau de charge : " + this.getBatteryLeft() + "%");
+						//this.demarrer();	
 						}
 					else
 						{
-						System.out.println("\n\tLe niveau de charge est inchangé : " + getBatteryLeft() + "%");
-						start();
-						return false;
+						System.out.println("\n\tLe niveau de charge est inchangé : " + this.getBatteryLeft() + "%");
+						//this.demarrer();
 						}
 			}
-			return true;
+			return this.getBatteryLeft();
+			
 		}
 //------------------------------------------------------------------------------------------------------------------------	
 	// Ajout des programmes et fonctionnalités du robot
 	
 	// Programme Main
-	static void start()
+	public void demarrer()
 		{
-		start();
+		this.demarrer();
 		}
 	void getMenuTableaux()
 		{
@@ -106,13 +111,13 @@ public class Robot_Edison {
 	// Fin du programme Main
 	
 	// Setter de l'objet
-		public void setBatteryLeft(int batteryLeft)
+		public void setBatteryLeft(int _batteryLeft)
 			{
-			this.batteryLeft = batteryLeft;
+			this.batteryLeft = _batteryLeft;
 			}
-		public void setIdRobot(String idRobot)
+		public void setIdRobot(String _idRobot)
 			{
-			this.idRobot = idRobot;
+			this.idRobot = _idRobot;
 			}
 	// Fin des setters de l'objet
 			// Getters du robot
@@ -133,18 +138,23 @@ public class Robot_Edison {
 				return getAfficherHeure();
 				}
 			// Fin des getters du robot
-		// 
-		public void getEteindre()
+		// boolean tests
+			boolean getTestIsOn()
 			{
-			getEteindre();
+				return testIsOn();
 			}
-		public void getAllumer()
+		// Fin des boolean tests
+		public boolean getEteindre()
 			{
-			getAllumer();
+			return getEteindre();
 			}
-		public void getChargerBatterie()
+		public boolean getAllumer()
 			{
-			getChargerBatterie();
+			return this.getAllumer();
+			}
+		public int chargerBatterie()
+			{
+			return this.chargerBatterie();
 			}
 		public void getCellularAutomata()
 			{

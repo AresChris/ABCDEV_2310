@@ -33,6 +33,7 @@ public class Semaine {
 		EnumSemaine.VENDREDI = title("Vendredi");
 		EnumSemaine.SAMEDI = title("Samedi");
 		EnumSemaine.DIMANCHE = title("dimanche");
+		return titleSemaine();
 		}
 	
 	private EnumSemaine title(String string) {
@@ -125,7 +126,7 @@ public class Semaine {
 				
 					if(choixMenu.contains("R") || choixMenu.contains("r"))
 						{
-						edison.start();
+						edison.demarrer();
 						}
 					else if(choixMenu.contains("E") || choixMenu.contains("e"))
 						{

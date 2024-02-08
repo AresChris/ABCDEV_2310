@@ -26,7 +26,7 @@ public class Nota_Bene {
 		int choixMenu = sc.nextInt();
 		if(choixMenu == 1)
 		{
-			edison.start();
+			edison.demarrer();
 		}
 		else
 		{

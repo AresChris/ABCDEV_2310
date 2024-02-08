@@ -17,23 +17,25 @@ public class Allumer_Eteindre {
 		static Calendar calendar = Calendar.getInstance(); // Retourne l'heure actuelle
 		// Fin de déclaration des utiles
 		
-	static boolean isOn;
+	
 	
 	// Boutton ON/OFF
 	//-----------------------------------------------------------------------------------
-	public void allumer(Robot_Edison edison)
+	public boolean allumer()
 		{
-		if(!isOn)
+		if(!edison.getIsOn)
 		{
 			System.out.println("Démarrage du robot");
-			isOn = true;
+			this.isOn = true;
 			start();
+			return true;
 		}
 		else
 		{
 			System.out.println("Le robot était déjà allumé");
 		}
-		edison.start();
+		//edison.start();
+		return true;
 		}
 	public void eteindre(Robot_Edison edison)
 	{
@@ -43,13 +45,13 @@ public class Allumer_Eteindre {
 		if(allumage.contains("A") || allumage.contains("a"))
 		{
 			isOn = true;
-			edison.start();
+			//edison.start();
 		}
 	}
 	// Getters
-	public void getAllumer()
+	public boolean getAllumer()
 		{
-		this.allumer(null);
+		return this.allumer();
 		}
 	public void getEteindre()
 		{

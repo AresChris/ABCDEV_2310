@@ -19,7 +19,7 @@ public class Start {
 		// Fin de déclaration des utiles
 		
 
-	public static void demarrer(Robot_Edison edison)  // Affiche la notice, regroupe toutes les fonctionnalitées
+	public void demarrer(Robot_Edison edison)  // Affiche la notice, regroupe toutes les fonctionnalitées
 	{
 		System.out.print("-------------------------------------------------------------\n\t\tLe robot " + edison.getId() + " est un robot programmable et modulable.\n"
 				+ "Notice :\n1. Eteindre\n2. Allumer\n3. Charger la batterie\n4. Afficher la date et l'heure"
@@ -76,11 +76,12 @@ public class Start {
 			else
 				{
 				System.out.println("\tSaisie invalide : caractères interdits.");
-				edison.start();
-				}
+				edison.demarrer();
+				}		
+			
 	}
-	static void start()
+	/*public void demarrer()
 		{
-		demarrer(null);
-		}
+		edison.demarrer();
+		}*/
 }
